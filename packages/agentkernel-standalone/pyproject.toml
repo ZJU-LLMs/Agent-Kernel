@@ -1,0 +1,56 @@
+[build-system]
+requires = ["hatchling", "uv-dynamic-versioning"]
+build-backend = "hatchling.build"
+
+[project]
+name = "agentkernel-standalone"
+version = "0.0.1"
+authors = []
+description = "A standalone multi-agent system framework"
+keywords = ["git", "llm", "agent"]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "colorlog>=6.9.0",
+    "faker>=37.12.0",
+    "fastmcp>=2.11.3",
+    "loguru>=0.7.3",
+    "numpy>=2.3.4",
+    "openai>=2.3.0",
+    "pydantic>=2.11.9",
+    "pyyaml>=6.0.2",
+    "requests>=2.32.5",
+]
+
+license = "MIT"
+license-files = ["LICENSE*"]
+
+[project.scripts]
+pcg = "agentkernel_standalone.toolkit.generation.pcg:cli"
+
+[project.optional-dependencies]
+web = [
+    "aiohttp>=3.12.15",
+    "fastapi>=0.116.2",
+    "uvicorn>=0.35.0",
+]
+storages = [
+    "asyncpg>=0.30.0",
+    "pymilvus>=2.6.2",
+    "redis>=6.4.0",
+]
+all = [
+    "agentkernel-standalone[web]",
+    "agentkernel-standalone[storages]",
+]
+
+[project.urls]
+Homepage = "https://github.com/baconroot/MAS"
+Issues = "https://github.com/baconroot/MAS/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["agentkernel_standalone"]
+
+[tool.hatch.version]
+path = "agentkernel_standalone/__init__.py"
+scheme = "guess-next-dev"
