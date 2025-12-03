@@ -8,12 +8,12 @@
 
 <div align="center">
     <!-- Core Metrics -->
-    <!-- <a href="https://github.com/ZJU-LLMs/Agent-Kernel/stargazers">
-        <img alt="GitHub Stars" src="https://img.shields.io/github/stars/ZJU-LLMs/Agent-Kernel?label=Stars&logo=github&color=brightgreen">
-    </a> -->
     <a href="https://github.com/ZJU-LLMs/Agent-Kernel/stargazers">
-        <img alt="GitHub Stars" src="https://img.shields.io/github/stars/ZJU-LLMs/Agent-Kernel?style=social">
+        <img alt="GitHub Stars" src="https://img.shields.io/github/stars/ZJU-LLMs/Agent-Kernel?label=Stars&logo=github&color=brightgreen">
     </a>
+    <!-- <a href="https://github.com/ZJU-LLMs/Agent-Kernel/stargazers">
+        <img alt="GitHub Stars" src="https://img.shields.io/github/stars/ZJU-LLMs/Agent-Kernel?style=social">
+    </a> -->
     <!-- <a href="https://github.com/ZJU-LLMs/Agent-Kernel/releases">
         <img alt="Version" src="https://img.shields.io/github/v/release/ZJU-LLMs/Agent-Kernel?color=blue&label=Version">
     </a> -->
@@ -59,52 +59,23 @@
 
 ---
 
-# Agent-Kernel: Explore the Scaling Law of Collective Intelligence
+# Explore the Scaling Law of Collective Intelligence
 
-**Agent-Kernel** is a Multi-Agent System (MAS) framework featuring a novel society-centric modular microkernel architecture, designed to support agent-based social simulation in both distributed and standalone environments.
+**Agent-Kernel** is a user-friendly multi-agent system development framework, which is designed to powerfully enable **large-scale** social simulation. This offers the opportunity to **Explore the Scaling Law of Collective Intelligence**.
 
-## 📍 Table of Contents
+## ✨ Highlights
 
-- [✨ Core Advantages: Why Choose Agent-Kernel?](#-core-advantages-why-choose-agent-kernel)
-  - [Adaptability](#1-adaptability)
-  - [Configurability](#2-configurability)
-  - [Reliability](#3-reliability)
-  - [Reusability](#4-reusability)
-- [🎬 Showcase](#-showcase)
-  - [Universe 25 Experiment](#1-universe-25-experiment)
-  - [ZJU Campus Life](#2-zju-campus-life)
-- [🏛️ Architecture and Design](#️-architecture-and-design)
-  - [Framework Overview](#1-framework-overview)
-  - [Software Design](#2-software-design)
-- [🚀 Quick Start](#-quick-start)
-  - [Requirements](#1-requirements)
-  - [Clone and activate environment](#2-clone-and-activate-environment)
-  - [Choose a package to install](#3-choose-a-package-to-install)
-  - [(Optional) Start Society-Panel](#4-optional-start-society-panel)
-- [📂 Project Structure](#-project-structure)
-- [🎓 Citation](#-citation)
-- [🤝 Contributors](#-contributors)
-- [📜 License](#-license)
+Agent-Kernel supports:
 
-## ✨ Core Advantages: Why Choose Agent-Kernel?
+- **dynamic addition and removal of LLMs-based agents at runtime**;
 
-Agent-Kernel offers four core advantages for social simulation, making it stand out in the study of multi-agent systems:
+- **unlimited scalability of agents**;
 
-### 1. Adaptability
+- **real-time intervention during the simulation process**;
 
-Agent-Kernel supports adding/removing agents, changing environments, and modifying behaviors at runtime. This enables simulations to naturally reflect population flow, environmental shifts, and evolving behavioral patterns.
+- **trustworthy verification of agent behaviors and large model outputs**;
 
-### 2. Configurability
-
-With the Controller module, Agent-Kernel allows real-time adjustments to parameters or events during simulation. This makes it easy to test and validate complex sociological hypotheses.
-
-### 3. Reliability
-
-Agent-Kernel employs a strict system-level verification mechanism, validating every agent action. This ensures that simulation behaviors follow physical and social rules, maintaining scientific rigor.
-
-### 4. Reusability
-
-Agent-Kernel uses a standardized, plugin-based modular design. Codes can be reused across scenarios, significantly accelerating research iteration.
+- **code reuse across different simulation scenarios**.
 
 ## 🎬 Showcase
 
@@ -125,6 +96,50 @@ Constructing a high-fidelity simulation of the campus environment to study pedes
 <div align="center">
  <img src="assets/zju.png" alt="ZJU Campus Life" width="700"/>
 </div>
+
+## 📍 Table of Contents
+
+- [✨ Highlights](#-highlights)
+- [🎬 Showcase](#-showcase)
+  - [Universe 25 Experiment](#1-universe-25-experiment)
+  - [ZJU Campus Life](#2-zju-campus-life)
+- [🎯 Core Advantages: Why Choose Agent-Kernel?](#-core-advantages-why-choose-agent-kernel)
+  - [Adaptability](#1-adaptability)
+  - [Configurability](#2-configurability)
+  - [Reliability](#3-reliability)
+  - [Reusability](#4-reusability)
+- [🏛️ Architecture and Design](#️-architecture-and-design)
+  - [Framework Overview](#1-framework-overview)
+  - [Software Design](#2-software-design)
+- [🚀 Quick Start](#-quick-start)
+  - [Requirements](#1-requirements)
+  - [Clone and activate environment](#2-clone-and-activate-environment)
+  - [Choose a package to install](#3-choose-a-package-to-install)
+  - [(Optional) Start Society-Panel](#4-optional-start-society-panel)
+- [📂 Project Structure](#-project-structure)
+- [🎓 Citation](#-citation)
+- [🤝 Contributors](#-contributors)
+- [📜 License](#-license)
+
+## 🎯 Core Advantages: Why Choose Agent-Kernel?
+
+Agent-Kernel offers four core advantages for social simulation, making it stand out in the study of multi-agent systems:
+
+### 1. Adaptability
+
+Agent-Kernel supports adding/removing agents, changing environments, and modifying behaviors at runtime. This enables simulations to naturally reflect population flow, environmental shifts, and evolving behavioral patterns.
+
+### 2. Configurability
+
+With the Controller module, Agent-Kernel allows real-time adjustments to parameters or events during simulation. This makes it easy to test and validate complex sociological hypotheses.
+
+### 3. Reliability
+
+Agent-Kernel employs a strict system-level verification mechanism, validating every agent action. This ensures that simulation behaviors follow physical and social rules, maintaining scientific rigor.
+
+### 4. Reusability
+
+Agent-Kernel uses a standardized, plugin-based modular design. Codes can be reused across scenarios, significantly accelerating research iteration.
 
 ## 🏛️ Architecture and Design
 
@@ -299,7 +314,7 @@ If you use Agent-Kernel in your research, please consider citing our paper:
 Thanks to all the developers who have contributed to Agent-Kernel:
 
 <a href="https://github.com/ZJU-LLMs/Agent-Kernel/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=ZJU-LLMs/Agent-Kernel" />
+  <img src="https://contrib.rocks/image?repo=ZJU-LLMs/Agent-Kernel&v=1" />
 </a>
 
 _We also welcome you to become one of our contributors via Pull Requests!_

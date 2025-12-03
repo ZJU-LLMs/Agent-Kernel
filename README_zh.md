@@ -9,7 +9,7 @@
 <div align="center">
     <!-- Core Metrics -->
     <a href="https://github.com/ZJU-LLMs/Agent-Kernel/stargazers">
-        <img alt="GitHub Stars" src="https://img.shields.io/github/stars/ZJU-LLMs/Agent-Kernel?style=social">
+        <img alt="GitHub Stars" src="https://img.shields.io/github/stars/ZJU-LLMs/Agent-Kernel?label=Stars&logo=github&color=brightgreen">
     </a>
     <a href="https://github.com/ZJU-LLMs/Agent-Kernel/releases">
         <img alt="Version" src="https://img.shields.io/badge/Version-1.0.0-blue">
@@ -53,52 +53,23 @@
 
 ---
 
-# Agent-Kernel: Explore the Scaling Law of Collective Intelligence
+# 探索群体智能的无限可能
 
-**Agent-Kernel** 是一个多智能体系统 (Multi-Agent System, MAS) 框架，其开创了一种以社会为中心的模块化微内核架构，旨在为分布式和单机环境下的社会模拟提供支持。
+**Agent-Kernel** 是一款用户友好的多智能体系统开发框架，深度赋能**大规模**社会模拟，**为探索大规模群体智能提供无限可能**。
 
-## 📍 目录
+## ✨ 亮点
 
-- [✨ 核心优势：为何选择 Agent-Kernel？](#-核心优势为何选择-agent-kernel)
-  - [适应性](#1-适应性)
-  - [可配置性](#2-可配置性)
-  - [可靠性](#3-可靠性)
-  - [可复用性](#4-可复用性)
-- [🎬 应用展示](#-应用展示)
-  - [25 号宇宙](#1-25-号宇宙)
-  - [浙江大学校园生活](#2-浙江大学校园生活)
-- [🏛️ 架构与设计](#️-架构与设计)
-  - [框架总览](#1-框架总览)
-  - [软件设计](#2-软件设计)
-- [🚀 快速入门](#-快速入门)
-  - [环境要求](#1-环境要求)
-  - [克隆并激活环境](#2-克隆并激活环境)
-  - [选择要安装的包](#3-选择要安装的包)
-  - [（可选）启动 Society-Panel](#4-可选启动-society-panel)
-- [📂 项目结构](#-项目结构)
-- [🎓 引用](#-引用)
-- [🤝 贡献者](#-贡献者)
-- [📜 许可证](#-许可证)
+Agent-Kernel 支持：
 
-## ✨ 核心优势：为何选择 Agent-Kernel？
+- **运行时动态增减大模型智能体**；
 
-Agent-Kernel 为社会模拟研究提供了四大核心优势，使其在多智能体系统领域脱颖而出：
+- **智能体数量无限扩展**；
 
-### 1. 适应性
+- **模拟过程中实时干预**；
 
-Agent-Kernel 支持在运行时增减智能体、改变环境和修改行为。这意味着我们能够模拟社会中的人口流动、环境变迁和行为模式的持续演进，从而捕捉真实社会中不断变化的动态过程。
+- **智能体行为和大模型输出的验证与审查**；
 
-### 2. 可配置性
-
-Agent-Kernel 赋予了研究者强大的实时干预能力 。通过内置的控制器模块，您可以在仿真运行时直接调整实验参数或触发突发事件，从而高效地验证各类复杂的社会学假设 。
-
-### 3. 可靠性
-
-Agent-Kernel 引入了严格的系统级校验机制，我们对智能体的每次行为都进行了验证，确保符合物理与社会规则，从而保障了模拟结果的科学有效性。
-
-### 4. 可复用性
-
-Agent-Kernel 采用了标准化的插件化设计，功能模块被封装为可互换的插件单元，支持跨场景的无缝复用 ，极大地加速了研究迭代的效率 。
+- **跨模拟场景代码复用**。
 
 ## 🎬 应用展示
 
@@ -119,6 +90,50 @@ Agent-Kernel 已成功应用于多个复杂的社会模拟场景：
 <div align="center">
  <img src="assets/zju.png" alt="浙大校园模拟" width="700"/>
 </div>
+
+## 📍 目录
+
+- [✨ 亮点](#-亮点)
+- [🎬 应用展示](#-应用展示)
+  - [25 号宇宙](#1-25-号宇宙)
+  - [浙江大学校园生活](#2-浙江大学校园生活)
+- [🎯 核心优势：为何选择 Agent-Kernel？](#-核心优势为何选择-agent-kernel)
+  - [适应性](#1-适应性)
+  - [可配置性](#2-可配置性)
+  - [可靠性](#3-可靠性)
+  - [可复用性](#4-可复用性)
+- [🏛️ 架构与设计](#️-架构与设计)
+  - [框架总览](#1-框架总览)
+  - [软件设计](#2-软件设计)
+- [🚀 快速入门](#-快速入门)
+  - [环境要求](#1-环境要求)
+  - [克隆并激活环境](#2-克隆并激活环境)
+  - [选择要安装的包](#3-选择要安装的包)
+  - [（可选）启动 Society-Panel](#4-可选启动-society-panel)
+- [📂 项目结构](#-项目结构)
+- [🎓 引用](#-引用)
+- [🤝 贡献者](#-贡献者)
+- [📜 许可证](#-许可证)
+
+## 🎯 核心优势：为何选择 Agent-Kernel？
+
+Agent-Kernel 为社会模拟研究提供了四大核心优势，使其在多智能体系统领域脱颖而出：
+
+### 1. 适应性
+
+Agent-Kernel 支持在运行时增减智能体、改变环境和修改行为。这意味着我们能够模拟社会中的人口流动、环境变迁和行为模式的持续演进，从而捕捉真实社会中不断变化的动态过程。
+
+### 2. 可配置性
+
+Agent-Kernel 赋予了研究者强大的实时干预能力 。通过内置的控制器模块，您可以在仿真运行时直接调整实验参数或触发突发事件，从而高效地验证各类复杂的社会学假设 。
+
+### 3. 可靠性
+
+Agent-Kernel 引入了严格的系统级校验机制，我们对智能体的每次行为都进行了验证，确保符合物理与社会规则，从而保障了模拟结果的科学有效性。
+
+### 4. 可复用性
+
+Agent-Kernel 采用了标准化的插件化设计，功能模块被封装为可互换的插件单元，支持跨场景的无缝复用 ，极大地加速了研究迭代的效率 。
 
 ## 🏛️ 架构与设计
 
@@ -293,7 +308,7 @@ MAS/
 感谢所有为 Agent-Kernel 做出贡献的开发者们：
 
 <a href="https://github.com/ZJU-LLMs/Agent-Kernel/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=ZJU-LLMs/Agent-Kernel" />
+  <img src="https://contrib.rocks/image?repo=ZJU-LLMs/Agent-Kernel&v=1" />
 </a>
 
 _我们同样欢迎您通过提交 Pull Requests 成为贡献者中的一员！_
