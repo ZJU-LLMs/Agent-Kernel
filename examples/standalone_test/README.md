@@ -16,7 +16,7 @@ To simplify the process, we have provided basic implementations for five core pl
     
 2. Install the required dependencies:
     ```bash
-    pip install agentkernel-standalone
+    pip install "agentkernel-standalone[all]"
     ```
     
 3. Run
