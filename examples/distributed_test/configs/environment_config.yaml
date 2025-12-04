@@ -3,12 +3,10 @@ components:
   relation:
     plugin:
       EasyRelationPlugin:
-        adapters: 
-          redis: "RedisGraphAdapter"
+        adapters: {}
         relations: 'agents_relation'
   space:
     plugin:
       EasySpacePlugin:
-        adapters:
-          redis: "RedisKVAdapter"
+        adapters: {}
         agents: 'map_agents'

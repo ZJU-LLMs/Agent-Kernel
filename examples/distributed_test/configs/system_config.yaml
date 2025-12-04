@@ -1,5 +1,4 @@
 # system configuration
-
 name: TestSystem
 components:
   messager:

@@ -16,10 +16,6 @@ from agentkernel_standalone.mas.builder import Builder
 from examples.standalone_test.registry import RESOURCES_MAPS
 from agentkernel_standalone.toolkit.logger import get_logger
 
-import multiprocessing
-from agentkernel_standalone.mas.interface.protocol import EventCategory
-
-
 from examples.standalone_test.custom_controller import CustomController
 
 logger = get_logger(__name__)

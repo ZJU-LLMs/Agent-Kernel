@@ -2,5 +2,4 @@ name: EasyActions
 components:
   communication:
     plugins:
-      EasyCommunicationPlugin:
-        redis: "RedisKVAdapter"
+      EasyCommunicationPlugin: {}

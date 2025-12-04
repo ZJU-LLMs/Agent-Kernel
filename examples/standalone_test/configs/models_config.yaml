@@ -1,5 +1,11 @@
+# - name: OpenAIProvider
+#   model: your-model-name
+#   api_key: "your-api-key"
+#   base_url: "your-base-url"
+#   capabilities: ["chat"]
+
 - name: OpenAIProvider
-  model: your-model-name
-  api_key: "your-api-key"
-  base_url: "your-base-url"
+  model: qwen-plus-latest
+  api_key: sk-7767d683050e48a4984d7de3663c6135
+  base_url: https://dashscope.aliyuncs.com/compatible-mode/v1
   capabilities: ["chat"]

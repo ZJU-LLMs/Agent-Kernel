@@ -1,13 +1,11 @@
-import math
-import numpy as np
-from typing import Dict, Any, List, Optional, Callable
+from typing import Dict, Any, List, Optional
 from agentkernel_distributed.mas.environment.base.plugin_base import RelationPlugin
 from agentkernel_distributed.toolkit.logger import get_logger
 
 logger = get_logger(__name__)
 
 class EasyRelationPlugin(RelationPlugin):
-    def __init__(self, redis: Callable = None, relations: Optional[List[Dict[str, Any]]] = None):
+    def __init__(self, relations: Optional[List[Dict[str, Any]]] = None):
         self.relations = relations if relations is not None else []
         
     async def init(self):

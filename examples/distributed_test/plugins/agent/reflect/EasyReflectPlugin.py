@@ -6,15 +6,13 @@ from enum import Enum
 from agentkernel_distributed.mas.agent.base.plugin_base import ReflectPlugin
 from agentkernel_distributed.toolkit.logger import get_logger
 from agentkernel_distributed.toolkit.utils import clean_json_response
-from agentkernel_distributed.toolkit.storages import RedisKVAdapter, MilvusVectorAdapter
 
 
 logger = get_logger(__name__)
 
 class EasyReflectPlugin(ReflectPlugin):
-    def __init__(self, redis: RedisKVAdapter):
+    def __init__(self):
         super().__init__()
-        self.redis = redis
         self.agent_id = None
         
     async def init(self):

@@ -3,4 +3,4 @@ components:
   communication:
     plugins:
       EasyCommunicationPlugin:
-        redis: "RedisKVAdapter"
+        adapters: {}

@@ -1,7 +1,7 @@
 import asyncio
 import json
 import math
-from typing import Dict, Any, List, Optional, Callable, Tuple, Literal
+from typing import Dict, Any, List, Optional, Tuple
 from agentkernel_distributed.mas.environment.base.plugin_base import SpacePlugin
 from agentkernel_distributed.toolkit.logger import get_logger
 
@@ -9,10 +9,9 @@ logger = get_logger(__name__)
 
 class EasySpacePlugin(SpacePlugin):
     '''
-    EasySpacePlugin is a plugin that stores, updates the entity's postion in a redis database.
+    EasySpacePlugin is a plugin that stores.
     '''
-    def __init__(self, redis: Any, agents: Optional[Dict[str, Any]] = None):
-        self.redis = redis
+    def __init__(self, agents: Optional[Dict[str, Any]] = None):
         self.agents = agents or None
         
         logger.info(f"EasySpacePlugin initialized with {len(agents)} agents.")
@@ -37,7 +36,7 @@ class EasySpacePlugin(SpacePlugin):
     
     async def update_agent_position(self, agent_id: str, new_position: Tuple[int, int]) -> None:
         '''
-        Update the position of an agent in the redis database.
+        Update the position of an agents.
 
         Args:
             agent_id (str): The ID of the agent.

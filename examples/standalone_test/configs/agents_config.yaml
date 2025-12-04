@@ -10,31 +10,19 @@ templates:
       profile:
         plugin:
           EasyProfilePlugin:
-            adapters: 
-              redis: "RedisKVAdapter"
             profile_data: "agent_profiles"
       state:
         plugin:
-          EasyStatePlugin:
-            adapters:
-              redis: "RedisKVAdapter"
+          EasyStatePlugin: {}
       plan:
         plugin:
-          EasyPlanPlugin:
-            adapters:
-              redis: "RedisKVAdapter"
+          EasyPlanPlugin: {}
       invoke:
         plugin:
-          EasyInvokePlugin:
-            adapters:
-              redis: "RedisKVAdapter"
+          EasyInvokePlugin: {}
       perceive:
         plugin:
-          EasyPerceivePlugin:
-            adapters:
-              redis: "RedisKVAdapter"
+          EasyPerceivePlugin: {}
       reflect:
         plugin:
-          EasyReflectPlugin:
-            adapters:
-              redis: "RedisKVAdapter"
+          EasyReflectPlugin: {}

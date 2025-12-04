@@ -16,11 +16,6 @@ from examples.standalone_test.plugins.action.communication.EasyCommunicationPlug
 from examples.standalone_test.plugins.environment.relation.EasyRelationPlugin import EasyRelationPlugin
 from examples.standalone_test.plugins.environment.space.EasySpacePlugin import EasySpacePlugin
 
-# --- Adapter ---
-from agentkernel_standalone.toolkit.storages.graph_adapters.redis import RedisGraphAdapter
-from agentkernel_standalone.toolkit.storages.kv_adapters.redis import RedisKVAdapter
-from agentkernel_standalone.toolkit.storages.vectordb_adapters.milvus import MilvusVectorAdapter
-
 # Agent plugin and component registry
 
 agent_plugin_calss_map = {
@@ -68,12 +63,6 @@ system_component_class_map = {
     "timer": Timer,
 }
 
-adapter_class_map = {
-    "RedisKVAdapter": RedisKVAdapter,
-    "RedisGraphAdapter": RedisGraphAdapter,
-    "MilvusVectorAdapter": MilvusVectorAdapter,
-}
-
 RESOURCES_MAPS = {
     "agent_components": agent_component_class_map,
     "agent_plugins": agent_plugin_calss_map,
@@ -82,7 +71,6 @@ RESOURCES_MAPS = {
     "environment_components": environment_component_class_map,
     "environment_plugins": environment_plugin_class_map,
     "system_components": system_component_class_map,
-    "adapters": adapter_class_map,
     "models": model_class_map,
     "controller": CustomController,
 }

@@ -7,7 +7,7 @@ from agentkernel_standalone.toolkit.logger import get_logger
 logger = get_logger(__name__)
 
 class EasyRelationPlugin(RelationPlugin):
-    def __init__(self, redis: Callable = None, relations: Optional[List[Dict[str, Any]]] = None):
+    def __init__(self, relations: Optional[List[Dict[str, Any]]] = None):
         self.relations = relations if relations is not None else []
         
     async def init(self):

@@ -10,7 +10,6 @@ from typing import Any, Dict, List, Optional, Tuple, Union, Literal
 from agentkernel_distributed.mas.controller.controller import ControllerImpl
 from agentkernel_distributed.mas.interface.protocol import EventCategory, SimulationEvent
 from agentkernel_distributed.toolkit.logger import get_logger
-from agentkernel_distributed.toolkit.storages import RedisKVAdapter
 
 logger = get_logger(__name__)
 

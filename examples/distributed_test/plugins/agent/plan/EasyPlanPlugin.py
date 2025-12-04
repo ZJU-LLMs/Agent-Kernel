@@ -7,7 +7,6 @@ from agentkernel_distributed.mas.agent.base.plugin_base import PlanPlugin
 from agentkernel_distributed.mas.agent.components import *
 from agentkernel_distributed.toolkit.logger import get_logger
 
-from agentkernel_distributed.toolkit.storages import RedisKVAdapter
 from agentkernel_distributed.types.schemas.action import CallStatus
 
 logger = get_logger(__name__)
@@ -19,9 +18,8 @@ class EasyPlanPlugin(PlanPlugin):
     2. Choose whether to chat with another agent or not.
     """
     
-    def __init__(self, redis: RedisKVAdapter):
+    def __init__(self):
         super().__init__()
-        self.redis = redis
         self.plan = []
         logger.info("EasyPlanPlugin initialized")
         

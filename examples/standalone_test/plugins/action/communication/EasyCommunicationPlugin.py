@@ -10,7 +10,6 @@ from agentkernel_standalone.toolkit.utils.annotation import AgentCall
 
 # Import the standardized ActionResult and ActionStatus
 from agentkernel_standalone.types.schemas.action import ActionResult
-from agentkernel_standalone.toolkit.storages.kv_adapters import RedisKVAdapter
 
 logger = get_logger(__name__)
 
@@ -20,9 +19,8 @@ class EasyCommunicationPlugin(CommunicationPlugin):
     EasyCommunicationPlugin chieve the communication function bwtween two agents.
     """
 
-    def __init__(self, redis: RedisKVAdapter):
+    def __init__(self):
         super().__init__()
-        self.redis = redis
 
     async def init(self, controller, model_router):
         self.controller = controller

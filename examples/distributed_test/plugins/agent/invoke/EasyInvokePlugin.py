@@ -1,9 +1,6 @@
 from typing import List
 from agentkernel_distributed.mas.agent.base.plugin_base import InvokePlugin
 from agentkernel_distributed.toolkit.logger import get_logger
-from agentkernel_distributed.toolkit.storages import RedisKVAdapter, MilvusVectorAdapter
-from agentkernel_distributed.types.schemas.action import ActionResult, CallStatus
-from agentkernel_distributed.types.schemas.agent import CurrentAction, ActionRecord, ActionOutcome
 
 logger = get_logger(__name__)
 
@@ -11,9 +8,8 @@ class EasyInvokePlugin(InvokePlugin):
     """
     Do what EasyPlanPlugin ask to do.
     """
-    def __init__(self, redis: RedisKVAdapter):
+    def __init__(self):
         super().__init__()
-        self.redis = redis
         self.agent_id = None
         self.plan_comp = None
         self.plans = []

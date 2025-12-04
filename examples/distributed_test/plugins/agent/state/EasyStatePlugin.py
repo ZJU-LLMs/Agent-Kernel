@@ -2,15 +2,13 @@ import json
 from typing import Dict, Any, Optional
 from agentkernel_distributed.toolkit.logger import get_logger
 from agentkernel_distributed.mas.agent.base.plugin_base import StatePlugin
-from agentkernel_distributed.toolkit.storages import RedisKVAdapter
 from agentkernel_distributed.types.schemas.agent import ActionRecord, ActionOutcome
 
 logger = get_logger(__name__)
 
 class EasyStatePlugin(StatePlugin):
-    def __init__(self, redis: RedisKVAdapter, state_data: Optional[Dict[str, Any]] = None):
+    def __init__(self, state_data: Optional[Dict[str, Any]] = None):
         super().__init__()
-        self.redis = redis
         # state_data is the specific state maintained by this plugin
         self._state_data: Dict[str, Any] = state_data if state_data is not None else {}
         self.agent_id = None
@@ -22,4 +20,4 @@ class EasyStatePlugin(StatePlugin):
         logger.info(f'Agent {self.agent_id} have the same state as yesterday.')
     
     async def set_state(self, key: str, value: Any):
-        await self.redis.set(key, value)
+        pass

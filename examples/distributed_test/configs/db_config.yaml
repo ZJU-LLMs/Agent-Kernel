@@ -1,20 +1,2 @@
-pools:
-  default_redis:
-    type: "redis"  # Database type, used to determine which connection pool to create
-    settings:
-      host: "localhost"
-      port: 6379
-      db: 0
-      decode_responses: True
-    pool_settings:
-      max_connections: 500 # Connection pool related configuration
-
-adapters:
-
-  RedisKVAdapter:
-    class_name: "RedisKVAdapter"
-    use_pool: "default_redis"
-
-  RedisGraphAdapter:
-    class_name: "RedisGraphAdapter"
-    use_pool: "default_redis"
+pools: {}
+adapters: {}
