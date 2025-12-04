@@ -107,9 +107,8 @@ Agent-Kernel 已成功应用于多个复杂的社会模拟场景：
   - [软件设计](#2-软件设计)
 - [🚀 快速入门](#-快速入门)
   - [环境要求](#1-环境要求)
-  - [克隆并激活环境](#2-克隆并激活环境)
-  - [选择要安装的包](#3-选择要安装的包)
-  - [（可选）启动 Society-Panel](#4-可选启动-society-panel)
+  - [安装](#2-安装)
+  - [（可选）启动 Society-Panel](#3-可选启动-society-panel)
 - [📂 项目结构](#-项目结构)
 - [🎓 引用](#-引用)
 - [🤝 贡献者](#-贡献者)
@@ -162,87 +161,40 @@ Agent-Kernel 框架采用模块化微内核架构，包含一个由 **Agent**、
 ### 1. 环境要求
 
 - `Python ≥ 3.11`
-- `uv`
 
-安装 `uv`:
+### 2. 安装
 
-```bash
-# Linux/macOS 用户
-curl -LsSf https://astral.sh/uv/install.sh | sh
-
-# Windows (PowerShell) 用户
-powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
-
-# 或通过 pip 安装
-pip install uv
-```
-
-### 2. 克隆并激活环境
-
-```bash
-git clone https://github.com/ZJU-LLMs/Agent-Kernel.git
-cd Agent-Kernel
-uv venv
-# Linux/macOS 用户
-source .venv/bin/activate
-# Windows PowerShell 用户
-# .venv\Scripts\Activate.ps1
-```
-
-### 3. 选择要安装的包
-
-您可以选择使用**分布式**包或**单机**包。
-
-两者都支持可选的附加功能：
-
-- `web` → `aiohttp`, `fastapi`, `uvicorn`
-- `storages` → `asyncpg`, `pymilvus`, `redis`
-- `all` → 同时包含 `web` 和 `storages`
-
-> 您可以在包路径后添加 `.[web]`、`.[storages]` 或 `.[all]` 来安装附加功能。
-
-#### Agent-Kernel 分布式版本
-
-```bash
-cd packages/agentkernel-distributed
-# 基础安装
-uv pip install -e .
-
-# 安装可选功能:
-# uv pip install -e ".[web]"
-# uv pip install -e ".[storages]"
-# uv pip install -e ".[all]"
-```
-
-- 分布式包依赖于 **Ray**，会自动进行安装。
-- 在本地使用时，**无需手动启动 Ray 集群**。
-
-运行分布式示例：
-
-```bash
-uv run python -m examples.distributed_test.run_simulation
-```
+您可以根据需求选择**单机版**或**分布式版**。
 
 #### Agent-Kernel 单机版
 
 ```bash
-cd packages/agentkernel-standalone
-# 基础安装
-uv pip install -e .
-
-# 安装可选功能:
-# uv pip install -e ".[web]"
-# uv pip install -e ".[storages]"
-# uv pip install -e ".[all]"
+pip install agentkernel-standalone
 ```
 
-运行单机版示例：
+#### Agent-Kernel 分布式版本
 
 ```bash
-uv run python -m examples.standalone_test.run_simulation
+pip install agentkernel-distributed
 ```
 
-### 4. （可选）启动 Society-Panel
+> 分布式包依赖于 **Ray**，会自动进行安装。
+
+#### 可选附加功能
+
+两个包都支持可选的附加功能：
+
+- `[web]` → `aiohttp`, `fastapi`, `uvicorn`
+- `[storages]` → `asyncpg`, `pymilvus`, `redis`
+- `[all]` → 同时包含 `web` 和 `storages`
+
+```bash
+# 安装示例
+pip install agentkernel-standalone[all]
+pip install agentkernel-distributed[web,storages]
+```
+
+### 3. （可选）启动 Society-Panel
 
 Society-Panel 是一个基于网页的控制面板，可以帮助您可视化地配置、部署和监控模拟。
 

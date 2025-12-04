@@ -113,9 +113,8 @@ Constructing a high-fidelity simulation of the campus environment to study pedes
   - [Software Design](#2-software-design)
 - [🚀 Quick Start](#-quick-start)
   - [Requirements](#1-requirements)
-  - [Clone and activate environment](#2-clone-and-activate-environment)
-  - [Choose a package to install](#3-choose-a-package-to-install)
-  - [(Optional) Start Society-Panel](#4-optional-start-society-panel)
+  - [Installation](#2-installation)
+  - [(Optional) Start Society-Panel](#3-optional-start-society-panel)
 - [📂 Project Structure](#-project-structure)
 - [🎓 Citation](#-citation)
 - [🤝 Contributors](#-contributors)
@@ -168,87 +167,40 @@ To realize the core design goals of the Agent-Kernel framework, we made a series
 ### 1. Requirements
 
 - `Python ≥ 3.11`
-- `uv`
 
-Install `uv`:
+### 2. Installation
 
-```bash
-# Linux/macOS
-curl -LsSf https://astral.sh/uv/install.sh | sh
-
-# Windows (PowerShell)
-powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
-
-# or via pip
-pip install uv
-```
-
-### 2. Clone and activate environment
-
-```bash
-git clone https://github.com/ZJU-LLMs/Agent-Kernel.git
-cd Agent-Kernel
-uv venv
-# Linux/macOS
-source .venv/bin/activate
-# Windows PowerShell
-# .venv\Scripts\Activate.ps1
-```
-
-### 3. Choose a package to install
-
-You can work with either **distributed** or **standalone** package.
-
-Both support optional extras:
-
-- `web` → `aiohttp`, `fastapi`, `uvicorn`
-- `storages` → `asyncpg`, `pymilvus`, `redis`
-- `all` → includes both `web` and `storages`
-
-> You can add extras with `.[web]`, `.[storages]`, or `.[all]` after the package path.
-
-#### Agent-Kernel Distributed
-
-```bash
-cd packages/agentkernel-distributed
-# base install
-uv pip install -e .
-
-# with optional features:
-# uv pip install -e ".[web]"
-# uv pip install -e ".[storages]"
-# uv pip install -e ".[all]"
-```
-
-- The distributed package depends on **Ray** and will install it automatically.
-- **No manual Ray cluster startup is required** for local usage.
-
-Run the distributed example:
-
-```bash
-uv run python -m examples.distributed_test.run_simulation
-```
+You can choose either **standalone** or **distributed** package based on your needs.
 
 #### Agent-Kernel Standalone
 
 ```bash
-cd packages/agentkernel-standalone
-# base install
-uv pip install -e .
-
-# with optional features:
-# uv pip install -e ".[web]"
-# uv pip install -e ".[storages]"
-# uv pip install -e ".[all]"
+pip install agentkernel-standalone
 ```
 
-Run the standalone example:
+#### Agent-Kernel Distributed
 
 ```bash
-uv run python -m examples.standalone_test.run_simulation
+pip install agentkernel-distributed
 ```
 
-### 4. (Optional) Start Society-Panel
+> The distributed package depends on **Ray** and will install it automatically.
+
+#### Optional Extras
+
+Both packages support optional extras:
+
+- `[web]` → `aiohttp`, `fastapi`, `uvicorn`
+- `[storages]` → `asyncpg`, `pymilvus`, `redis`
+- `[all]` → includes both `web` and `storages`
+
+```bash
+# Example with extras
+pip install agentkernel-standalone[all]
+pip install agentkernel-distributed[web,storages]
+```
+
+### 3. (Optional) Start Society-Panel
 
 Society-Panel is a web-based control panel to help you configure, deploy, and monitor your simulations visually.
 
