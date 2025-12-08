@@ -253,7 +253,7 @@ class ActionComponent(ABC):
             return (
                 result
                 if isinstance(result, ActionResult)
-                else ActionResult.error(method_name=method_name, message=str(result), status=CallStatus.ERROR)
+                else ActionResult.error(method_name=method_name, message=str(result))
             )
 
         except Exception as e:
