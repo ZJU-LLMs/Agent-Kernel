@@ -80,8 +80,14 @@ Agent-Kernel 已成功应用于多个复杂的社会模拟场景：
 模拟著名的“25 号宇宙”社会学实验，以探索人口密度、社会结构与行为异常之间的关系。
 
 <div align="center">
-  <img src="assets/rat.jpg" alt="25号宇宙实验" width="700"/>
+  <a href="https://www.bilibili.com/video/BV1dz2DBDERB/" target="_blank">
+    <img src="assets/rat.jpg" alt="25号宇宙实验" width="700"/>
+  </a>
 </div>
+
+<!-- <div align="center">
+  <img src="assets/rat.jpg" alt="25号宇宙实验" width="700"/>
+</div> -->
 
 ### 2. 浙江大学校园生活
 

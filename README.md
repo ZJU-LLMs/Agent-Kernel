@@ -86,8 +86,15 @@ Agent-Kernel has been successfully applied to several complex social simulation 
 Simulating the famous "Universe 25" sociological experiment to explore the relationships between population density, social structure, and behavioral anomalies.
 
 <div align="center">
-  <img src="assets/rat.jpg" alt="Universe 25 Experiment" width="700"/>
+  <a href="https://www.bilibili.com/video/BV1dz2DBDERB/" target="_blank">
+    <img src="assets/rat.jpg" alt="Universe 25 Experiment" width="700"/>
+  </a>
 </div>
+
+<!--
+<div align="center">
+  <img src="assets/rat.jpg" alt="Universe 25 Experiment" width="700"/>
+</div> -->
 
 ### 2. ZJU Campus Life
 
