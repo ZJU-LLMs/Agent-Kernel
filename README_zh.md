@@ -94,8 +94,14 @@ Agent-Kernel 已成功应用于多个复杂的社会模拟场景：
 构建高保真度的校园环境模拟，用于研究行人流动动态、资源分配和社会互动模式。
 
 <div align="center">
- <img src="assets/zju.png" alt="浙大校园模拟" width="700"/>
+  <a href="https://www.bilibili.com/video/BV1xamQBuEgS/" target="_blank">
+    <img src="assets/zju.png" alt="浙大校园模拟" width="700"/>
+  </a>
 </div>
+
+<!-- <div align="center">
+ <img src="assets/zju.png" alt="浙大校园模拟" width="700"/>
+</div> -->
 
 ## 📍 目录
 

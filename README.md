@@ -101,8 +101,14 @@ Simulating the famous "Universe 25" sociological experiment to explore the relat
 Constructing a high-fidelity simulation of the campus environment to study pedestrian flow dynamics, resource allocation, and social interaction patterns.
 
 <div align="center">
- <img src="assets/zju.png" alt="ZJU Campus Life" width="700"/>
+  <a href="https://www.bilibili.com/video/BV1xamQBuEgS/" target="_blank">
+    <img src="assets/zju.png" alt="ZJU Campus Life" width="700"/>
+  </a>
 </div>
+
+<!-- <div align="center">
+ <img src="assets/zju.png" alt="ZJU Campus Life" width="700"/>
+</div> -->
 
 ## 📍 Table of Contents
 
