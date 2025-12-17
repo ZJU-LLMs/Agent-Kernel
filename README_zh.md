@@ -1,8 +1,8 @@
 <div align="center">
  <img
-  src="assets/agentkernel_logo.png"
+  src="assets/agentkernel_cover.png"
   alt="Agent-Kernel Logo"
-  width="400"
+  width="800"
  />
 </div>
 
@@ -53,9 +53,9 @@
 
 ---
 
-# 探索群体智能的无限可能
+# 探索集体智能的无限可能
 
-**Agent-Kernel** 是一款用户友好的多智能体系统开发框架，深度赋能**大规模**社会模拟，**为探索大规模群体智能提供无限可能**。
+**Agent-Kernel** 是一款用户友好的多智能体系统开发框架，深度赋能**大规模**社会模拟，**为探索大规模集体智能提供无限可能**。
 
 ## ✨ 亮点
 
