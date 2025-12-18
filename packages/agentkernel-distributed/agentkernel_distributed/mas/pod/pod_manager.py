@@ -178,7 +178,7 @@ class PodManagerImpl(BasePodManager):
 
     async def save_to_db(self, scope: Literal["all", "agents", "action", "environment"] = "agents") -> None:
         """
-        Save the environment state to the database using one of the pods.
+        Save the state of agents, actions, or environment to the database.
 
         Args:
             scope (Literal["all", "agents", "action", "environment"]): Specifies which components to save.
@@ -222,19 +222,19 @@ class PodManagerImpl(BasePodManager):
             representative_pod = next(iter(self._pod_id_to_pod.values()))
             try:
                 await representative_pod.forward.remote("save_to_db", scope)
-                logger.info("Environment data saved to database successfully.")
+                logger.info(f"{scope.capitalize()} data saved to database successfully.")
             except Exception as exc:
-                logger.error(f"Failed to save environment data to database: {exc}", exc_info=True)
+                logger.error(f"Failed to save {scope} data to database: {exc}", exc_info=True)
 
     async def load_from_db(self) -> None:
         """
-        Load the environment state from the database using one of the pods.
+        Load the state of agents, actions, and environment from the database.
         """
         try:
             await asyncio.gather(*[pod.forward.remote("load_from_db") for pod in self._pod_id_to_pod.values()])
-            logger.info("Environment data loaded from database successfully.")
+            logger.info("All data loaded from database successfully.")
         except Exception as exc:
-            logger.error(f"Failed to load environment data from database: {exc}", exc_info=True)
+            logger.error(f"Failed to load data from database: {exc}", exc_info=True)
 
     async def _create_new_pod(self) -> MasPod:
         """
