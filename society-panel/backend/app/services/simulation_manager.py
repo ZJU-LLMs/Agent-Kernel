@@ -6,8 +6,6 @@ import asyncio
 import os
 import sys
 import time
-import multiprocessing
-import json
 from enum import Enum
 from typing import Any, Dict, Optional
 import ray
@@ -16,7 +14,6 @@ from datetime import datetime
 from agentkernel_distributed.mas.builder import Builder
 from agentkernel_distributed.mas.pod import BasePodManager
 from agentkernel_distributed.mas.system import System
-from agentkernel_distributed.mas.interface.server import start_server
 from agentkernel_distributed.types.schemas import Message
 
 
@@ -44,7 +41,6 @@ class SimulationManager:
         self._pod_manager: Optional[BasePodManager] = None
         self._system: Optional[System] = None
         self._error_message: Optional[str] = None
-        self._api_process: Optional[multiprocessing.Process] = None
 
         self.workspace_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "workspace"))
         os.makedirs(self.workspace_path, exist_ok=True)
@@ -138,18 +134,6 @@ class SimulationManager:
 
             self._builder = Builder(project_path=self.workspace_path, resource_maps=RESOURCE_MAPS)
 
-            if self._builder.config.api_server and not self._api_process:
-                print("API server config found. Starting it in a separate process...")
-                redis_pool_config = self._builder.config.database.pools.get("default_redis")
-                if not redis_pool_config:
-                    raise ValueError("API server requires 'default_redis' pool in db_config.yaml")
-                server_config = self._builder.config.api_server.model_dump()
-                server_config["redis_settings"] = redis_pool_config.settings
-                self._api_process = multiprocessing.Process(target=start_server, args=(server_config,), daemon=True)
-                self._api_process.start()
-                print(f"API server process started with PID: {self._api_process.pid}")
-                await asyncio.sleep(3)
-
             self._pod_manager, self._system = await self._builder.init()
 
             print("--- Simulation components initialized ---")
@@ -227,18 +211,9 @@ class SimulationManager:
 
     async def cleanup(self):
         """
-        Clean up simulation resources including API server and Ray actors.
+        Clean up simulation resources including Ray actors.
         """
         print("Cleaning up simulation resources...")
-
-        if self._api_process and self._api_process.is_alive():
-            print("Terminating API server process...")
-            self._api_process.terminate()
-            self._api_process.join(timeout=5)
-            if self._api_process.is_alive():
-                print("API server process did not terminate gracefully, killing it.")
-                self._api_process.kill()
-            self._api_process = None
 
         if ray.is_initialized():
             try:

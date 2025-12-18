@@ -2,13 +2,15 @@
 FastAPI application entry point for SOCIETY-PANEL backend.
 """
 
+import asyncio
 import inspect
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, WebSocket, WebSocketDisconnect
 from contextlib import asynccontextmanager
 from typing import Dict, Any, List
 from .api import files, configs, registry, requirements
 from fastapi.middleware.cors import CORSMiddleware
 from .services.simulation_manager import simulation_manager, SimulationStatus
+from .services.log_watcher import log_watcher
 
 
 @asynccontextmanager
@@ -23,8 +25,10 @@ async def lifespan(app: FastAPI):
         None: Control is yielded to the application during its lifetime.
     """
     print("SOCIETY-PANEL Backend is starting up...")
+    await log_watcher.start_watching()
     yield
     print("SOCIETY-PANEL Backend is shutting down...")
+    await log_watcher.stop_watching()
     await simulation_manager.cleanup()
 
 
@@ -175,3 +179,54 @@ async def execute_command_endpoint(payload: Dict[str, Any]):
 
     result = await simulation_manager.execute_god_command(command, params)
     return {"status": "success", "result": result}
+
+
+@app.websocket("/ws")
+async def websocket_log_endpoint(websocket: WebSocket):
+    """
+    WebSocket endpoint for real-time log streaming.
+
+    Clients connect to receive formatted log entries as they are written.
+    Log format:
+    {
+        "tick": "HH:MM:SS",
+        "name": "[LEVEL] source",
+        "payload": "module.func() → message",
+        "category": "agent|environment|simulation|system|framework",
+        "level": "DEBUG|INFO|WARNING|ERROR",
+        "full_timestamp": "YYYY-MM-DD HH:MM:SS",
+        "module": "module.name",
+        "function": "function_name"
+    }
+    """
+    await websocket.accept()
+    
+    log_queue = log_watcher.subscribe()
+    
+    try:
+        await websocket.send_json({
+            "tick": "SYS",
+            "name": "SYSTEM",
+            "payload": "Connected to log stream. Waiting for new log entries...",
+            "category": "system",
+            "level": "INFO"
+        })
+        
+        while True:
+            try:
+                log_entry = await asyncio.wait_for(log_queue.get(), timeout=30.0)
+                await websocket.send_json(log_entry)
+            except asyncio.TimeoutError:
+                await websocket.send_json({
+                    "tick": "SYS",
+                    "name": "HEARTBEAT",
+                    "payload": "Connection alive",
+                    "category": "system",
+                    "level": "DEBUG"
+                })
+    except WebSocketDisconnect:
+        print("WebSocket client disconnected")
+    except Exception as e:
+        print(f"WebSocket error: {e}")
+    finally:
+        log_watcher.unsubscribe(log_queue)

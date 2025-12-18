@@ -1,12 +1,16 @@
 """
 Service for scanning workspace and generating registry.py file.
+
+This module supports dynamic discovery of environment components, allowing users
+to define custom component types (e.g., weather, economy) without modifying the
+core agentkernel package.
 """
 
 import os
 import ast
 import yaml
 import textwrap
-from typing import Dict, List, Set, Tuple
+from typing import Dict, List, Set, Tuple, Optional, Any
 
 
 class RegistryGenerator:
@@ -14,13 +18,16 @@ class RegistryGenerator:
     A service class that scans Python files and configuration files in the workspace,
     analyzes class definitions and configuration items, and automatically generates
     a registry.py file that registers all user-defined plugins and framework core modules.
+
+    Supports dynamic environment component discovery for custom component types.
     """
 
     def __init__(self):
         """
         Initialize the RegistryGenerator with base class mappings and known framework classes.
         """
-        self.BASE_CLASS_MAP = {
+        # Standard plugin base classes with fixed component types
+        self.STANDARD_PLUGIN_MAP = {
             "ProfilePlugin": ("agent_plugins", "profile"),
             "StatePlugin": ("agent_plugins", "state"),
             "PlanPlugin": ("agent_plugins", "plan"),
@@ -36,6 +43,12 @@ class RegistryGenerator:
             "ControllerImpl": ("controller", None),
             "PodManagerImpl": ("pod_manager", None),
         }
+
+        # Base classes that can have dynamic COMPONENT_TYPE
+        self.DYNAMIC_PLUGIN_BASES = {"GenericPlugin", "EnvironmentPlugin"}
+
+        # Built-in environment component types
+        self.BUILTIN_ENV_COMPONENTS = {"relation", "space"}
 
         self.KNOWN_FRAMEWORK_CLASSES = {
             "RedisKVAdapter": "agentkernel_distributed.toolkit.storages",
@@ -56,7 +69,7 @@ from agentkernel_distributed.mas.action.components import (
     CommunicationComponent, ToolsComponent, OtherActionsComponent
 )
 from agentkernel_distributed.mas.environment.components import (
-    RelationComponent, SpaceComponent
+    RelationComponent, SpaceComponent, get_or_create_component_class
 )
 from agentkernel_distributed.mas.system.components import Messager, Recorder, Timer
 """
@@ -129,6 +142,37 @@ RESOURCE_MAPS = {{
 }}
 """
 
+    def _extract_component_type_from_class(self, file_path: str, class_name: str) -> Optional[str]:
+        """
+        Extract the COMPONENT_TYPE class attribute from a class definition.
+
+        Args:
+            file_path (str): The path to the Python file.
+            class_name (str): The name of the class to analyze.
+
+        Returns:
+            Optional[str]: The COMPONENT_TYPE value if found, None otherwise.
+        """
+        try:
+            with open(file_path, "r", encoding="utf-8") as f:
+                content = f.read()
+            tree = ast.parse(content)
+
+            for node in ast.walk(tree):
+                if isinstance(node, ast.ClassDef) and node.name == class_name:
+                    for item in node.body:
+                        if isinstance(item, ast.Assign):
+                            for target in item.targets:
+                                if isinstance(target, ast.Name) and target.id == "COMPONENT_TYPE":
+                                    if isinstance(item.value, ast.Constant):
+                                        return item.value.value
+                                    elif isinstance(item.value, ast.Str):  # Python 3.7 compatibility
+                                        return item.value.s
+            return None
+        except Exception as e:
+            print(f"Warning: Could not extract COMPONENT_TYPE from {file_path}:{class_name}. Error: {e}")
+            return None
+
     def _parse_file_for_classes(self, file_path: str) -> List[Tuple[str, List[str]]]:
         """
         Parse a Python file and extract class definitions with their base classes.
@@ -155,9 +199,11 @@ RESOURCE_MAPS = {{
             print(f"Warning: Could not parse {file_path}. Error: {e}")
             return []
 
-    async def get_registry_info(self, workspace_path: str) -> Dict[str, any]:
+    async def get_registry_info(self, workspace_path: str) -> Dict[str, Any]:
         """
         Scan the workspace and collect information about available plugins.
+
+        This method now supports dynamic discovery of custom environment component types.
 
         Args:
             workspace_path (str): The path to the workspace directory.
@@ -168,10 +214,14 @@ RESOURCE_MAPS = {{
         registry_info = {
             "agent_plugins": {"profile": [], "state": [], "plan": [], "invoke": [], "perceive": [], "reflect": []},
             "action_plugins": {"communication": [], "tools": [], "otheractions": []},
-            "environment_plugins": {"relation": [], "space": []},
+            "environment_plugins": {"relation": [], "space": []},  # Will be extended dynamically
             "controller": None,
             "pod_manager": None,
         }
+
+        # Track discovered custom environment component types
+        discovered_env_types: Set[str] = set()
+
         for root, _, files in os.walk(workspace_path):
             if ".venv" in root or "__pycache__" in root:
                 continue
@@ -181,21 +231,37 @@ RESOURCE_MAPS = {{
 
                 file_path = os.path.join(root, file)
                 found_classes = self._parse_file_for_classes(file_path)
+
                 for class_name, base_classes in found_classes:
                     for base_name in base_classes:
-                        if base_name in self.BASE_CLASS_MAP:
-                            category, sub_category = self.BASE_CLASS_MAP[base_name]
+                        # Handle standard plugins with fixed component types
+                        if base_name in self.STANDARD_PLUGIN_MAP:
+                            category, sub_category = self.STANDARD_PLUGIN_MAP[base_name]
                             if sub_category:
                                 if class_name not in registry_info[category][sub_category]:
                                     registry_info[category][sub_category].append(class_name)
                             else:
                                 registry_info[category] = class_name
                             break
+
+                        # Handle dynamic environment plugins (GenericPlugin or custom EnvironmentPlugin subclasses)
+                        elif base_name in self.DYNAMIC_PLUGIN_BASES:
+                            component_type = self._extract_component_type_from_class(file_path, class_name)
+                            if component_type and component_type not in ("base", "generic"):
+                                discovered_env_types.add(component_type)
+                                if component_type not in registry_info["environment_plugins"]:
+                                    registry_info["environment_plugins"][component_type] = []
+                                if class_name not in registry_info["environment_plugins"][component_type]:
+                                    registry_info["environment_plugins"][component_type].append(class_name)
+                            break
+
         return registry_info
 
     async def generate_registry_file(self, workspace_path: str):
         """
         Generate the registry.py file by scanning the workspace.
+
+        This method now supports dynamic environment component types.
 
         Args:
             workspace_path (str): The path to the workspace directory.
@@ -209,6 +275,11 @@ RESOURCE_MAPS = {{
         plugin_mappings = {"agent_plugins": [], "action_plugins": [], "environment_plugins": []}
         controller_class = "ControllerImpl"
         pod_manager_class = "PodManagerImpl"
+
+        # Track custom environment component types discovered
+        custom_env_component_types: Set[str] = set()
+        # Map from plugin class name to its component type
+        env_plugin_to_type: Dict[str, str] = {}
 
         for root, _, files in os.walk(workspace_path):
             if ".venv" in root or "__pycache__" in root:
@@ -224,15 +295,29 @@ RESOURCE_MAPS = {{
 
                 for class_name, base_classes in found_classes:
                     user_modules[class_name] = module_path
+
                     for base_name in base_classes:
-                        if base_name in self.BASE_CLASS_MAP:
-                            category, _ = self.BASE_CLASS_MAP[base_name]
+                        # Handle standard plugins
+                        if base_name in self.STANDARD_PLUGIN_MAP:
+                            category, _ = self.STANDARD_PLUGIN_MAP[base_name]
                             if category in plugin_mappings:
                                 plugin_mappings[category].append(f'    "{class_name}": {class_name},')
                             elif category == "controller":
                                 controller_class = class_name
                             elif category == "pod_manager":
                                 pod_manager_class = class_name
+                            break
+
+                        # Handle dynamic environment plugins
+                        elif base_name in self.DYNAMIC_PLUGIN_BASES:
+                            component_type = self._extract_component_type_from_class(file_path, class_name)
+                            if component_type and component_type not in ("base", "generic"):
+                                plugin_mappings["environment_plugins"].append(
+                                    f'    "{class_name}": {class_name},'
+                                )
+                                env_plugin_to_type[class_name] = component_type
+                                if component_type not in self.BUILTIN_ENV_COMPONENTS:
+                                    custom_env_component_types.add(component_type)
                             break
 
         configs_dir = os.path.join(workspace_path, "configs")
@@ -292,6 +377,7 @@ RESOURCE_MAPS = {{
         if pod_manager_class not in user_modules:
             dynamic_imports.add(f"from {self.KNOWN_FRAMEWORK_CLASSES['PodManagerImpl']} import PodManagerImpl")
 
+        # Generate component mappings
         agent_components_str = """
     "profile": ProfileComponent,
     "state": StateComponent,
@@ -299,13 +385,22 @@ RESOURCE_MAPS = {{
     "perceive": PerceiveComponent,
     "reflect": ReflectComponent,
     "invoke": InvokeComponent,"""
+
         action_components_str = """
     "communication": CommunicationComponent,
     "tools": ToolsComponent,
     "otheractions": OtherActionsComponent,"""
-        environment_components_str = """
-    "relation": RelationComponent,
-    "space": SpaceComponent,"""
+
+        # Build environment components string with dynamic component support
+        env_component_lines = [
+            '    "relation": RelationComponent,',
+            '    "space": SpaceComponent,',
+        ]
+        # Add dynamic component types using get_or_create_component_class
+        for comp_type in sorted(custom_env_component_types):
+            env_component_lines.append(f'    "{comp_type}": get_or_create_component_class("{comp_type}"),')
+
+        environment_components_str = "\n".join(env_component_lines)
 
         registry_content = self.REGISTRY_TEMPLATE.format(
             static_imports=self.STATIC_IMPORTS.strip(),
@@ -315,7 +410,7 @@ RESOURCE_MAPS = {{
             action_plugins="\n".join(sorted(plugin_mappings["action_plugins"])),
             action_components=textwrap.dedent(action_components_str).strip(),
             environment_plugins="\n".join(sorted(plugin_mappings["environment_plugins"])),
-            environment_components=textwrap.dedent(environment_components_str).strip(),
+            environment_components=environment_components_str,
             adapter_map_entries="\n".join(sorted(adapter_map_entries)),
             model_map_entries="\n".join(sorted(list(set(model_map_entries)))),
             controller=controller_class,

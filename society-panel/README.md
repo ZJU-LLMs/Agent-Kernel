@@ -2,6 +2,8 @@
 
 A unified visual control panel for Multi-Agent System (MAS) simulations. Society Panel integrates simulation management, file operations, and configuration editing into a single web-based interface, enabling researchers and developers to build, deploy, and monitor agent societies with ease.
 
+> ⚠️ **Note**: Society Panel currently only supports the **distributed version** (`agentkernel-distributed`). 
+
 ---
 
 ## 📑 Table of Contents

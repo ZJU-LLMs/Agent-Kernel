@@ -1,5 +1,8 @@
 """
 API endpoints for reading and writing YAML configuration files.
+
+This module supports dynamic environment component configuration, allowing users
+to define custom component types without modifying the core configurations.
 """
 
 import os
@@ -8,11 +11,13 @@ from fastapi import APIRouter, HTTPException, Body
 from typing import Any, Dict
 
 from ..services.simulation_manager import simulation_manager
+from ..services.registry_generator import registry_generator
 
 router = APIRouter()
 CONFIGS_DIR = os.path.join(simulation_manager.workspace_path, "configs")
 
-DEFAULT_CONFIGS = {
+# Base default configurations (environment_config is generated dynamically)
+BASE_DEFAULT_CONFIGS = {
     "simulation_config.yaml": {
         "simulation": {"pod_size": 10, "init_batch_size": 5, "max_ticks": 100},
         "configs": {
@@ -42,13 +47,6 @@ DEFAULT_CONFIGS = {
             "otheractions": {"plugins": {}},
         },
     },
-    "environment_config.yaml": {
-        "name": "TestEnvironment",
-        "components": {
-            "relation": {"plugin": {}},
-            "space": {"plugin": {}},
-        },
-    },
     "db_config.yaml": {"pools": {}, "adapters": {}},
     "models_config.yaml": [],
     "system_config.yaml": {
@@ -62,10 +60,65 @@ DEFAULT_CONFIGS = {
 }
 
 
+async def get_default_config_for(config_name: str) -> Dict[str, Any]:
+    """
+    Get the default configuration for a specific config file.
+
+    For environment_config.yaml, this generates the config dynamically
+    to include any custom environment component types discovered in the workspace.
+
+    Args:
+        config_name (str): The name of the configuration file.
+
+    Returns:
+        Dict[str, Any]: The default configuration, or None if no default exists.
+    """
+    if config_name == "environment_config.yaml":
+        # Generate dynamically to include custom component types
+        return await get_dynamic_environment_config()
+    return BASE_DEFAULT_CONFIGS.get(config_name)
+
+
+async def get_dynamic_environment_config() -> Dict[str, Any]:
+    """
+    Generate the environment configuration dynamically.
+
+    This includes built-in components (relation, space) and any custom
+    component types discovered in the workspace.
+
+    Returns:
+        Dict[str, Any]: The environment configuration.
+    """
+    # Start with built-in components
+    components = {
+        "relation": {"plugin": {}},
+        "space": {"plugin": {}},
+    }
+
+    # Discover custom component types from the workspace
+    try:
+        registry_info = await registry_generator.get_registry_info(simulation_manager.workspace_path)
+        # Add any custom environment component types
+        env_plugins = registry_info.get("environment_plugins", {})
+        for comp_type in env_plugins.keys():
+            if comp_type not in components:
+                components[comp_type] = {"plugin": {}}
+    except Exception as e:
+        print(f"Warning: Could not discover custom environment components: {e}")
+
+    return {
+        "name": "TestEnvironment",
+        "components": components,
+    }
+
+
 @router.get("/{config_name}")
 async def get_config_file(config_name: str):
     """
     Read a specified YAML configuration file.
+
+    For environment_config.yaml, defaults are generated dynamically to include
+    any custom environment component types discovered in the workspace.
 
     Args:
         config_name (str): The name of the configuration file to read.
@@ -83,8 +136,9 @@ async def get_config_file(config_name: str):
     os.makedirs(CONFIGS_DIR, exist_ok=True)
 
     if not os.path.exists(file_path):
-        if config_name in DEFAULT_CONFIGS:
-            return DEFAULT_CONFIGS[config_name]
+        default_config = await get_default_config_for(config_name)
+        if default_config is not None:
+            return default_config
         else:
             raise HTTPException(
                 status_code=404, detail=f"Config file '{config_name}' not found and no default is available."
@@ -95,10 +149,25 @@ async def get_config_file(config_name: str):
             data = yaml.safe_load(f)
 
         if data is None:
-            if config_name in DEFAULT_CONFIGS:
-                return DEFAULT_CONFIGS[config_name]
+            default_config = await get_default_config_for(config_name)
+            if default_config is not None:
+                return default_config
             else:
                 return {}
+
+        # For environment config, merge with discovered custom components
+        if config_name == "environment_config.yaml" and data:
+            try:
+                registry_info = await registry_generator.get_registry_info(simulation_manager.workspace_path)
+                env_plugins = registry_info.get("environment_plugins", {})
+                components = data.get("components", {})
+                # Add any missing custom component types
+                for comp_type in env_plugins.keys():
+                    if comp_type not in components:
+                        components[comp_type] = {"plugin": {}}
+                data["components"] = components
+            except Exception as e:
+                print(f"Warning: Could not merge custom environment components: {e}")
 
         return data
     except Exception as e:

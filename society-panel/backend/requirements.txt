@@ -1,9 +1,5 @@
-fastapi
-uvicorn[standard]
-python-multipart
-aiofiles
-pyyaml
-ray[default]
-json_repair
-matplotlib
-seaborn
+# Core framework (includes fastapi, uvicorn, ray, pyyaml, json_repair, storages, etc.)
+agentkernel-distributed[all]
+
+# Additional dependencies not included in agentkernel-distributed
+python-multipart  # Required for FastAPI file upload functionality
