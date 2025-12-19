@@ -34,7 +34,6 @@ setlocal EnableDelayedExpansion
 set "ROOT_DIR=%CD%"
 set "BACKEND_DIR=society-panel\backend"
 set "FRONTEND_DIR=society-panel\frontend"
-set "FRAMEWORK_PKG_DIR=packages\agentkernel-distributed"
 
 :: Server Ports
 set "BACKEND_PORT=8001"
@@ -235,19 +234,6 @@ if not exist ".venv\pip_installed_reqs" (
     pip install --trusted-host %PIP_TRUSTED_HOST% -i %PIP_INDEX_URL% -r requirements.txt
     if !ERRORLEVEL! EQU 0 (
         copy requirements.txt .venv\pip_installed_reqs >NUL
-    )
-)
-
-:: Install local framework package in editable mode
-if not exist ".venv\pip_installed_local" (
-    CALL :print_info "Ensuring pip is up-to-date for editable install..."
-    pip install --trusted-host %PIP_TRUSTED_HOST% -i %PIP_INDEX_URL% --upgrade pip --quiet
-    CALL :print_info "Installing local framework package 'agentkernel-distributed' in editable mode..."
-    pushd "%ROOT_DIR%"
-    pip install --trusted-host %PIP_TRUSTED_HOST% -i %PIP_INDEX_URL% -e "%FRAMEWORK_PKG_DIR%[all]"
-    popd
-    if !ERRORLEVEL! EQU 0 (
-        type NUL > .venv\pip_installed_local
     )
 )
 

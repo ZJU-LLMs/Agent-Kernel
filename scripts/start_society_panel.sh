@@ -40,7 +40,6 @@ set -o pipefail # Exit if any command in a pipeline fails
 readonly ROOT_DIR="$(pwd)"
 readonly BACKEND_DIR="society-panel/backend"
 readonly FRONTEND_DIR="society-panel/frontend"
-readonly FRAMEWORK_PKG_DIR="packages/agentkernel-distributed"
 
 # Server Ports
 readonly BACKEND_PORT=8001
@@ -223,15 +222,6 @@ if [ ! -f ".venv/pip_installed_reqs" ] || ! cmp -s "requirements.txt" ".venv/pip
     pip install --trusted-host "$PIP_TRUSTED_HOST" -i "$PIP_INDEX_URL" --upgrade pip
     print_info "Backend dependencies need to be installed/updated. Running pip install..."
     pip install --trusted-host "$PIP_TRUSTED_HOST" -i "$PIP_INDEX_URL" -r requirements.txt && cp requirements.txt .venv/pip_installed_reqs
-fi
-
-# Install local framework package in editable mode
-if [ ! -f ".venv/pip_installed_local" ]; then
-    print_info "Ensuring pip is up-to-date for editable install..."
-    pip install --trusted-host "$PIP_TRUSTED_HOST" -i "$PIP_INDEX_URL" --upgrade pip --quiet
-    print_info "Installing local framework package 'agentkernel-distributed' in editable mode..."
-    (cd "$ROOT_DIR" && pip install --trusted-host "$PIP_TRUSTED_HOST" -i "$PIP_INDEX_URL" -e "$FRAMEWORK_PKG_DIR[all]")
-    touch .venv/pip_installed_local
 fi
 
 # Launch backend server
