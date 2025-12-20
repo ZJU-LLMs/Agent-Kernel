@@ -3,12 +3,13 @@
 from __future__ import annotations
 
 from abc import ABC, abstractmethod
-from typing import TYPE_CHECKING, Any, Dict, Optional
+from typing import TYPE_CHECKING, Any, Dict, Optional, Type, TypeVar
 
 from ....types.schemas.agent import ActionRecord, CurrentAction, PerceptionData
 from ....types.schemas.message import Message
 
 if TYPE_CHECKING:
+    from ..agent import Agent
     from ..components import (
         InvokeComponent,
         PerceiveComponent,
@@ -18,6 +19,8 @@ if TYPE_CHECKING:
         StateComponent,
     )
     from .component_base import AgentComponent
+
+T = TypeVar("T", bound="AgentPlugin")
 
 __all__ = [
     "AgentPlugin",
@@ -58,6 +61,49 @@ class AgentPlugin(ABC):
             component: Optional[AgentComponent[Any]]: Owning component instance or None.
         """
         self._component = component
+
+    @property
+    def agent(self) -> Optional["Agent"]:
+        """
+        Return the agent that owns this plugin's component.
+
+        Returns:
+            Optional[Agent]: Agent instance when attached, otherwise None.
+        """
+        if self._component is not None:
+            return self._component.agent
+        return None
+
+    def peer_plugin(self, name: str, plugin_type: Type[T]) -> Optional[T]:
+        """
+        Retrieve a peer plugin from the same agent with type-safe access.
+
+        This method provides a convenient way to access other plugins within
+        the same agent, with full type hints for the returned plugin instance.
+
+        Args:
+            name (str): Name of the component to retrieve the plugin from
+                (e.g., "perceive", "profile", "state", "plan", "invoke", "reflect").
+            plugin_type (Type[T]): Expected plugin class type for type inference
+                and runtime validation.
+
+        Returns:
+            Optional[T]: The plugin instance cast to the specified type if found
+                and type-matched, otherwise None.
+
+        Example:
+            >>> perceive = self.peer_plugin("perceive", MyPerceivePlugin)
+            >>> if perceive:
+            ...     messages = perceive.get_messages()
+        """
+        if self._component is None or self._component.agent is None:
+            return None
+        component = self._component.agent.get_component(name)
+        if component is not None:
+            plugin = component.get_plugin()
+            if isinstance(plugin, plugin_type):
+                return plugin
+        return None
 
     @abstractmethod
     async def init(self) -> None:
