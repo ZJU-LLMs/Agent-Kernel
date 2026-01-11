@@ -6,12 +6,12 @@ import asyncio
 import importlib
 import random
 import sys
-from typing import Dict, List, Optional
+from typing import Dict, List, Optional, Tuple
 
 import aiohttp
 
 from ...toolkit.logger import get_logger
-from .api.provider import ModelProvider
+from .api.provider import ModelProvider, TokenUsage, ChatResponseWithUsage
 
 logger = get_logger(__name__)
 
@@ -107,8 +107,9 @@ class AsyncModelRouter:
         system_prompt: str = "",
         model_name: Optional[str] = None,
         timeout: int = 300,
+        return_usage: bool = False,
         **kwargs: object,
-    ) -> Optional[str]:
+    ) -> ChatResponseWithUsage:
         """
         Execute a chat request against the first provider that succeeds.
 
@@ -117,15 +118,17 @@ class AsyncModelRouter:
             system_prompt (str): Optional system prompt. Defaults to an empty string.
             model_name (Optional[str]): Optional model identifier.
             timeout (int): Request timeout in seconds. Defaults to 300 seconds.
+            return_usage (bool): If True, return tuple of (response, usage). Defaults to False.
             **kwargs (object): Additional provider-specific request parameters.
 
         Returns:
-            Optional[str]: Response payload or None when all providers fail.
+            ChatResponseWithUsage: Tuple of (response_list, token_usage).
+                token_usage is None if not available from the provider.
         """
         target_providers = self._get_target_providers(capability="chat", model_name=model_name)
         if not target_providers:
             logger.warning("No target providers available for chat request.")
-            return None
+            return (None, None)
 
         retry_delay = 1
         max_delay = 60
@@ -145,7 +148,14 @@ class AsyncModelRouter:
                         timeout=timeout,
                     ) as response:
                         response.raise_for_status()
-                        return provider.parse_response(await response.text())
+                        response_text = await response.text()
+                        
+                        if hasattr(provider, 'parse_response_with_usage'):
+                            return provider.parse_response_with_usage(response_text)
+                        else:
+                            content = provider.parse_response(response_text)
+                            return (content if isinstance(content, list) else [content] if content else None, None)
+                            
                 except Exception as exc:
                     logger.warning("%s chat request failed with %s: %s", self, provider.model, exc)
                     continue

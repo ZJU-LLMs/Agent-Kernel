@@ -3,25 +3,143 @@
 from __future__ import annotations
 
 import re
-from typing import Any, Dict, List, Optional, Union
+from typing import Any, Awaitable, Callable, Dict, List, Optional, Union
 
 from ...toolkit.logger import get_logger
 from .async_router import AsyncModelRouter
+from .hook import (
+    ChatCompleteEvent,
+    ChatErrorEvent,
+    HookCallback,
+    model_hook,
+    register_model_hooks,
+)
 
 logger = get_logger(__name__)
 
+__all__ = [
+    "ModelRouter",
+    "ChatCompleteEvent",
+    "ChatErrorEvent",
+    "HookCallback",
+    "model_hook",
+    "register_model_hooks",
+]
+
 
 class ModelRouter:
-    """Facade that unifies local model router backends."""
+    """Facade that unifies local model router backends.
+    
+    Supports a hook system for extensibility:
+    - post_chat: Called after successful chat completion with ChatCompleteEvent
+    - on_error: Called when an error occurs with ChatErrorEvent
+    
+    Example:
+        async def my_hook(event: ChatCompleteEvent):
+            print(f"Tokens used: {event.token_usage.prompt_tokens}")
+        
+        router = ModelRouter(backend)
+        router.register_hook("post_chat", my_hook)
+    """
+    
+    HOOK_POST_CHAT = "post_chat"
+    HOOK_ON_ERROR = "on_error"
 
     def __init__(self, backend_router: AsyncModelRouter) -> None:
         """
-        Create a model router backed by either a local async router.
+        Create a model router backed by a local async router.
 
         Args:
             backend_router (AsyncModelRouter): Instance of `AsyncModelRouter`.
         """
         self._router: AsyncModelRouter = backend_router
+        self._hooks: Dict[str, List[HookCallback]] = {
+            self.HOOK_POST_CHAT: [],
+            self.HOOK_ON_ERROR: [],
+        }
+    
+    def register_hook(self, event_type: str, callback: HookCallback) -> None:
+        """
+        Register a hook callback for a specific event type.
+        
+        Args:
+            event_type (str): The event type to hook into. 
+                Supported: "post_chat", "on_error"
+            callback (HookCallback): Async callback function.
+                - For "post_chat": receives ChatCompleteEvent
+                - For "on_error": receives ChatErrorEvent
+        
+        Raises:
+            ValueError: If the event type is not supported.
+            
+        Example:
+            async def log_tokens(event: ChatCompleteEvent):
+                if event.token_usage:
+                    print(f"Used {event.token_usage.prompt_tokens} tokens")
+            
+            router.register_hook("post_chat", log_tokens)
+        """
+        if event_type not in self._hooks:
+            raise ValueError(
+                f"Unknown event type: {event_type}. "
+                f"Supported types: {list(self._hooks.keys())}"
+            )
+        self._hooks[event_type].append(callback)
+        logger.debug("Hook registered for '%s'. Total hooks: %d", 
+                     event_type, len(self._hooks[event_type]))
+    
+    def unregister_hook(self, event_type: str, callback: HookCallback) -> bool:
+        """
+        Remove a previously registered hook callback.
+        
+        Args:
+            event_type (str): The event type.
+            callback (HookCallback): The callback to remove.
+            
+        Returns:
+            bool: True if the callback was found and removed.
+        """
+        if event_type not in self._hooks:
+            return False
+        try:
+            self._hooks[event_type].remove(callback)
+            logger.debug("Hook unregistered for '%s'. Total hooks: %d", 
+                         event_type, len(self._hooks[event_type]))
+            return True
+        except ValueError:
+            return False
+    
+    def clear_hooks(self, event_type: Optional[str] = None) -> None:
+        """
+        Clear all hooks for a specific event type, or all hooks if not specified.
+        
+        Args:
+            event_type (Optional[str]): Event type to clear. If None, clears all hooks.
+        """
+        if event_type is None:
+            for key in self._hooks:
+                self._hooks[key].clear()
+            logger.debug("All hooks cleared.")
+        elif event_type in self._hooks:
+            self._hooks[event_type].clear()
+            logger.debug("Hooks cleared for '%s'.", event_type)
+    
+    async def _trigger_hooks(self, event_type: str, event_data: Any) -> None:
+        """
+        Trigger all registered hooks for an event type.
+        
+        Args:
+            event_type (str): The event type.
+            event_data (Any): The event data to pass to callbacks.
+        """
+        if event_type not in self._hooks:
+            return
+        
+        for callback in self._hooks[event_type]:
+            try:
+                await callback(event_data)
+            except Exception as exc:
+                logger.warning("Hook callback failed for '%s': %s", event_type, exc)
 
     async def chat(
         self,
@@ -46,25 +164,46 @@ class ModelRouter:
         """
         sanitized_prompt = f"{user_prompt} /no_think"
 
-        response = await self._router.chat(
-            user_prompt=sanitized_prompt,
-            system_prompt=system_prompt,
-            model_name=model_name,
-            timeout=timeout,
-            **kwargs,
-        )
+        try:
+            response, token_usage = await self._router.chat(
+                user_prompt=sanitized_prompt,
+                system_prompt=system_prompt,
+                model_name=model_name,
+                timeout=timeout,
+                **kwargs,
+            )
+        except Exception as exc:
+            error_event = ChatErrorEvent(
+                error=exc,
+                user_prompt=user_prompt,
+                system_prompt=system_prompt,
+                model_name=model_name,
+            )
+            await self._trigger_hooks(self.HOOK_ON_ERROR, error_event)
+            raise
         
-        final_response = []
+        final_response: Optional[Union[str, List[str]]] = None
+        processed_results = []
+        
         if response is not None:
             for result in response:
                 result = re.sub(r"<think>.*?</think>", "", result, flags=re.S)
-                final_response.append(result)
+                processed_results.append(result)
 
-        if len(final_response) == 1:
-            return final_response[0]
+            if len(processed_results) == 1:
+                final_response = processed_results[0]
+            elif len(processed_results) > 1:
+                final_response = processed_results
         
-        if final_response == []:
-            return None
+        chat_event = ChatCompleteEvent(
+            response=final_response,
+            raw_response=response,
+            token_usage=token_usage,
+            user_prompt=user_prompt,
+            system_prompt=system_prompt,
+            model_name=model_name,
+        )
+        await self._trigger_hooks(self.HOOK_POST_CHAT, chat_event)
         
         return final_response
 

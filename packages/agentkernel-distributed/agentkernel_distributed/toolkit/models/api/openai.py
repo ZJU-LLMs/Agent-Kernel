@@ -1,10 +1,10 @@
 """Provider for OpenAI-compatible API endpoints."""
 
 import json
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Tuple
 
 from ....toolkit.logger import get_logger
-from .provider import ChatModelProvider, EmbeddingModelProvider
+from .provider import ChatModelProvider, EmbeddingModelProvider, TokenUsage, ChatResponseWithUsage
 
 logger = get_logger(__name__)
 
@@ -96,7 +96,7 @@ class OpenAIProvider(ChatModelProvider, EmbeddingModelProvider):
             "json": payload,
         }
 
-    def parse_response(self, response: str) -> Optional[str]:
+    def parse_response(self, response: str) -> Optional[List[str]]:
         """Parses the JSON response and extracts the message content.
 
         The response structure is expected to be identical to the OpenAI API format.
@@ -105,7 +105,7 @@ class OpenAIProvider(ChatModelProvider, EmbeddingModelProvider):
             response (str): The raw JSON response from the server.
 
         Returns:
-            Optional[str]: The extracted text content of the message, or None
+            Optional[List[str]]: The extracted text content of the message, or None
             if parsing fails.
         """
         try:
@@ -119,6 +119,48 @@ class OpenAIProvider(ChatModelProvider, EmbeddingModelProvider):
         except (json.JSONDecodeError, IndexError, KeyError) as e:
             logger.error(f"{self} failed to parse response: {e} - Response: {response}")
             return None
+    
+    def parse_response_with_usage(self, response: str) -> ChatResponseWithUsage:
+        """Parses the JSON response and extracts both content and token usage.
+
+        The response structure is expected to be identical to the OpenAI API format:
+        {
+            "choices": [...],
+            "usage": {
+                "prompt_tokens": 123,
+                "completion_tokens": 456,
+                "total_tokens": 579
+            }
+        }
+
+        Args:
+            response (str): The raw JSON response from the server.
+
+        Returns:
+            ChatResponseWithUsage: A tuple of (content_list, token_usage).
+        """
+        try:
+            res = json.loads(response)
+            
+            final_result = []
+            for choice in res.get("choices", []):
+                message = choice.get("message", {}).get("content", "").strip()
+                final_result.append(message)
+            
+            usage_data = res.get("usage", {})
+            token_usage = None
+            if usage_data:
+                token_usage = TokenUsage(
+                    prompt_tokens=usage_data.get("prompt_tokens", 0),
+                    completion_tokens=usage_data.get("completion_tokens", 0),
+                    total_tokens=usage_data.get("total_tokens", 0)
+                )
+            
+            return (final_result if final_result else None, token_usage)
+            
+        except (json.JSONDecodeError, IndexError, KeyError) as e:
+            logger.error(f"{self} failed to parse response with usage: {e} - Response: {response}")
+            return (None, None)
 
     def get_embedding_request_params(self, texts: List[str]) -> Dict[str, Any]:
         """Prepares request parameters for the embeddings endpoint.

@@ -1,7 +1,30 @@
 """Abstract base classes for model providers."""
 
 from abc import ABC, abstractmethod
-from typing import Dict, Any, List
+from dataclasses import dataclass
+from typing import Dict, Any, List, Optional, Tuple
+
+
+@dataclass
+class TokenUsage:
+    """Token usage information from LLM API response.
+    
+    Attributes:
+        prompt_tokens: Number of tokens in the input prompt.
+        completion_tokens: Number of tokens in the generated response.
+        total_tokens: Total number of tokens (prompt + completion).
+    """
+    prompt_tokens: int = 0
+    completion_tokens: int = 0
+    total_tokens: int = 0
+    
+    def __post_init__(self):
+        """Calculate total_tokens if not provided."""
+        if self.total_tokens == 0 and (self.prompt_tokens > 0 or self.completion_tokens > 0):
+            self.total_tokens = self.prompt_tokens + self.completion_tokens
+
+
+ChatResponseWithUsage = Tuple[Optional[List[str]], Optional[TokenUsage]]
 
 
 class ModelProvider(ABC):
@@ -86,6 +109,19 @@ class ChatModelProvider(ModelProvider):
             str: The extracted message content.
         """
         raise NotImplementedError
+    
+    def parse_response_with_usage(self, response: str) -> ChatResponseWithUsage:
+        """Parses the raw response and extracts both content and token usage.
+
+        Args:
+            response (str): The raw response string from the API.
+
+        Returns:
+            ChatResponseWithUsage: A tuple of (content, token_usage).
+                Default implementation returns (parse_response result, None).
+        """
+        content = self.parse_response(response)
+        return (content if isinstance(content, list) else [content] if content else None, None)
 
 
 class EmbeddingModelProvider(ModelProvider):
