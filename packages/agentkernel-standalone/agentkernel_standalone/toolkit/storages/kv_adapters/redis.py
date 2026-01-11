@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import asyncio
 import datetime as dt
 import json
 from typing import Any, Dict, Iterable, List, Optional, Sequence, Union
@@ -252,6 +253,7 @@ class RedisKVAdapter(BaseKVAdapter):
     async def push(self, key: str, *values: Any, left: bool = True) -> int:
         """
         Push values into a list stored at ``key``.
+        Includes retry logic to handle transient connection errors.
 
         Args:
             key (str): List key.
@@ -262,11 +264,24 @@ class RedisKVAdapter(BaseKVAdapter):
         Returns:
             int: New list length.
         """
-        client = self._ensure_client()
-        serialized_values = [self._serialize(v) for v in values]
-        if left:
-            return await client.lpush(key, *serialized_values)
-        return await client.rpush(key, *serialized_values)
+        max_retries = 3
+        retry_delay = 0.5
+
+        for attempt in range(max_retries):
+            try:
+                client = self._ensure_client()
+                serialized_values = [self._serialize(v) for v in values]
+                if left:
+                    return await client.lpush(key, *serialized_values)
+                return await client.rpush(key, *serialized_values)
+            except aioredis.ConnectionError as e:
+                if attempt < max_retries - 1:
+                    logger.warning(f"Redis connection error on push attempt {attempt + 1}/{max_retries}: {e}. Retrying...")
+                    await asyncio.sleep(retry_delay)
+                    retry_delay *= 2
+                else:
+                    logger.error(f"Redis push failed after {max_retries} attempts: {e}")
+                    raise
 
     async def export_data(self, prefix: Optional[Union[str, Iterable[str]]] = None) -> Dict[str, Any]:
         """
@@ -620,12 +635,33 @@ class RedisKVAdapter(BaseKVAdapter):
 
     async def _hset_field_by_field(self, client: aioredis.StrictRedis, key: str, data: Dict[str, Any]) -> None:
         """
-        Set hash fields one by one to avoid blocking the server with HMSET.
+        Set hash fields using pipeline to minimize connection usage.
+        Includes retry logic to handle transient connection errors.
 
         Args:
             client (aioredis.StrictRedis): The Redis client.
             key (str): The hash key.
             data (Dict[str, Any]): The field-value data to set.
         """
-        for field, field_value in data.items():
-            await client.hset(key, field, field_value)
+        if not data:
+            return
+        
+        max_retries = 3
+        retry_delay = 0.5  # seconds
+        
+        for attempt in range(max_retries):
+            try:
+                # Use pipeline to batch all hset operations into a single round-trip
+                pipe = client.pipeline(transaction=False)
+                for field, field_value in data.items():
+                    pipe.hset(key, field, field_value)
+                await pipe.execute()
+                return  # Success, exit the retry loop
+            except aioredis.ConnectionError as e:
+                if attempt < max_retries - 1:
+                    logger.warning(f"Redis connection error on attempt {attempt + 1}/{max_retries}: {e}. Retrying in {retry_delay}s...")
+                    await asyncio.sleep(retry_delay)
+                    retry_delay *= 2  # Exponential backoff
+                else:
+                    logger.error(f"Redis connection failed after {max_retries} attempts: {e}")
+                    raise

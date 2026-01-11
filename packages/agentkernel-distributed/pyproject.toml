@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "agentkernel-distributed"
-version = "1.1.0" 
+version = "1.2.0" 
 authors = []
 description = "A distributed multi-agent system framework"
 keywords = ["git", "llm", "agent", "ray"]

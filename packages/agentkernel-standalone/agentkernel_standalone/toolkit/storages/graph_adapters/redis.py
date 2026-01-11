@@ -1,5 +1,6 @@
 """Graph database adapter implementation using Redis as the backend."""
 
+import asyncio
 from redis import asyncio as aioredis
 from .base import BaseGraphAdapter
 from typing import Dict, Any, List, Optional
@@ -277,7 +278,8 @@ class RedisGraphAdapter(BaseGraphAdapter):
 
     async def get_node_out_edges(self, node_id: str) -> List[Dict[str, Any]]:
         """
-        Retrieves all outgoing edges for a given node.
+        Retrieves all outgoing edges for a given node using pipeline for efficiency.
+        Includes retry logic to handle transient connection errors.
 
         Args:
             node_id (str): The identifier of the node.
@@ -285,18 +287,43 @@ class RedisGraphAdapter(BaseGraphAdapter):
         Returns:
             List[Dict[str, Any]]: A list of dictionaries, each representing an outgoing edge.
         """
-        client = self._ensure_client()
-        results = []
-        out_neighbors = await client.smembers(f"node:{node_id}:out_neighbors")
-        for target_id in out_neighbors:
-            edge_data = await self.get_edge(node_id, target_id)
-            if edge_data:
-                results.append(edge_data)
-        return results
+        max_retries = 3
+        retry_delay = 0.5
+        
+        for attempt in range(max_retries):
+            try:
+                client = self._ensure_client()
+                out_neighbors = await client.smembers(f"node:{node_id}:out_neighbors")
+                if not out_neighbors:
+                    return []
+                
+                # Use pipeline to batch all edge retrievals
+                neighbor_list = list(out_neighbors)
+                pipe = client.pipeline(transaction=False)
+                for target_id in neighbor_list:
+                    pipe.hgetall(f"edge:{node_id}:{target_id}")
+                edge_data_list = await pipe.execute()
+                
+                results = []
+                for target_id, edge_data in zip(neighbor_list, edge_data_list):
+                    if edge_data:
+                        deserialized = self._deserialize_properties(edge_data)
+                        deserialized["source_id"] = node_id
+                        deserialized["target_id"] = target_id
+                        results.append(deserialized)
+                return results
+            except aioredis.ConnectionError as e:
+                if attempt < max_retries - 1:
+                    logger.warning(f"Redis connection error on attempt {attempt + 1}/{max_retries}: {e}. Retrying...")
+                    await asyncio.sleep(retry_delay)
+                    retry_delay *= 2
+                else:
+                    raise
 
     async def get_node_in_edges(self, node_id: str) -> List[Dict[str, Any]]:
         """
-        Retrieves all incoming edges for a given node.
+        Retrieves all incoming edges for a given node using pipeline for efficiency.
+        Includes retry logic to handle transient connection errors.
 
         Args:
             node_id (str): The identifier of the node.
@@ -304,14 +331,38 @@ class RedisGraphAdapter(BaseGraphAdapter):
         Returns:
             List[Dict[str, Any]]: A list of dictionaries, each representing an incoming edge.
         """
-        client = self._ensure_client()
-        results = []
-        in_neighbors = await client.smembers(f"node:{node_id}:in_neighbors")
-        for source_id in in_neighbors:
-            edge_data = await self.get_edge(source_id, node_id)
-            if edge_data:
-                results.append(edge_data)
-        return results
+        max_retries = 3
+        retry_delay = 0.5
+        
+        for attempt in range(max_retries):
+            try:
+                client = self._ensure_client()
+                in_neighbors = await client.smembers(f"node:{node_id}:in_neighbors")
+                if not in_neighbors:
+                    return []
+                
+                # Use pipeline to batch all edge retrievals
+                neighbor_list = list(in_neighbors)
+                pipe = client.pipeline(transaction=False)
+                for source_id in neighbor_list:
+                    pipe.hgetall(f"edge:{source_id}:{node_id}")
+                edge_data_list = await pipe.execute()
+                
+                results = []
+                for source_id, edge_data in zip(neighbor_list, edge_data_list):
+                    if edge_data:
+                        deserialized = self._deserialize_properties(edge_data)
+                        deserialized["source_id"] = source_id
+                        deserialized["target_id"] = node_id
+                        results.append(deserialized)
+                return results
+            except aioredis.ConnectionError as e:
+                if attempt < max_retries - 1:
+                    logger.warning(f"Redis connection error on attempt {attempt + 1}/{max_retries}: {e}. Retrying...")
+                    await asyncio.sleep(retry_delay)
+                    retry_delay *= 2
+                else:
+                    raise
 
     async def get_total_nodes(self) -> int:
         """
@@ -612,16 +663,37 @@ class RedisGraphAdapter(BaseGraphAdapter):
 
     async def _hset_field_by_field(self, key: str, mapping: Dict[str, Any]) -> None:
         """
-        Sets fields in a Redis hash one by one, serializing values.
+        Sets fields in a Redis hash using pipeline for efficiency.
+        Includes retry logic to handle transient connection errors.
 
         Args:
             key: The Redis key for the hash.
             mapping: A dictionary of fields and values to set.
         """
+        if not mapping:
+            return
+        
+        max_retries = 3
+        retry_delay = 0.5  # seconds
         client = self._ensure_client()
-        for field, value in mapping.items():
-            serialized_value = self._serialize_value(value)
-            await client.hset(key, field, serialized_value)
+        
+        for attempt in range(max_retries):
+            try:
+                # Use pipeline to batch all hset operations
+                pipe = client.pipeline(transaction=False)
+                for field, value in mapping.items():
+                    serialized_value = self._serialize_value(value)
+                    pipe.hset(key, field, serialized_value)
+                await pipe.execute()
+                return  # Success, exit the retry loop
+            except aioredis.ConnectionError as e:
+                if attempt < max_retries - 1:
+                    logger.warning(f"Redis connection error on attempt {attempt + 1}/{max_retries}: {e}. Retrying in {retry_delay}s...")
+                    await asyncio.sleep(retry_delay)
+                    retry_delay *= 2  # Exponential backoff
+                else:
+                    logger.error(f"Redis connection failed after {max_retries} attempts: {e}")
+                    raise
 
     def _deserialize_properties(self, props: Dict[str, Any]) -> Dict[str, Any]:
         """
