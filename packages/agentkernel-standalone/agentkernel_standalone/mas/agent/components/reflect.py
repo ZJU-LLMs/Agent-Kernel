@@ -1,6 +1,4 @@
-"""Agent component that coordinates reflection and memory plugins."""
-
-from typing import Any, Dict
+"""Reflect component that coordinates reflection plugin."""
 
 from ....toolkit.logger import get_logger
 from ..base.component_base import AgentComponent
@@ -12,29 +10,13 @@ logger = get_logger(__name__)
 
 
 class ReflectComponent(AgentComponent[ReflectPlugin]):
-    """A component that manages the agent's reflection and memory."""
+    """Component container for reflection plugin."""
 
     COMPONENT_NAME = "reflect"
 
     def __init__(self) -> None:
         """Initialize the reflect component."""
         super().__init__()
-        self._recent_reflection: Dict[str, Any] = {}
-
-    @property
-    def recent_reflection(self) -> Dict[str, Any]:
-        """Return the most recent reflection payload."""
-        return self._recent_reflection
-
-    @recent_reflection.setter
-    def recent_reflection(self, new_reflection: Dict[str, Any]) -> None:
-        """
-        Replace the cached reflection payload.
-
-        Args:
-            new_reflection (Dict[str, Any]): Reflection data provided by the plugin.
-        """
-        self._recent_reflection = new_reflection
 
     async def execute(self, current_tick: int) -> None:
         """
@@ -48,5 +30,3 @@ class ReflectComponent(AgentComponent[ReflectPlugin]):
             return
 
         await self._plugin.execute(current_tick)
-
-        self._recent_reflection = self._plugin.recent_reflection

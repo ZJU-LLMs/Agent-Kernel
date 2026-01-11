@@ -5,11 +5,14 @@ import copy
 import inspect
 from typing import TYPE_CHECKING, Any, Dict, List, Optional
 
+
 from ...toolkit.logger import get_logger
 from ...toolkit.models.router import ModelRouter
 from ...types.configs import AgentConfig, AgentTemplateConfig
 from ...types.schemas.message import Message
 from .agent import Agent
+from .base.component_base import AgentComponent
+
 
 if TYPE_CHECKING:
     from ..controller import BaseController
@@ -123,42 +126,56 @@ class AgentManager:
         self, agent_id: str, component_name: str, method_name: str, *args: Any, **kwargs: Any
     ) -> Any:
         """
-        Execute a method on a component belonging to a specific agent.
+        Execute a method or access an attribute on a plugin (preferred) or component.
 
         Args:
             agent_id (str): Identifier of the target agent.
-            component_name (str): Component exposing the method.
+            component_name (str): Name of the component whose plugin exposes the method.
             method_name (str): Name of the method or attribute to access.
             *args (Any): Positional arguments forwarded to the method.
             **kwargs (Any): Keyword arguments forwarded to the method.
 
         Returns:
-            Any: Result produced by the component.
+            Any: Result produced by the plugin or component method, or the attribute value.
 
         Raises:
             ValueError: If the agent or component cannot be found.
-            AttributeError: If the component lacks the requested attribute.
+            AttributeError: If neither the plugin nor the component has the requested attribute.
             TypeError: If arguments are provided for a non-callable attribute.
         """
         agent = self._agents.get(agent_id)
         if agent is None:
             raise ValueError(f"Agent ID '{agent_id}' not found in this pod.")
 
-        component = agent.get_component(component_name)
+        component: AgentComponent = agent.get_component(component_name)
         if component is None:
             raise ValueError(f"Component '{component_name}' not found in agent '{agent_id}'.")
 
-        if not hasattr(component, method_name):
-            raise AttributeError(f"Method or attribute '{method_name}' not found in component '{component_name}'.")
+        plugin = component.get_plugin()
+        target = None
+        target_name = None
 
-        member = getattr(component, method_name)
+        if plugin is not None and hasattr(plugin, method_name):
+            target = plugin
+            target_name = "plugin"
+        elif hasattr(component, method_name):
+            target = component
+            target_name = "component"
+        else:
+            raise AttributeError(
+                f"Method or attribute '{method_name}' not found in plugin or component "
+                f"'{component_name}' of agent '{agent_id}'."
+            )
+
+        member = getattr(target, method_name)
+
         if callable(member):
             if inspect.iscoroutinefunction(member):
                 return await member(*args, **kwargs)
             return member(*args, **kwargs)
 
         if args or kwargs:
-            raise TypeError(f"Attribute '{method_name}' is not callable and cannot accept arguments.")
+            raise TypeError(f"Attribute '{method_name}' on {target_name} is not callable and cannot accept arguments.")
         return member
 
     def _generate_single_agent_config(

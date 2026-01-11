@@ -5,7 +5,6 @@ from __future__ import annotations
 from abc import ABC, abstractmethod
 from typing import TYPE_CHECKING, Any, Dict, Optional, Type, TypeVar
 
-from ....types.schemas.agent import ActionRecord, CurrentAction, PerceptionData
 from ....types.schemas.message import Message
 
 if TYPE_CHECKING:
@@ -149,12 +148,6 @@ class PerceivePlugin(AgentPlugin):
     def __init__(self) -> None:
         super().__init__()
         self._component: Optional["PerceiveComponent"] = None
-        self._perception: PerceptionData = {}
-
-    @property
-    def perception(self) -> PerceptionData:
-        """Return the current perception data produced by the plugin."""
-        return self._perception
 
     @abstractmethod
     async def add_message(self, message: Message) -> None:
@@ -174,18 +167,6 @@ class PlanPlugin(AgentPlugin):
     def __init__(self) -> None:
         super().__init__()
         self._component: Optional["PlanComponent"] = None
-        self._current_plan: Optional[Dict[str, Any]] = None
-        self._current_step_index: int = 0
-
-    @property
-    def current_plan(self) -> Optional[Dict[str, Any]]:
-        """Return the plan currently produced by the plugin."""
-        return self._current_plan
-
-    @property
-    def current_step_index(self) -> int:
-        """Return the planner's progress within the current plan."""
-        return self._current_step_index
 
 
 class ReflectPlugin(AgentPlugin):
@@ -196,12 +177,6 @@ class ReflectPlugin(AgentPlugin):
     def __init__(self) -> None:
         super().__init__()
         self._component: Optional["ReflectComponent"] = None
-        self._recent_reflection: Dict[str, Any] = {}
-
-    @property
-    def recent_reflection(self) -> Dict[str, Any]:
-        """Return the most recent reflection result."""
-        return self._recent_reflection
 
 
 class StatePlugin(AgentPlugin):
@@ -212,12 +187,6 @@ class StatePlugin(AgentPlugin):
     def __init__(self) -> None:
         super().__init__()
         self._component: Optional["StateComponent"] = None
-        self._state_data: Dict[str, Any] = {}
-
-    @property
-    def state_data(self) -> Dict[str, Any]:
-        """Return the latest state data maintained by the plugin."""
-        return self._state_data
 
     @abstractmethod
     async def set_state(self, key: str, value: Any) -> None:
@@ -229,6 +198,18 @@ class StatePlugin(AgentPlugin):
             value (Any): Associated value to store.
         """
 
+    @abstractmethod
+    async def get_state(self, key: str) -> Any:
+        """
+        Retrieve a state entry from the plugin.
+
+        Args:
+            key (str): State key to retrieve.
+
+        Returns:
+            Any: The value associated with the key, or None if not found.
+        """
+
 
 class ProfilePlugin(AgentPlugin):
     """Base class for profile plugins."""
@@ -238,12 +219,6 @@ class ProfilePlugin(AgentPlugin):
     def __init__(self) -> None:
         super().__init__()
         self._component: Optional["ProfileComponent"] = None
-        self._profile_data: Dict[str, Any] = {}
-
-    @property
-    def profile_data(self) -> Dict[str, Any]:
-        """Return the profile data maintained by the plugin."""
-        return self._profile_data
 
     @abstractmethod
     async def set_profile(self, key: str, value: Any) -> None:
@@ -255,6 +230,18 @@ class ProfilePlugin(AgentPlugin):
             value (Any): Associated value to store.
         """
 
+    @abstractmethod
+    async def get_profile(self, key: str) -> Any:
+        """
+        Retrieve a profile entry from the plugin.
+
+        Args:
+            key (str): Profile key to retrieve.
+
+        Returns:
+            Any: The value associated with the key, or None if not found.
+        """
+
 
 class InvokePlugin(AgentPlugin):
     """Base class for action plugins."""
@@ -264,15 +251,3 @@ class InvokePlugin(AgentPlugin):
     def __init__(self) -> None:
         super().__init__()
         self._component: Optional["InvokeComponent"] = None
-        self._action_history: list[ActionRecord] = []
-        self._current_action: Optional[CurrentAction] = None
-
-    @property
-    def action_history(self) -> list[ActionRecord]:
-        """Return the recorded action history."""
-        return self._action_history
-
-    @property
-    def current_action(self) -> Optional[CurrentAction]:
-        """Return the action currently in progress."""
-        return self._current_action

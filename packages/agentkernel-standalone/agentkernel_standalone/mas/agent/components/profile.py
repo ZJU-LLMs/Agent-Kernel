@@ -1,6 +1,4 @@
-"""Agent component that manages profile metadata."""
-
-from typing import Any, Dict
+"""Profile component that manages profile metadata."""
 
 from ....toolkit.logger import get_logger
 from ..base.component_base import AgentComponent
@@ -12,40 +10,13 @@ logger = get_logger(__name__)
 
 
 class ProfileComponent(AgentComponent[ProfilePlugin]):
-    """A component that manages the agent's profile and metadata."""
+    """Component container for profile plugin."""
 
     COMPONENT_NAME = "profile"
 
     def __init__(self) -> None:
         """Initialize the profile component."""
         super().__init__()
-        self._profile_data: Dict[str, Any] = {}
-
-    @property
-    def profile_data(self) -> Dict[str, Any]:
-        """Return the current profile data for the agent."""
-        return self._profile_data
-
-    @profile_data.setter
-    def profile_data(self, profile_data: Dict[str, Any]) -> None:
-        """
-        Replace the stored profile data.
-
-        Args:
-            profile_data (Dict[str, Any]): New profile values keyed by field name.
-        """
-        self._profile_data = profile_data
-
-    async def set_profile(self, key: str, value: Any) -> None:
-        """
-        Update a profile field via the underlying plugin.
-
-        Args:
-            key (str): Profile attribute to update.
-            value (Any): Value assigned to the attribute.
-        """
-        self._profile_data[key] = value
-        await self._plugin.set_profile(key, value)
 
     async def execute(self, current_tick: int) -> None:
         """
@@ -59,5 +30,3 @@ class ProfileComponent(AgentComponent[ProfilePlugin]):
             return
 
         await self._plugin.execute(current_tick)
-
-        self._profile_data = self._plugin.profile_data

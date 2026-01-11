@@ -8,7 +8,8 @@ import ray
 import psutil
 
 from ...toolkit.logger import get_logger
-from ...toolkit.models.router import ModelRouter, AsyncModelRouter
+from ...toolkit.models.router import ModelRouter, register_model_hooks
+from ...toolkit.models.async_router import AsyncModelRouter
 from ...toolkit.storages.base import DatabaseAdapter
 from ...toolkit.storages.connection_pools import close_connection_pools, create_connection_pools
 from ...types.configs import PodConfig
@@ -106,6 +107,10 @@ class MasPod:
         self._system_handle = system_handle
         self._pod_manager_handle = pod_manager_handle
 
+        # Set up model router hooks for event tracking
+        if self._model_router and system_handle:
+            self._setup_model_router_hooks(system_handle)
+
         if self._controller:
             await self._controller.post_init(
                 system=system_handle,
@@ -123,6 +128,35 @@ class MasPod:
             await self._agent_manager.post_init(model_router=self._model_router, controller=self._controller)
 
         logger.info("[%s] External dependencies injected.", self._pod_id)
+    
+    def _setup_model_router_hooks(self, system_handle: System) -> None:
+        """
+        Set up hooks on the model router for event tracking.
+        
+        By default, no hooks are registered. Hooks can be added via:
+        - resource_maps["model_hooks"]: Single hook or list of @model_hook decorated functions
+        
+        Args:
+            system_handle (System): Handle to the global system service.
+            
+        Example:
+            @model_hook("post_chat")
+            async def my_hook(event, system):
+                ...
+            
+            RESOURCE_MAPS = {
+                "model_hooks": my_hook,          # Single hook
+                # or
+                "model_hooks": [hook1, hook2],   # Multiple hooks
+            }
+        """
+        model_hooks = self._resource_maps.get("model_hooks")
+        
+        if model_hooks:
+            count = register_model_hooks(self._model_router, model_hooks, system_handle)
+            logger.info("[%s] Registered %d model hook(s).", self._pod_id, count)
+        else:
+            logger.debug("[%s] No model hooks configured.", self._pod_id)
         
     def get_performance_metrics(self) -> Dict[str, Any]:
         """

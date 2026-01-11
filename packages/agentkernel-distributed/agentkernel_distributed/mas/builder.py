@@ -93,8 +93,31 @@ def load_config(project_path: str) -> Config:
         templates = agents_cfg.get("templates") or []
         for template in templates or []:
             if not template.get("agents"):
-                profiles = loaded_data.get("agent_profiles")
-                template["agents"] = sorted(list(profiles.keys()))
+                profile_data_key = None
+                components = template.get("components", {})
+                if "profile" in components:
+                    profile_component = components["profile"]
+                    if "plugin" in profile_component:
+                        for plugin_name, plugin_config in profile_component["plugin"].items():
+                            if isinstance(plugin_config, dict):
+                                profile_data_key = plugin_config.get("profile_data")
+                                if profile_data_key:
+                                    break
+                
+                if not profile_data_key:
+                    profile_data_key = "agent_profiles"
+                
+                profiles = loaded_data.get(profile_data_key)
+                
+                if profiles and isinstance(profiles, dict):
+                    template["agents"] = sorted(list(profiles.keys()))
+                else:
+                    if profile_data_key != "agent_profiles" or profile_data_key in loaded_data:
+                        logger.warning(
+                            f"Could not find valid profile data for key '{profile_data_key}' "
+                            f"in template '{template.get('name', 'unknown')}'. "
+                            f"Template will have no agents unless specified explicitly."
+                        )
 
     try:
         config = Config(**final_config_dict)

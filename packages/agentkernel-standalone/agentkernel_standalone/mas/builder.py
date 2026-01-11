@@ -9,7 +9,7 @@ from .environment.environment import Environment
 from .system import System
 from .controller import Controller, BaseController
 
-from ..toolkit.models.router import ModelRouter, AsyncModelRouter
+from ..toolkit.models.router import ModelRouter, AsyncModelRouter, register_model_hooks
 from ..toolkit.storages.base import DatabaseAdapter
 from ..toolkit.storages.connection_pools import create_connection_pools
 from ..toolkit.logger import get_logger
@@ -97,8 +97,31 @@ def load_config(project_path: str) -> Config:
         templates = agents_cfg.get("templates") or []
         for template in templates or []:
             if not template.get("agents"):
-                profiles = loaded_data.get("agent_profiles")
-                template["agents"] = sorted(list(profiles.keys()))
+                profile_data_key = None
+                components = template.get("components", {})
+                if "profile" in components:
+                    profile_component = components["profile"]
+                    if "plugin" in profile_component:
+                        for plugin_name, plugin_config in profile_component["plugin"].items():
+                            if isinstance(plugin_config, dict):
+                                profile_data_key = plugin_config.get("profile_data")
+                                if profile_data_key:
+                                    break
+                
+                if not profile_data_key:
+                    profile_data_key = "agent_profiles"
+                
+                profiles = loaded_data.get(profile_data_key)
+                
+                if profiles and isinstance(profiles, dict):
+                    template["agents"] = sorted(list(profiles.keys()))
+                else:
+                    if profile_data_key != "agent_profiles" or profile_data_key in loaded_data:
+                        logger.warning(
+                            f"Could not find valid profile data for key '{profile_data_key}' "
+                            f"in template '{template.get('name', 'unknown')}'. "
+                            f"Template will have no agents unless specified explicitly."
+                        )
 
     try:
         config = Config(**final_config_dict)
@@ -451,19 +474,52 @@ class Builder:
         # 1. Post-init System
         await self._system.post_init(controller=self._controller)
 
-        # 2. Post-init Controller
+        # 2. Set up model router hooks for event tracking
+        if self._model_router and self._system:
+            self._setup_model_router_hooks(self._system)
+
+        # 3. Post-init Controller
         await self._controller.post_init(
             system=self._system,
             model_router=self._model_router,
         )
 
-        # 3. Post-init Environment
+        # 4. Post-init Environment
         await self._environment.post_init()
 
-        # 4. Post-init Action
+        # 5. Post-init Action
         await self._action.post_init(controller=self._controller, model_router=self._model_router)
 
-        # 5. Post-init AgentManager
+        # 6. Post-init AgentManager
         await self._agent_manager.post_init(model_router=self._model_router, controller=self._controller)
 
         logger.info("Post-initialization of all standalone components complete.")
+
+    def _setup_model_router_hooks(self, system_handle: System) -> None:
+        """
+        Set up hooks on the model router for event tracking.
+        
+        By default, no hooks are registered. Hooks can be added via:
+        - resource_maps["model_hooks"]: Single hook or list of @model_hook decorated functions
+        
+        Args:
+            system_handle (System): Handle to the system service.
+            
+        Example:
+            @model_hook("post_chat")
+            async def my_hook(event, system):
+                ...
+            
+            RESOURCE_MAPS = {
+                "model_hooks": my_hook,          # Single hook
+                # or
+                "model_hooks": [hook1, hook2],   # Multiple hooks
+            }
+        """
+        model_hooks = self._resource_maps.get("model_hooks")
+        
+        if model_hooks:
+            count = register_model_hooks(self._model_router, model_hooks, system_handle)
+            logger.info("[standalone] Registered %d model hook(s).", count)
+        else:
+            logger.debug("[standalone] No model hooks configured.")
