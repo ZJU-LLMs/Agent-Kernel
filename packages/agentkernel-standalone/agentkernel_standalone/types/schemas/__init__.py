@@ -1,9 +1,3 @@
-from .agent import (
-    PerceptionData,
-    ActionOutcome,
-    ActionRecord,
-    CurrentAction,
-)
 from .message import Message, MessageKind
 from .vectordb import (
     VectorDocument,
@@ -14,10 +8,6 @@ from .vectordb import (
 from .action import ActionResult, CallStatus
 
 __all__ = [
-    "PerceptionData",
-    "ActionOutcome",
-    "ActionRecord",
-    "CurrentAction",
     "Message",
     "MessageKind",
     "ActionResult",
