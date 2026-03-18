@@ -115,7 +115,7 @@ Constructing a high-fidelity simulation of the campus environment to study pedes
 Building an interactive hospital simulation arena for evolving and benchmarking LLM-based collective intelligence in realistic clinical workflows.
 
 <div align="center">
-  <a href="demo/OpenHospital/README.md">
+  <a href="https://www.bilibili.com/video/BV1LJwZzkEeg/?vd_source=4f6c2b7b024351820d6f6e012672275c">
     <img src="demo/OpenHospital/assets/showcase_video_cover.jpg" alt="OpenHospital" width="700"/>
   </a>
 </div>

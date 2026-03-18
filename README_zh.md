@@ -108,7 +108,7 @@ Agent-Kernel 已成功应用于多个复杂的社会模拟场景：
 构建面向真实临床流程的交互式医院模拟训练场，用于演化和评测基于大语言模型的群体智能。
 
 <div align="center">
-  <a href="demo/OpenHospital/README.md">
+  <a href="https://www.bilibili.com/video/BV1LJwZzkEeg/?vd_source=4f6c2b7b024351820d6f6e012672275c">
     <img src="demo/OpenHospital/assets/showcase_video_cover.jpg" alt="OpenHospital" width="700"/>
   </a>
 </div>
