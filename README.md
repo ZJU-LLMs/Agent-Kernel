@@ -110,12 +110,23 @@ Constructing a high-fidelity simulation of the campus environment to study pedes
  <img src="assets/zju.png" alt="ZJU Campus Life" width="700"/>
 </div> -->
 
+### 3. OpenHospital
+
+Building an interactive hospital simulation arena for evolving and benchmarking LLM-based collective intelligence in realistic clinical workflows.
+
+<div align="center">
+  <a href="https://www.bilibili.com/video/BV1LJwZzkEeg/?vd_source=4f6c2b7b024351820d6f6e012672275c">
+    <img src="demo/OpenHospital/assets/showcase_video_cover.jpg" alt="OpenHospital" width="700"/>
+  </a>
+</div>
+
 ## 📍 Table of Contents
 
 - [✨ Highlights](#-highlights)
 - [🎬 Showcase](#-showcase)
   - [Universe 25 Experiment](#1-universe-25-experiment)
   - [ZJU Campus Life](#2-zju-campus-life)
+  - [OpenHospital](#3-openhospital)
 - [🎯 Core Advantages: Why Choose Agent-Kernel?](#-core-advantages-why-choose-agent-kernel)
   - [Adaptability](#1-adaptability)
   - [Configurability](#2-configurability)
@@ -253,10 +264,13 @@ From the panel, you can upload custom code packages, edit configuration files th
 ## 📂 Project Structure
 
 ```
-MAS/
+Agent-Kernel/
 ├── packages/
 │   ├── agentkernel-distributed/   # Distributed version (installs Ray automatically)
 │   └── agentkernel-standalone/    # Local single-machine version
+│
+├── demo/                          # Demo scenarios built on shared Agent-Kernel packages
+│   └── OpenHospital/
 │
 ├── examples/
 │   ├── distributed_test/          # Example for the distributed version (Ray)

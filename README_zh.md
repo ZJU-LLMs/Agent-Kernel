@@ -103,12 +103,23 @@ Agent-Kernel 已成功应用于多个复杂的社会模拟场景：
  <img src="assets/zju.png" alt="浙大校园模拟" width="700"/>
 </div> -->
 
+### 3. OpenHospital
+
+构建面向真实临床流程的交互式医院模拟训练场，用于演化和评测基于大语言模型的群体智能。
+
+<div align="center">
+  <a href="https://www.bilibili.com/video/BV1LJwZzkEeg/?vd_source=4f6c2b7b024351820d6f6e012672275c">
+    <img src="demo/OpenHospital/assets/showcase_video_cover.jpg" alt="OpenHospital" width="700"/>
+  </a>
+</div>
+
 ## 📍 目录
 
 - [✨ 亮点](#-亮点)
 - [🎬 应用展示](#-应用展示)
   - [25 号宇宙](#1-25-号宇宙)
   - [浙江大学校园生活](#2-浙江大学校园生活)
+  - [OpenHospital](#3-openhospital)
 - [🎯 核心优势：为何选择 Agent-Kernel？](#-核心优势为何选择-agent-kernel)
   - [适应性](#1-适应性)
   - [可配置性](#2-可配置性)
@@ -246,10 +257,13 @@ Society-Panel 是一个基于网页的控制面板，可以帮助您可视化地
 ## 📂 项目结构
 
 ```
-MAS/
+Agent-Kernel/
 ├── packages/
 │   ├── agentkernel-distributed/   # 分布式版本 (自动安装 Ray)
 │   └── agentkernel-standalone/    # 本地单机版本
+│
+├── demo/                          # 基于共享 Agent-Kernel 框架包构建的 demo 场景
+│   └── OpenHospital/
 │
 ├── examples/
 │   ├── distributed_test/          # 分布式版本 (Ray) 示例

@@ -1,0 +1,23 @@
+{
+  "departments": [
+    "Cardiology Department",
+    "Dentistry Department",
+    "Dermatology Department",
+    "Endocrinology Department",
+    "Gastroenterology Department",
+    "General Surgery Department",
+    "Hematology Department",
+    "Immunology Department",
+    "Infectious Department",
+    "Nephrology Department",
+    "Neurology Department",
+    "Obstetrics and Gynecology Department",
+    "Oncology Department",
+    "Ophthalmology Department",
+    "Orthopedics Department",
+    "Otolaryngology Department",
+    "Pediatrics Department",
+    "Respiratory Department",
+    "Urology Department"
+  ]
+}

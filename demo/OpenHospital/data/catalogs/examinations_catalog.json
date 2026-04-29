@@ -1,0 +1,4229 @@
+{
+    "metadata": {
+        "description": "Standardized examination catalog. Doctors must select examination names from this list when ordering tests.",
+        "version": "1.0",
+        "last_updated": "2026-01-28"
+    },
+    "examinations": [
+        {
+            "name": "Abdominal Examination",
+            "description": "Palpation, percussion, and auscultation to assess abdominal organs and tenderness.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "Abdominal Thrust Maneuver",
+            "description": "Upward abdominal thrusts to relieve foreign-body airway obstruction.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "Anterior Drawer Test",
+            "description": "Assesses anterior cruciate ligament laxity by anterior tibial translation.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "Anterior Rhinoscopy",
+            "description": "Visual inspection of nasal cavity using speculum and light source.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "Anthropometric Measurements",
+            "description": "Measures body size and proportions, such as height, weight, and circumferences.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "Apgar Score",
+            "description": "Rapid newborn assessment of heart rate, breathing, tone, reflexes, and color.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "Basset's Sign",
+            "description": "Elicits pain by compressing the femoral head in suspected hip pathology.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "Brachial Plexus Tension Test",
+            "description": "Provokes symptoms by stretching brachial plexus to assess nerve involvement.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "Breast Examination",
+            "description": "Inspects and palpates breasts and lymph nodes for masses or abnormalities.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "Capillary Fragility Test (Tourniquet Test)",
+            "description": "Assesses capillary fragility by counting petechiae after cuff occlusion.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "Chest Expansion Measurement",
+            "description": "Measures thoracic excursion during inspiration and expiration.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "Comprehensive Eye Examination",
+            "description": "Full assessment of vision, eye structures, and ocular function.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "Corneal Examination",
+            "description": "Evaluates corneal clarity and defects, often with fluorescein staining.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "Cover Test",
+            "description": "Detects ocular misalignment by observing refixation during occlusion.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "Dermoscopy",
+            "description": "Magnified skin lesion evaluation to improve diagnosis of pigmented lesions.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "Digital Rectal Examination (DRE)",
+            "description": "Palpates rectum and prostate to assess masses, tone, or tenderness.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "Eversion Stress Test",
+            "description": "Assesses lateral ankle ligament injury by stressing the joint into eversion.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "Exophthalmometry",
+            "description": "Measures degree of eye protrusion to assess proptosis.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "External Eye Examination",
+            "description": "Inspects eyelids, conjunctiva, and ocular surface for visible abnormalities.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "External Genital Examination",
+            "description": "Inspects external genitalia for lesions, inflammation, or structural abnormalities.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "Eyelid Examination",
+            "description": "Assesses eyelid position, movement, and lesions affecting ocular protection.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "Femoral Nerve Stretch Test",
+            "description": "Stretches femoral nerve to assess L2-L4 radiculopathy or neuropathy.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "Ferriman-Gallway Score",
+            "description": "Scores hair growth pattern to quantify hirsutism severity.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "Fetal Heart Rate Auscultation",
+            "description": "Listens to fetal heart rate to assess fetal wellbeing.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "Finger-to-Floor Distance Test",
+            "description": "Measures trunk flexion by distance from fingertips to floor.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "Gonioscopy",
+            "description": "Examines anterior chamber angle to assess glaucoma and angle anatomy.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "Hip Abduction Test",
+            "description": "Assesses hip range of motion and pain during abduction.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "Nasopharyngeal Examination",
+            "description": "Evaluates nasopharynx for masses, inflammation, or obstruction.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "Neurological Examination",
+            "description": "Assesses mental status, cranial nerves, strength, sensation, reflexes, and coordination.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "Occiput-to-Wall Test",
+            "description": "Measures thoracic kyphosis by gap between occiput and wall.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "Ocular Motility Examination",
+            "description": "Assesses extraocular movements to detect palsies or restrictions.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "Ophthalmoscopy",
+            "description": "Examines retina and optic disc using an ophthalmoscope.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "Oral Examination",
+            "description": "Inspects lips, mucosa, teeth, gums, tongue, and palate for abnormalities.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "Oropharyngeal Examination",
+            "description": "Inspects tonsils, uvula, and posterior pharynx for inflammation or lesions.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "Orthostatic Vital Signs",
+            "description": "Measures vitals lying and standing to assess orthostatic hypotension.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "Otoscopy",
+            "description": "Examines ear canal and tympanic membrane with an otoscope.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "Patellar Grinding Test (Clarke's Sign)",
+            "description": "Assesses patellofemoral pain by compressing patella during quadriceps contraction.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "Patellar Tap Test (Ballottement)",
+            "description": "Detects knee effusion by tapping patella for a floating sensation.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "Patrick's Test (FABER)",
+            "description": "Assesses hip or sacroiliac pathology with flexion-abduction-external rotation.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "Pelvic Compression and Distraction Test",
+            "description": "Provokes sacroiliac pain by compressing or distracting the pelvic ring.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "Pelvic Examination",
+            "description": "Evaluates female pelvic organs via inspection and bimanual palpation.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "Penile Measurement",
+            "description": "Measures penile length and girth for clinical assessment or documentation.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "Periodontal Probing",
+            "description": "Measures periodontal pocket depth to assess gum disease severity.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "Phalen's Maneuver",
+            "description": "Flexes wrists to reproduce median nerve symptoms of carpal tunnel syndrome.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "Physical Examination",
+            "description": "Systematic assessment using inspection, palpation, percussion, and auscultation.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "Piedallu's Sign",
+            "description": "Assesses sacroiliac dysfunction via asymmetry of posterior superior iliac spine movement.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "Pneumatic Otoscopy",
+            "description": "Assesses eardrum mobility by applying air pressure with an otoscope bulb.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "Probing Examination",
+            "description": "Explores depth and patency of wounds, tracts, or sinus openings with a probe.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "Prone Knee Flexion Test",
+            "description": "Assesses femoral nerve or lumbar root irritation with prone knee flexion.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "Pull Test",
+            "description": "Assesses postural stability by observing balance response to a backward pull.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "Pupillary Light Reflex Test",
+            "description": "Assesses pupillary constriction and symmetry in response to light.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "Red Reflex Test",
+            "description": "Screens for ocular media opacities by observing retinal red reflection.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "Schober's Test",
+            "description": "Measures lumbar spine flexion to assess for reduced mobility.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "Single-leg Squat Test",
+            "description": "Evaluates lower-limb strength, balance, and dynamic knee control.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "Skin Examination",
+            "description": "Inspects skin for lesions, rashes, color changes, and abnormalities.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "Skin and Sclera Examination",
+            "description": "Checks skin and sclera for jaundice, pallor, and discoloration.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "Slit Lamp Examination",
+            "description": "Microscopic examination of anterior eye structures using a slit beam.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "Slit Lamp Examination with Fluorescein Staining",
+            "description": "Uses fluorescein to detect corneal defects and assess tear film.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "Spinal Lateral Flexion Test",
+            "description": "Assesses side-bending range of motion of the spine.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "Spurling Test",
+            "description": "Provokes cervical radiculopathy symptoms by neck extension and compression.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "Strabismus Evaluation",
+            "description": "Assesses eye alignment and extraocular movements for ocular misalignment.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "Strabismus Evaluation (Hirschberg Test)",
+            "description": "Estimates ocular alignment by corneal light reflex position.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "Straight Leg Raise Test (SLRT)",
+            "description": "Assesses sciatic nerve irritation by raising the extended leg.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "Talar Tilt Test",
+            "description": "Assesses lateral ankle ligament instability by tilting the talus.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "Thomas Test",
+            "description": "Assesses hip flexor tightness and hip extension range of motion.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "Tinel's Sign",
+            "description": "Elicits tingling by tapping a nerve to assess nerve irritation.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "Tonometry",
+            "description": "Measures intraocular pressure to screen for glaucoma.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "Vital Signs",
+            "description": "Measures temperature, pulse, respiration, blood pressure, and oxygen saturation.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "Wood's Lamp Examination",
+            "description": "Uses ultraviolet light to detect fungal infection or pigment changes.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "von Graefe's Sign",
+            "description": "Assesses lid lag on downward gaze, often seen in hyperthyroidism.",
+            "category": "Physical Examination"
+        },
+        {
+            "name": "Adrenal Function Tests",
+            "description": "Evaluates adrenal hormone production and reserve for dysfunction.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "Adrenocorticotropic Hormone (ACTH) Test",
+            "description": "Measures ACTH to assess pituitary-adrenal axis function.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "Alpha-Fetoprotein (AFP) Test",
+            "description": "Measures AFP to screen for liver cancer or monitor tumors.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "Anemia Profile",
+            "description": "Assesses anemia with CBC, iron studies, and related markers.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "Anti-Müllerian Hormone (AMH) Test",
+            "description": "Measures AMH to estimate ovarian reserve and fertility potential.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "Arterial Blood Gas (ABG)",
+            "description": "Measures arterial oxygenation, ventilation, and acid-base status.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "B-type Natriuretic Peptide (BNP)",
+            "description": "Measures BNP to help assess heart failure severity.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "Beta-2 Microglobulin Test",
+            "description": "Measures beta-2 microglobulin to assess lymphoproliferative disease and kidney function.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "Blood Ammonia Test",
+            "description": "Measures ammonia to assess liver function and encephalopathy risk.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "Blood Biomarker Analysis",
+            "description": "Analyzes specific blood markers to assess disease activity or risk.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "Blood Glucose Test",
+            "description": "Measures blood sugar to screen for or monitor diabetes.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "Blood Tests",
+            "description": "Laboratory analysis of blood to assess health and diagnose disease.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "Blood Typing and Cross-matching",
+            "description": "Determines blood type and compatibility for transfusion.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "Bone Marrow Examination",
+            "description": "Evaluates marrow cells to diagnose hematologic disorders.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "Bone Turnover Markers (BTMs)",
+            "description": "Measures bone formation and resorption markers to assess bone metabolism.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "C-Reactive Protein (CRP)",
+            "description": "Measures CRP as a marker of inflammation or infection.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "Calcitonin Test",
+            "description": "Measures calcitonin to evaluate medullary thyroid cancer risk.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "Cardiac Enzyme Panel",
+            "description": "Measures cardiac biomarkers to detect myocardial injury.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "Catecholamine Assay",
+            "description": "Measures catecholamines to evaluate pheochromocytoma or sympathetic overactivity.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "Chromogranin A (CgA) Test",
+            "description": "Measures CgA as a marker for neuroendocrine tumors.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "Chromogranin B (CgB) Test",
+            "description": "Measures CgB to help evaluate neuroendocrine tumor activity.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "Coagulation Profile",
+            "description": "Assesses clotting function using tests like PT, INR, and aPTT.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "Complete Blood Count (CBC)",
+            "description": "Measures blood cell counts to assess anemia, infection, and platelets.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "Comprehensive Metabolic Panel (CMP)",
+            "description": "Assesses electrolytes, kidney function, liver enzymes, and glucose.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "Cortisol Test",
+            "description": "Measures cortisol to assess adrenal function and stress response.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "Erythrocyte Enzyme Assay",
+            "description": "Measures red cell enzyme activity to diagnose enzymopathies.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "Erythrocyte Sedimentation Rate (ESR)",
+            "description": "Measures ESR as a nonspecific marker of inflammation.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "Fasting Blood Glucose (FBG)",
+            "description": "Measures fasting glucose to screen for diabetes or prediabetes.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "Gastric Cancer Screening Panel",
+            "description": "Blood markers assessing gastric mucosal status and cancer risk.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "Hemoglobin A1c (HbA1c)",
+            "description": "Measures average blood glucose over the past 2-3 months.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "Hemoglobin Electrophoresis",
+            "description": "Separates hemoglobin types to detect sickle cell and thalassemias.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "High-sensitivity C-reactive Protein (hs-CRP)",
+            "description": "Measures low-level inflammation to help assess cardiovascular risk.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "Homocysteine Test",
+            "description": "Measures homocysteine to assess B-vitamin status and vascular risk.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "Hormone Panel",
+            "description": "Measures multiple hormones to evaluate endocrine function and imbalances.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "Human Chorionic Gonadotropin (hCG) Test",
+            "description": "Detects hCG to confirm pregnancy or monitor related conditions.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "Inflammatory Marker Panel",
+            "description": "Checks multiple blood markers to assess systemic inflammation or infection.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "Insulin and C-peptide Release Test",
+            "description": "Assesses insulin secretion by measuring insulin and C-peptide responses.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "Iron Studies",
+            "description": "Evaluates iron status using ferritin, iron, TIBC, and saturation.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "Lipid Panel",
+            "description": "Measures cholesterol and triglycerides to assess cardiovascular risk.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "Liver Fibrosis Panel",
+            "description": "Estimates liver scarring risk using blood biomarkers and algorithms.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "Liver Function Tests (LFTs)",
+            "description": "Measures liver enzymes and proteins to assess liver injury and function.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "Liver and Renal Function Tests (LFTs/RFTs)",
+            "description": "Assesses liver and kidney function with combined blood chemistry tests.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "Maternal Serum Screening",
+            "description": "Screens pregnancy blood markers for fetal chromosomal or neural tube risks.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "Metabolic Screening",
+            "description": "Screens blood and urine for metabolic disorders and nutrient abnormalities.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "Metanephrines Test",
+            "description": "Measures metanephrines to evaluate for pheochromocytoma or paraganglioma.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "N-terminal Pro-B-type Natriuretic Peptide (NT-proBNP)",
+            "description": "Measures NT-proBNP to help diagnose and monitor heart failure.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "Oral Glucose Tolerance Test (OGTT)",
+            "description": "Measures blood glucose after oral sugar to diagnose diabetes or gestational diabetes.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "Pancreatic Enzyme Test",
+            "description": "Measures amylase and lipase to evaluate pancreatitis or pancreatic injury.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "Parathyroid Hormone (PTH) Test",
+            "description": "Measures PTH to evaluate calcium balance and parathyroid function.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "Peripheral Blood Smear",
+            "description": "Microscopic review of blood cells to assess morphology and abnormalities.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "Pituitary Hormone Panel",
+            "description": "Measures pituitary hormones to evaluate pituitary function and regulation.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "Plasma Amino Acid Analysis",
+            "description": "Measures plasma amino acids to diagnose metabolic or nutritional disorders.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "Plasma Arginine Vasopressin (AVP) Test",
+            "description": "Measures AVP to evaluate water balance disorders and diabetes insipidus.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "Procalcitonin (PCT)",
+            "description": "Measures procalcitonin to help detect bacterial infection and sepsis severity.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "Renal Function Tests (RFTs)",
+            "description": "Assesses kidney function using creatinine, urea, and related measures.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "Renin-Angiotensin-Aldosterone System (RAAS) Panel",
+            "description": "Measures renin and aldosterone to evaluate hypertension and adrenal disorders.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "Serum Angiotensin-Converting Enzyme (SACE) Assay",
+            "description": "Measures ACE level to support evaluation of sarcoidosis and related disorders.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "Serum Electrolytes",
+            "description": "Measures sodium, potassium, chloride, and bicarbonate for fluid-electrolyte balance.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "Serum Enzyme Analysis",
+            "description": "Measures specific enzymes to assess tissue damage or organ function.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "Serum Erythropoietin Level",
+            "description": "Measures erythropoietin to evaluate anemia or polycythemia causes.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "Serum Protein Electrophoresis (SPEP)",
+            "description": "Separates serum proteins to detect monoclonal gammopathies.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "Serum Serotonin (5-HT) Test",
+            "description": "Measures serotonin to evaluate for carcinoid syndrome or related disorders.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "Sex Hormone Panel",
+            "description": "Measures sex hormones to assess fertility, puberty, or endocrine disorders.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "Thrombopoietin (TPO) Test",
+            "description": "Measures thrombopoietin to evaluate causes of low platelet counts.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "Thyroid Function Tests (TFTs)",
+            "description": "Measures thyroid hormones and TSH to assess thyroid function.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "Trace Element Testing",
+            "description": "Measures trace minerals to detect deficiencies or toxic exposures.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "Tumor Marker Test",
+            "description": "Measures cancer-associated proteins to aid monitoring or risk assessment.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "Vitamin D Test",
+            "description": "Measures vitamin D level to assess bone and mineral health.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "Vitamin and Mineral Assay",
+            "description": "Measures selected vitamins and minerals to assess nutritional status.",
+            "category": "Laboratory Tests - Blood"
+        },
+        {
+            "name": "24-Hour Urinary Thiamine Test",
+            "description": "Measures thiamine excretion over 24 hours to assess vitamin B1 status.",
+            "category": "Laboratory Tests - Urine & Stool"
+        },
+        {
+            "name": "24-Hour Urine Electrolytes",
+            "description": "Measures urine electrolytes over 24 hours to assess renal handling.",
+            "category": "Laboratory Tests - Urine & Stool"
+        },
+        {
+            "name": "24-Hour Urine Metabolic Evaluation",
+            "description": "Assesses urine metabolites to evaluate kidney stone risk and metabolism.",
+            "category": "Laboratory Tests - Urine & Stool"
+        },
+        {
+            "name": "24-Hour Urine Protein Test",
+            "description": "Measures total protein excretion to assess kidney disease.",
+            "category": "Laboratory Tests - Urine & Stool"
+        },
+        {
+            "name": "Fecal Fluoride Test",
+            "description": "Measures fluoride in stool to assess fluoride exposure or intake.",
+            "category": "Laboratory Tests - Urine & Stool"
+        },
+        {
+            "name": "Fecal Occult Blood Test (FOBT)",
+            "description": "Detects hidden blood in stool for colorectal bleeding screening.",
+            "category": "Laboratory Tests - Urine & Stool"
+        },
+        {
+            "name": "Meares-Stamey Four-Glass Test",
+            "description": "Cultures sequential urine and prostatic fluid to localize prostatitis infection.",
+            "category": "Laboratory Tests - Urine & Stool"
+        },
+        {
+            "name": "Stool Color Card Examination",
+            "description": "Compares stool color to screen infants for cholestasis and biliary atresia.",
+            "category": "Laboratory Tests - Urine & Stool"
+        },
+        {
+            "name": "Stool Ova and Parasites Examination (O&P)",
+            "description": "Microscopic exam for parasite eggs and organisms in stool.",
+            "category": "Laboratory Tests - Urine & Stool"
+        },
+        {
+            "name": "Stool Routine Test",
+            "description": "Evaluates stool for infection signs, blood, and basic digestive abnormalities.",
+            "category": "Laboratory Tests - Urine & Stool"
+        },
+        {
+            "name": "Two-Glass Test",
+            "description": "Compares first and midstream urine to help localize urinary tract infection.",
+            "category": "Laboratory Tests - Urine & Stool"
+        },
+        {
+            "name": "Urinalysis (UA)",
+            "description": "Screens urine for infection, kidney disease, and metabolic disorders.",
+            "category": "Laboratory Tests - Urine & Stool"
+        },
+        {
+            "name": "Urinary 5-Hydroxyindoleacetic Acid (5-HIAA) Test",
+            "description": "Measures urine 5-HIAA to evaluate serotonin-secreting carcinoid tumors.",
+            "category": "Laboratory Tests - Urine & Stool"
+        },
+        {
+            "name": "Urinary 5-Hydroxytryptophan (5-HTP) Test",
+            "description": "Measures urinary 5-HTP, a serotonin precursor, for metabolic evaluation.",
+            "category": "Laboratory Tests - Urine & Stool"
+        },
+        {
+            "name": "Urinary Calcium Test",
+            "description": "Measures urine calcium to assess stone risk and calcium metabolism.",
+            "category": "Laboratory Tests - Urine & Stool"
+        },
+        {
+            "name": "Urinary Cystine Test",
+            "description": "Detects elevated urinary cystine to evaluate cystinuria and stone risk.",
+            "category": "Laboratory Tests - Urine & Stool"
+        },
+        {
+            "name": "Urinary Electrolyte Panel",
+            "description": "Measures urine electrolytes to assess renal handling and fluid balance.",
+            "category": "Laboratory Tests - Urine & Stool"
+        },
+        {
+            "name": "Urinary Fluoride Test",
+            "description": "Measures urine fluoride to assess fluoride exposure or toxicity.",
+            "category": "Laboratory Tests - Urine & Stool"
+        },
+        {
+            "name": "Urinary Hydroxyproline Test",
+            "description": "Measures urinary hydroxyproline to assess collagen breakdown and bone turnover.",
+            "category": "Laboratory Tests - Urine & Stool"
+        },
+        {
+            "name": "Urinary Lysozyme Test",
+            "description": "Measures urinary lysozyme to assess tubular injury or monocytic leukemia.",
+            "category": "Laboratory Tests - Urine & Stool"
+        },
+        {
+            "name": "Urinary Organic Acid Analysis",
+            "description": "Profiles urinary organic acids to detect inborn metabolic disorders.",
+            "category": "Laboratory Tests - Urine & Stool"
+        },
+        {
+            "name": "Urinary Pterin Analysis",
+            "description": "Measures urinary pterins to evaluate neurotransmitter and BH4 metabolism disorders.",
+            "category": "Laboratory Tests - Urine & Stool"
+        },
+        {
+            "name": "Urinary Serotonin (5-HT) Test",
+            "description": "Measures urinary serotonin to evaluate serotonin-producing tumors.",
+            "category": "Laboratory Tests - Urine & Stool"
+        },
+        {
+            "name": "Urinary Stone Analysis",
+            "description": "Analyzes passed or removed stones to determine composition and cause.",
+            "category": "Laboratory Tests - Urine & Stool"
+        },
+        {
+            "name": "Urinary Succinylacetone Level",
+            "description": "Detects urine succinylacetone for diagnosis of tyrosinemia type I.",
+            "category": "Laboratory Tests - Urine & Stool"
+        },
+        {
+            "name": "Urinary Uric Acid Test",
+            "description": "Measures urine uric acid to assess gout risk and stone formation.",
+            "category": "Laboratory Tests - Urine & Stool"
+        },
+        {
+            "name": "Urinary Vanillylmandelic Acid (VMA) Test",
+            "description": "Measures urine VMA to assess catecholamine-secreting tumors.",
+            "category": "Laboratory Tests - Urine & Stool"
+        },
+        {
+            "name": "Urinary White Blood Cell Excretion Rate Test",
+            "description": "Measures urinary WBC excretion to assess urinary tract inflammation.",
+            "category": "Laboratory Tests - Urine & Stool"
+        },
+        {
+            "name": "Urine Culture",
+            "description": "Grows bacteria from urine to diagnose urinary tract infection.",
+            "category": "Laboratory Tests - Urine & Stool"
+        },
+        {
+            "name": "Urine Protein Electrophoresis (UPEP)",
+            "description": "Separates urine proteins to detect monoclonal proteins and kidney disease.",
+            "category": "Laboratory Tests - Urine & Stool"
+        },
+        {
+            "name": "Urine hCG Pregnancy Test",
+            "description": "Detects hCG in urine to confirm pregnancy.",
+            "category": "Laboratory Tests - Urine & Stool"
+        },
+        {
+            "name": "Actinomyces Antibody Test",
+            "description": "Detects antibodies suggesting Actinomyces infection or exposure.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Allergen Testing (Bioresonance)",
+            "description": "Alternative method claiming to detect allergies; not scientifically validated.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Allergy Testing",
+            "description": "Identifies allergen sensitivities using skin testing or specific IgE blood tests.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Anti-Actin Antibody",
+            "description": "Detects anti-actin antibodies, supportive of autoimmune hepatitis type 1.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Anti-Cyclic Citrullinated Peptide (Anti-CCP) Antibody",
+            "description": "Detects anti-CCP antibodies to help diagnose rheumatoid arthritis.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Anti-Double Stranded DNA (anti-dsDNA) Antibody",
+            "description": "Detects anti-dsDNA antibodies to support lupus diagnosis and monitor activity.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Anti-Endomysial Antibody (EMA)",
+            "description": "Detects EMA antibodies to support diagnosis of celiac disease.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Anti-Endothelial Cell Antibody (AECA)",
+            "description": "Detects antibodies against endothelium, associated with some vasculitic disorders.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Anti-Intrinsic Factor Antibody",
+            "description": "Detects antibodies causing B12 malabsorption in pernicious anemia.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Anti-Keratin Antibody (AKA)",
+            "description": "Detects anti-keratin antibodies associated with rheumatoid arthritis.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Anti-Mitochondrial Antibody (AMA)",
+            "description": "Detects AMA to support diagnosis of primary biliary cholangitis.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Anti-Parietal Cell Antibody",
+            "description": "Detects antibodies linked to autoimmune gastritis and pernicious anemia risk.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Anti-Perinuclear Factor (APF)",
+            "description": "Detects APF antibodies associated with rheumatoid arthritis.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Anti-Platelet Antibody Test",
+            "description": "Detects antibodies against platelets in suspected immune thrombocytopenia.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Anti-Reticulin Antibody",
+            "description": "Detects anti-reticulin antibodies, historically associated with celiac disease.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Anti-Smooth Muscle Antibody (ASMA)",
+            "description": "Detects ASMA to support autoimmune hepatitis diagnosis.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Antigen Detection Test",
+            "description": "Detects specific microbial antigens for rapid infection diagnosis.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Antigen-Antibody Testing",
+            "description": "Detects antigens and/or antibodies to diagnose infections or immune status.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Antineutrophil Cytoplasmic Antibodies (ANCA) Profile",
+            "description": "Measures ANCA to help diagnose and classify ANCA-associated vasculitis.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Antinuclear Antibody (ANA) Profile",
+            "description": "Screens for ANA and patterns to evaluate systemic autoimmune disease.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Antiphospholipid Antibody (APA) Panel",
+            "description": "Tests antiphospholipid antibodies to assess clotting risk and APS.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Antistreptolysin O (ASO) Titre",
+            "description": "Measures ASO antibodies to assess recent streptococcal infection.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Autoimmune Hepatitis (AIH) Antibody Profile",
+            "description": "Measures AIH-related autoantibodies to support autoimmune hepatitis diagnosis.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Autoimmune Screening Panel",
+            "description": "Panel of autoantibodies used to evaluate suspected autoimmune disease.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Autologous Serum Skin Test (ASST)",
+            "description": "Skin test using patient serum to evaluate autoimmune chronic urticaria.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Bullous Pemphigoid (BP) Antibody Test",
+            "description": "Detects BP180/BP230 antibodies to support bullous pemphigoid diagnosis.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "C1-esterase Inhibitor Assay",
+            "description": "Measures C1 inhibitor to diagnose hereditary or acquired angioedema.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Casoni Intradermal Test",
+            "description": "Historical skin test for hydatid disease; largely obsolete.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Chlamydia pneumoniae Antibody Test",
+            "description": "Detects antibodies indicating past or recent Chlamydia pneumoniae infection.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Cold Agglutinin Test",
+            "description": "Detects cold-reactive antibodies causing hemolysis in cold agglutinin disease.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Complement Component Analysis",
+            "description": "Measures complement protein levels to assess immune and inflammatory function.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Complement Fixation Test (CFT)",
+            "description": "Detects specific antibodies by measuring complement consumption in a reaction.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Conjunctival Provocation Test",
+            "description": "Applies allergen to eye to evaluate immediate allergic conjunctival response.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Cryoglobulin Test",
+            "description": "Detects cold-precipitating proteins in blood linked to vasculitis and infection.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Cysticercus Antibody Test",
+            "description": "Detects antibodies against Taenia solium larvae causing cysticercosis.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Cytokine Profile",
+            "description": "Measures multiple cytokines to evaluate immune activation and inflammation patterns.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Cytomegalovirus (CMV) Antibody Test",
+            "description": "Detects CMV antibodies to assess past exposure or recent infection.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Dengue Virus Antibody Test",
+            "description": "Detects dengue antibodies to support diagnosis of current or past infection.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Direct Antiglobulin Test (DAT)",
+            "description": "Detects antibodies or complement bound to red blood cells.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Direct Immunofluorescence Assay (DFA)",
+            "description": "Uses fluorescent antibodies to detect antigens directly in patient specimens.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Dot Immunogold Filtration Assay (DIGFA)",
+            "description": "Rapid membrane test using gold labels to detect specific antibodies or antigens.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Echinococcus Antibody Test",
+            "description": "Detects antibodies to Echinococcus, supporting diagnosis of hydatid disease.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Enzyme-Linked Immunosorbent Assay (ELISA)",
+            "description": "Enzyme-based assay to detect or quantify specific antibodies or antigens.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Epstein-Barr Virus (EBV) Antibody Panel",
+            "description": "Measures EBV antibodies to determine acute, past, or reactivated infection.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Filariasis Antibody Test",
+            "description": "Detects antibodies to filarial parasites causing lymphatic or tissue filariasis.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Flow Cytometry Immunophenotyping",
+            "description": "Identifies cell populations by surface markers using flow cytometry.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Globulin Precipitation Test",
+            "description": "Assesses abnormal globulins by observing precipitation reactions in serum.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "HLA-B27 Typing",
+            "description": "Determines HLA-B27 status associated with spondyloarthritis risk.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "HLA-DR4 Typing",
+            "description": "Determines HLA-DR4 allele associated with autoimmune disease susceptibility.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Helicobacter Pylori Antibody Test",
+            "description": "Detects antibodies to H. pylori indicating exposure or infection.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Hemagglutination Inhibition (HI) Test",
+            "description": "Measures antibodies that block viral hemagglutination of red blood cells.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Hepatitis B Virus (HBV) Panel",
+            "description": "Measures HBV antigens and antibodies to stage infection and immunity.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Hepatitis C Virus (HCV) Antibody Test",
+            "description": "Detects HCV antibodies indicating exposure to hepatitis C virus.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Hepatitis E Virus (HEV) Antibody Test",
+            "description": "Detects HEV antibodies to support diagnosis of hepatitis E infection.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Herpes Simplex Virus (HSV) Antibody Test",
+            "description": "Detects HSV antibodies to assess prior exposure or infection type.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Heterophile Antibody Test",
+            "description": "Screens for heterophile antibodies suggestive of infectious mononucleosis.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Hidden Rheumatoid Factor (HRF)",
+            "description": "Detects masked rheumatoid factor not found by standard RF testing.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Histoplasmin Skin Test",
+            "description": "Skin test for delayed hypersensitivity to Histoplasma antigens.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Human Immunodeficiency Virus (HIV) Screening",
+            "description": "Screens for HIV infection using antigen and/or antibody detection tests.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Human Leukocyte Antigen (HLA) Typing",
+            "description": "Determines HLA alleles for transplant matching and disease association.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Immunodiffusion Test",
+            "description": "Detects antigens or antibodies by precipitation lines in gel diffusion.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Immunofluorescence Assay (IFA)",
+            "description": "Detects specific antibodies or antigens using fluorescent-labeled antibodies.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Immunoglobulin A (IgA) Test",
+            "description": "Measures IgA levels to evaluate mucosal immunity and immunodeficiency.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Immunological Profile",
+            "description": "Panel of immune markers assessing immune status and dysregulation.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Islet Autoantibody Panel",
+            "description": "Detects islet autoantibodies to assess autoimmune type 1 diabetes risk.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Lymphocyte Functional Assay",
+            "description": "Evaluates lymphocyte responses to stimuli to assess immune function.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Lymphocyte Subset Analysis",
+            "description": "Counts T, B, and NK cell subsets to assess immune status.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Microscopic Agglutination Test (MAT)",
+            "description": "Detects Leptospira antibodies using live serovars under microscopy.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Neutralization Test",
+            "description": "Measures antibodies that neutralize pathogen infectivity in vitro.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Parasite Serology",
+            "description": "Detects parasite-specific antibodies to support diagnosis of parasitic infections.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Passive Hemagglutination Test",
+            "description": "Detects antibodies via agglutination of antigen-coated red blood cells.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Patch Test",
+            "description": "Applies allergens to skin to diagnose delayed-type contact dermatitis.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Pericardial Fluid Immunological Analysis",
+            "description": "Analyzes pericardial fluid immune markers to evaluate inflammation or infection.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Rheumatoid Factor (RF)",
+            "description": "Measures rheumatoid factor antibodies associated with rheumatoid arthritis and other diseases.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Rubella Antibody Test",
+            "description": "Detects rubella antibodies to assess immunity or recent infection.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Schistosomiasis Cercaria Membranous Reaction (CMR) Test",
+            "description": "Detects schistosomiasis antibodies using cercarial membrane antigen reactions.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Serological Agglutination Test",
+            "description": "Detects antibodies by observing clumping of antigen-coated particles or cells.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Serological Antibody Testing",
+            "description": "Measures specific antibodies in serum to assess infection or immunity.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Serological Testing",
+            "description": "Blood-based testing for antibodies or antigens indicating infection or immune status.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Serum IgE Testing",
+            "description": "Measures total or specific IgE to evaluate allergies and atopic disease.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Serum Immunoelectrophoresis",
+            "description": "Separates and identifies serum proteins and immunoglobulin patterns for monoclonal gammopathies.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Serum Immunoglobulins (IgG, IgA, IgM)",
+            "description": "Measures blood IgG, IgA, and IgM levels to assess immune function.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Skin Prick Test",
+            "description": "Detects immediate allergic sensitization by observing skin reaction to allergens.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Specific IgM Antibody Test",
+            "description": "Detects pathogen-specific IgM antibodies indicating recent or acute infection.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "TORCH Panel",
+            "description": "Screens antibodies for congenital infection risks: toxoplasma, rubella, CMV, HSV, others.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Thyroid Autoantibody Panel",
+            "description": "Measures thyroid antibodies to evaluate autoimmune thyroid disease.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Thyrotropin Receptor Antibody (TRAb)",
+            "description": "Detects antibodies to TSH receptor, supporting Graves' disease diagnosis.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Tissue Transglutaminase (tTG) Antibody Test",
+            "description": "Detects tTG antibodies for celiac disease screening and monitoring.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Tuberculin Skin Test (TST)",
+            "description": "Assesses TB exposure by measuring skin induration after tuberculin injection.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Tuberculosis (TB) Antibody Test",
+            "description": "Detects antibodies to Mycobacterium tuberculosis; limited value for active TB.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Viral Serology Panel",
+            "description": "Measures antiviral antibodies to assess infection status or immunity.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Weil-Felix Test",
+            "description": "Older agglutination test suggesting rickettsial infection using Proteus antigens.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Western Blot (WB)",
+            "description": "Detects specific proteins or antibodies using electrophoresis and immunoblotting.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "Zika Virus IgM Antibody Test",
+            "description": "Detects Zika-specific IgM antibodies indicating recent infection.",
+            "category": "Laboratory Tests - Immunology"
+        },
+        {
+            "name": "(1,3)-β-D-Glucan Test (G-test)",
+            "description": "Detects fungal cell wall glucan to support invasive fungal infection diagnosis.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "13C-Urea Breath Test (13C-UBT)",
+            "description": "Noninvasive test detecting Helicobacter pylori via labeled CO2 in breath.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Acid-Fast Bacilli (AFB) Stain",
+            "description": "Microscopy stain to detect acid-fast organisms like Mycobacterium species.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Adenovirus Antibody Test",
+            "description": "Detects antibodies to adenovirus indicating past or recent infection.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Adenovirus Antigen Test",
+            "description": "Detects adenovirus antigens for rapid identification of current infection.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Adenovirus Nucleic Acid Amplification Test (Adenovirus NAAT)",
+            "description": "Detects adenovirus DNA/RNA for sensitive diagnosis of active infection.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Animal Inoculation Test",
+            "description": "Detects pathogens by inoculating animals and observing infection development.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Antimicrobial Susceptibility Test (AST)",
+            "description": "Determines which antibiotics effectively inhibit or kill an isolated bacterium.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Bacterial Antigen Test",
+            "description": "Detects specific bacterial antigens to rapidly identify infection.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Bacterial Culture and Identification",
+            "description": "Grows bacteria from specimens and identifies the causative organism.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Bacterial Culture and Sensitivity Test",
+            "description": "Cultures bacteria and tests antibiotic susceptibility to guide treatment.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Blood Culture",
+            "description": "Cultures blood to detect and identify bloodstream infections.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Bone Marrow Culture",
+            "description": "Cultures bone marrow to detect organisms causing systemic infection.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Cell Culture",
+            "description": "Grows cells to isolate viruses or other pathogens from clinical specimens.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Cerebrospinal Fluid (CSF) Pathogen Panel",
+            "description": "Multiplex test detecting common meningitis and encephalitis pathogens in CSF.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Cervical Culture",
+            "description": "Cultures cervical specimen to identify bacterial or fungal infection.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Cervicovaginal Culture",
+            "description": "Cultures cervicovaginal specimen to identify infectious organisms.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Chlamydia Culture",
+            "description": "Isolates Chlamydia from specimens using cell culture methods.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Chlamydia pneumoniae Nucleic Acid Test (NAAT)",
+            "description": "Detects Chlamydia pneumoniae nucleic acid for diagnosis of respiratory infection.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Cryptococcal Antigen Test (CrAg)",
+            "description": "Detects Cryptococcus antigen in blood or CSF for rapid diagnosis.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Cytomegalovirus Nucleic Acid Test (CMV NAT)",
+            "description": "Detects CMV DNA to diagnose and monitor active CMV infection.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "DNA Probe Assay",
+            "description": "Uses labeled DNA probes to detect specific microbial genetic sequences.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Dark-field Microscopy",
+            "description": "Visualizes thin organisms like spirochetes in unstained specimens.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Dengue Virus NS1 Antigen Test",
+            "description": "Detects dengue NS1 antigen for early diagnosis of acute dengue.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Dengue Virus Nucleic Acid Test (Dengue NAT)",
+            "description": "Detects dengue viral RNA for early confirmation of infection.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Ear Culture",
+            "description": "Cultures ear specimen to identify pathogens causing ear infection.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Epstein-Barr Virus Nucleic Acid Test (EBV NAT)",
+            "description": "Detects EBV DNA to diagnose and monitor EBV infection.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Eye Culture",
+            "description": "Cultures ocular specimen to identify pathogens causing eye infection.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Eye Smear Examination",
+            "description": "Microscopic examination of ocular smear to detect inflammatory cells or pathogens.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Fungal Culture and Identification",
+            "description": "Grows fungi from specimens and identifies the species.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Fungal Microscopic Examination",
+            "description": "Microscopy to detect fungal elements such as hyphae or yeast.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Genital Discharge Microscopic Examination",
+            "description": "Microscopy of genital discharge to identify cells, bacteria, yeast, or parasites.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Gram Stain",
+            "description": "Stains bacteria to classify Gram reaction and guide initial therapy.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "HIV Drug Resistance Testing",
+            "description": "Detects HIV mutations associated with antiretroviral drug resistance.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "HIV Viral Load Test",
+            "description": "Measures HIV RNA in blood to assess treatment response and infectivity.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Helicobacter pylori Antibody Test",
+            "description": "Detects antibodies to H. pylori indicating current or past exposure.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Helicobacter pylori Culture",
+            "description": "Cultures gastric specimens to isolate and identify Helicobacter pylori.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Helicobacter pylori Stool Antigen Test (HpSA)",
+            "description": "Detects H. pylori antigens in stool to diagnose infection.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Helicobacter pylori Testing",
+            "description": "Tests for H. pylori infection using breath, stool, blood, or biopsy methods.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Hepatitis B Virus Testing",
+            "description": "Detects hepatitis B infection through antigen, antibody, and DNA testing.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Hepatitis C Virus Nucleic Acid Test (HCV NAT)",
+            "description": "Detects and quantifies hepatitis C RNA to confirm active infection.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Hepatitis E Virus Nucleic Acid Test (HEV NAT)",
+            "description": "Detects hepatitis E viral RNA to diagnose active infection.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Herpes Simplex Virus Nucleic Acid Test (HSV NAT)",
+            "description": "Detects HSV DNA/RNA from lesions or fluids to confirm infection.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Human Papillomavirus Nucleic Acid Test (HPV NAT)",
+            "description": "Detects high-risk HPV DNA/RNA in cervical or other samples.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Indirect Hemagglutination Assay (IHA)",
+            "description": "Detects antibodies by red cell agglutination in patient serum.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Interferon-Gamma Release Assay (IGRA)",
+            "description": "Measures interferon-gamma response to diagnose latent tuberculosis infection.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Microbial Culture and Identification",
+            "description": "Grows microbes from specimens and identifies the causative organism.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Microbial Stain",
+            "description": "Stains specimens to visualize and classify microorganisms under microscopy.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Microscopic Examination",
+            "description": "Examines specimens under a microscope for cells, organisms, or abnormalities.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Microscopic Smear Examination",
+            "description": "Microscopic review of a smeared specimen to detect organisms or cells.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Mumps Virus Nucleic Acid Test (Mumps NAT)",
+            "description": "Detects mumps viral RNA to confirm acute mumps infection.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Mycobacterial Culture",
+            "description": "Cultures specimens to detect and identify mycobacteria, including tuberculosis.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Mycoplasma pneumoniae Antibody Test",
+            "description": "Measures antibodies to Mycoplasma pneumoniae indicating recent or past infection.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Mycoplasma pneumoniae Culture",
+            "description": "Cultures specimens to isolate Mycoplasma pneumoniae, though slow and difficult.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Nasopharyngeal Swab Viral NAT",
+            "description": "Detects viral nucleic acids from nasopharyngeal swab specimens.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Neisseria Gonorrhoeae Culture",
+            "description": "Cultures specimens to detect and identify Neisseria gonorrhoeae.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Nucleic Acid Amplification Test (NAAT)",
+            "description": "Amplifies and detects pathogen nucleic acids for rapid, sensitive diagnosis.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Paired Serum Antibody Test",
+            "description": "Compares acute and convalescent antibodies to document rising titers.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Parasite Culture",
+            "description": "Cultures specimens to grow and identify certain parasites.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Parasite Examination",
+            "description": "Microscopic examination of specimens to detect parasites, eggs, or cysts.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Pathogen Antigen Detection",
+            "description": "Detects specific pathogen antigens for rapid infection diagnosis.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Pericardial Fluid Culture",
+            "description": "Cultures pericardial fluid to detect bacterial or fungal infection.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Pleural Fluid Culture",
+            "description": "Cultures pleural fluid to identify infectious organisms causing effusion.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Prostatic Fluid Culture",
+            "description": "Cultures expressed prostatic fluid to identify pathogens in prostatitis.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Pus Culture",
+            "description": "Cultures pus to identify bacteria or fungi causing infection.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Pus Culture and Sensitivity Test",
+            "description": "Cultures pus and tests antibiotic susceptibility of isolated organisms.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Rapid Antigen Test (RAT)",
+            "description": "Quick test detecting pathogen antigens, often at point of care.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Rapid Urease Test (RUT)",
+            "description": "Detects urease activity in gastric biopsy to identify H. pylori.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Respiratory Secretion Culture",
+            "description": "Cultures respiratory secretions to identify bacterial or fungal pathogens.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Rotavirus Stool Antigen Test",
+            "description": "Detects rotavirus antigen in stool to diagnose gastroenteritis.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Silver Stain Microscopic Examination",
+            "description": "Uses silver stain microscopy to highlight fungi and certain organisms.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Skin Scraping Microscopic Examination",
+            "description": "Microscopic exam of skin scrapings to detect fungi or mites.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Sputum Analysis",
+            "description": "Evaluates sputum characteristics and microscopy for respiratory disease assessment.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Sputum Culture",
+            "description": "Cultures sputum to identify bacterial, fungal, or mycobacterial pathogens.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Sputum Culture and Stain",
+            "description": "Stains and cultures sputum to detect and identify pathogens.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Stool Culture",
+            "description": "Cultures stool to identify enteric bacterial pathogens.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Synovial Fluid Culture",
+            "description": "Cultures joint fluid to identify organisms causing septic arthritis.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Syphilis Serology",
+            "description": "Blood tests detecting antibodies to diagnose syphilis infection.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Throat Culture",
+            "description": "Cultures throat swab to identify pathogens such as Streptococcus.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Tissue Culture",
+            "description": "Cultures tissue specimens to identify bacterial, fungal, or mycobacterial infection.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Trichomonas Vaginalis Culture",
+            "description": "Cultures specimens to detect Trichomonas vaginalis infection.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Urethral Culture",
+            "description": "Cultures urethral specimens to identify bacterial causes of urethritis.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Viral Culture and Isolation",
+            "description": "Grows viruses in cell culture to isolate and identify viral pathogens.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Viral Hepatitis Panel",
+            "description": "Blood panel testing hepatitis A, B, and C markers.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Viral Nucleic Acid Test (Viral NAT)",
+            "description": "Detects viral DNA or RNA to diagnose active infection.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Viral Serology",
+            "description": "Detects viral antibodies or antigens to assess infection or immunity.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Weil-Felix Test (Rickettsial Agglutination)",
+            "description": "Agglutination test detecting antibodies suggestive of rickettsial infection.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Wound and Secretion Culture",
+            "description": "Cultures wound or discharge to identify pathogens and antibiotic sensitivities.",
+            "category": "Laboratory Tests - Microbiology"
+        },
+        {
+            "name": "Abdominal X-ray (AXR)",
+            "description": "Plain X-ray of abdomen to assess bowel gas, obstruction, or calcifications.",
+            "category": "Imaging - X-ray"
+        },
+        {
+            "name": "Barium Enema (BE)",
+            "description": "Contrast X-ray of colon after barium enema to evaluate large bowel.",
+            "category": "Imaging - X-ray"
+        },
+        {
+            "name": "Bitewing X-ray",
+            "description": "Dental X-ray showing crowns of upper and lower teeth for cavities.",
+            "category": "Imaging - X-ray"
+        },
+        {
+            "name": "Bone Age Assessment",
+            "description": "X-ray assessment of skeletal maturity, usually using hand and wrist.",
+            "category": "Imaging - X-ray"
+        },
+        {
+            "name": "Chest X-ray (CXR)",
+            "description": "X-ray of chest to evaluate lungs, heart size, and pleura.",
+            "category": "Imaging - X-ray"
+        },
+        {
+            "name": "Cystography",
+            "description": "Contrast imaging of bladder to assess anatomy and vesicoureteral reflux.",
+            "category": "Imaging - X-ray"
+        },
+        {
+            "name": "Dacryocystography",
+            "description": "Contrast imaging of lacrimal drainage system to evaluate obstruction.",
+            "category": "Imaging - X-ray"
+        },
+        {
+            "name": "Defecography",
+            "description": "Imaging during defecation to assess pelvic floor and anorectal function.",
+            "category": "Imaging - X-ray"
+        },
+        {
+            "name": "Dental X-ray",
+            "description": "X-ray of teeth and jaws to evaluate decay, roots, and bone.",
+            "category": "Imaging - X-ray"
+        },
+        {
+            "name": "Dual-Energy X-ray Absorptiometry (DEXA)",
+            "description": "Low-dose scan measuring bone mineral density to assess osteoporosis risk.",
+            "category": "Imaging - X-ray"
+        },
+        {
+            "name": "Extremity X-ray",
+            "description": "X-ray of arm or leg to assess fractures, alignment, or bone lesions.",
+            "category": "Imaging - X-ray"
+        },
+        {
+            "name": "Gastrointestinal Series (GIS)",
+            "description": "Contrast X-ray series evaluating gastrointestinal tract structure and motility.",
+            "category": "Imaging - X-ray"
+        },
+        {
+            "name": "Hand X-ray",
+            "description": "X-ray of hand to evaluate fractures, arthritis, or bone age.",
+            "category": "Imaging - X-ray"
+        },
+        {
+            "name": "Intravenous Urography (IVU)",
+            "description": "IV contrast X-rays to assess kidneys, ureters, and urinary tract drainage.",
+            "category": "Imaging - X-ray"
+        },
+        {
+            "name": "Joint X-ray",
+            "description": "X-ray of a joint to evaluate arthritis, fractures, or alignment.",
+            "category": "Imaging - X-ray"
+        },
+        {
+            "name": "Kidney, Ureter, and Bladder X-ray (KUB)",
+            "description": "Plain abdominal X-ray focusing on urinary tract and bowel gas.",
+            "category": "Imaging - X-ray"
+        },
+        {
+            "name": "Lumbar Spine X-ray",
+            "description": "X-ray of lower spine to assess vertebrae, alignment, and degeneration.",
+            "category": "Imaging - X-ray"
+        },
+        {
+            "name": "Mastoid X-ray",
+            "description": "X-ray of mastoid bone to assess air cells and infection changes.",
+            "category": "Imaging - X-ray"
+        },
+        {
+            "name": "Nasal Bone X-ray",
+            "description": "X-ray of nasal bones to evaluate fractures or deformity.",
+            "category": "Imaging - X-ray"
+        },
+        {
+            "name": "Nasopharyngeal X-ray",
+            "description": "X-ray of nasopharynx to assess adenoids and airway obstruction.",
+            "category": "Imaging - X-ray"
+        },
+        {
+            "name": "Neck X-ray",
+            "description": "X-ray of neck soft tissues to assess airway, swelling, or foreign body.",
+            "category": "Imaging - X-ray"
+        },
+        {
+            "name": "Panoramic Dental X-ray (OPG)",
+            "description": "Panoramic jaw X-ray showing teeth, mandible, maxilla, and sinuses.",
+            "category": "Imaging - X-ray"
+        },
+        {
+            "name": "Paranasal Sinus X-ray",
+            "description": "X-ray of sinuses to evaluate opacification, fluid levels, or fractures.",
+            "category": "Imaging - X-ray"
+        },
+        {
+            "name": "Pelvic X-ray",
+            "description": "X-ray of pelvis to assess fractures, hip joints, and pelvic alignment.",
+            "category": "Imaging - X-ray"
+        },
+        {
+            "name": "Penile X-ray",
+            "description": "X-ray of penis to assess calcifications, trauma, or foreign bodies.",
+            "category": "Imaging - X-ray"
+        },
+        {
+            "name": "Periapical X-ray",
+            "description": "Dental X-ray showing tooth root and surrounding bone for infection.",
+            "category": "Imaging - X-ray"
+        },
+        {
+            "name": "Shoulder X-ray",
+            "description": "X-ray of shoulder to assess fractures, dislocation, or arthritis.",
+            "category": "Imaging - X-ray"
+        },
+        {
+            "name": "Skeletal Survey",
+            "description": "Series of X-rays of skeleton to detect lesions, fractures, or metastases.",
+            "category": "Imaging - X-ray"
+        },
+        {
+            "name": "Skeletal X-ray",
+            "description": "X-ray of bones to assess fractures, deformities, or bone pathology.",
+            "category": "Imaging - X-ray"
+        },
+        {
+            "name": "Soft Tissue X-ray",
+            "description": "X-ray targeting soft tissues to detect swelling, gas, or foreign bodies.",
+            "category": "Imaging - X-ray"
+        },
+        {
+            "name": "Upper Gastrointestinal Series (UGI)",
+            "description": "Barium contrast X-rays of esophagus, stomach, and duodenum.",
+            "category": "Imaging - X-ray"
+        },
+        {
+            "name": "X-ray",
+            "description": "Radiographic imaging using X-rays to visualize internal structures.",
+            "category": "Imaging - X-ray"
+        },
+        {
+            "name": "3D CT Reconstruction (3D-CT)",
+            "description": "Computer-generated 3D images reconstructed from CT scan data.",
+            "category": "Imaging - CT"
+        },
+        {
+            "name": "Abdominal CT Scan (Abdominal CT)",
+            "description": "CT scan of abdomen to evaluate organs, vessels, and abdominal pathology.",
+            "category": "Imaging - CT"
+        },
+        {
+            "name": "Adrenal CT Scan (Adrenal CT)",
+            "description": "CT scan focusing on adrenal glands to assess masses or enlargement.",
+            "category": "Imaging - CT"
+        },
+        {
+            "name": "Brain and Orbital CT Scan (Brain/Orbital CT)",
+            "description": "CT scan of brain and orbits to assess injury, masses, or inflammation.",
+            "category": "Imaging - CT"
+        },
+        {
+            "name": "CT Angiography (CTA)",
+            "description": "Contrast CT imaging of blood vessels to detect stenosis or aneurysm.",
+            "category": "Imaging - CT"
+        },
+        {
+            "name": "CT Cholangiography (CTC)",
+            "description": "CT imaging of bile ducts with contrast to evaluate biliary obstruction.",
+            "category": "Imaging - CT"
+        },
+        {
+            "name": "CT Myelography (CTM)",
+            "description": "CT after intrathecal contrast to assess spinal canal and nerve roots.",
+            "category": "Imaging - CT"
+        },
+        {
+            "name": "CT Pulmonary Angiography (CTPA)",
+            "description": "Contrast CT of pulmonary arteries to detect pulmonary embolism.",
+            "category": "Imaging - CT"
+        },
+        {
+            "name": "CT Scan (CT)",
+            "description": "Cross-sectional X-ray imaging providing detailed views of internal anatomy.",
+            "category": "Imaging - CT"
+        },
+        {
+            "name": "CT Urography (CTU)",
+            "description": "Contrast CT evaluating kidneys, ureters, and bladder for urinary tract disease.",
+            "category": "Imaging - CT"
+        },
+        {
+            "name": "Cardiac CT Scan (Cardiac CT)",
+            "description": "CT imaging of heart to assess coronary arteries and cardiac anatomy.",
+            "category": "Imaging - CT"
+        },
+        {
+            "name": "Chest CT Scan (Chest CT)",
+            "description": "CT scan of chest to evaluate lungs, mediastinum, and pleura.",
+            "category": "Imaging - CT"
+        },
+        {
+            "name": "Chest and Abdominal CT Scan (Chest/Abdominal CT)",
+            "description": "CT imaging of chest and abdomen to evaluate thoracic and abdominal pathology.",
+            "category": "Imaging - CT"
+        },
+        {
+            "name": "Cone Beam CT (CBCT)",
+            "description": "Cone-beam CT providing detailed 3D images of teeth and facial bones.",
+            "category": "Imaging - CT"
+        },
+        {
+            "name": "Contrast-Enhanced Abdominal CT Scan (Abdominal CECT)",
+            "description": "Abdominal CT with IV contrast to better visualize organs and vessels.",
+            "category": "Imaging - CT"
+        },
+        {
+            "name": "Contrast-Enhanced Adrenal CT Scan (Adrenal CECT)",
+            "description": "Adrenal CT with IV contrast to characterize adrenal lesions.",
+            "category": "Imaging - CT"
+        },
+        {
+            "name": "Contrast-Enhanced CT Scan (CECT)",
+            "description": "CT imaging using intravenous contrast to highlight organs, vessels, and tumors.",
+            "category": "Imaging - CT"
+        },
+        {
+            "name": "Contrast-Enhanced Chest CT Scan (Chest CECT)",
+            "description": "Contrast chest CT to assess lungs, mediastinum, pleura, and vessels.",
+            "category": "Imaging - CT"
+        },
+        {
+            "name": "Contrast-Enhanced Pelvic CT Scan (Pelvic CECT)",
+            "description": "Contrast pelvic CT to evaluate pelvic organs, lymph nodes, and vessels.",
+            "category": "Imaging - CT"
+        },
+        {
+            "name": "Coronary CT Angiography (CCTA)",
+            "description": "Contrast CT to visualize coronary arteries and detect stenosis or plaques.",
+            "category": "Imaging - CT"
+        },
+        {
+            "name": "Craniovertebral Junction CT with 3D Reconstruction (CVJ CT)",
+            "description": "CT of skull base and upper cervical spine with 3D bone reconstruction.",
+            "category": "Imaging - CT"
+        },
+        {
+            "name": "Dual-Energy CT (DECT)",
+            "description": "CT using two energy levels to characterize tissues and materials.",
+            "category": "Imaging - CT"
+        },
+        {
+            "name": "Ear CT Scan (Ear CT)",
+            "description": "CT of ear structures to evaluate middle and inner ear pathology.",
+            "category": "Imaging - CT"
+        },
+        {
+            "name": "Head CT Scan (Head CT)",
+            "description": "CT of the brain and skull to assess bleeding, stroke, or trauma.",
+            "category": "Imaging - CT"
+        },
+        {
+            "name": "Head and Neck CT Scan (Head/Neck CT)",
+            "description": "CT of head and neck to evaluate tumors, infections, and anatomy.",
+            "category": "Imaging - CT"
+        },
+        {
+            "name": "High-Resolution CT (HRCT)",
+            "description": "Thin-slice CT providing detailed images, especially of lung parenchyma.",
+            "category": "Imaging - CT"
+        },
+        {
+            "name": "High-Resolution Chest CT (Chest HRCT)",
+            "description": "High-detail chest CT for interstitial lung disease and small airway changes.",
+            "category": "Imaging - CT"
+        },
+        {
+            "name": "High-Resolution Temporal Bone CT Scan (Temporal Bone HRCT)",
+            "description": "Thin-slice temporal bone CT for detailed evaluation of ear and mastoid.",
+            "category": "Imaging - CT"
+        },
+        {
+            "name": "Low-Dose CT (LDCT)",
+            "description": "CT performed with reduced radiation dose, often for screening or follow-up.",
+            "category": "Imaging - CT"
+        },
+        {
+            "name": "Neck CT Scan (Neck CT)",
+            "description": "CT of neck to evaluate masses, lymph nodes, airway, and soft tissues.",
+            "category": "Imaging - CT"
+        },
+        {
+            "name": "Orbital CT Scan (Orbital CT)",
+            "description": "CT of eye sockets to assess fractures, tumors, or orbital inflammation.",
+            "category": "Imaging - CT"
+        },
+        {
+            "name": "Paranasal Sinus CT Scan (Sinus CT)",
+            "description": "CT of sinuses to evaluate sinusitis, polyps, and bony anatomy.",
+            "category": "Imaging - CT"
+        },
+        {
+            "name": "Pelvic CT Scan (Pelvic CT)",
+            "description": "CT of pelvis to assess organs, bones, lymph nodes, and trauma.",
+            "category": "Imaging - CT"
+        },
+        {
+            "name": "Penile CT Scan (Penile CT)",
+            "description": "CT imaging of penile tissues to evaluate masses, trauma, or lesions.",
+            "category": "Imaging - CT"
+        },
+        {
+            "name": "Plain Head CT Scan (Plain Head CT)",
+            "description": "Non-contrast head CT to detect hemorrhage, infarct, or mass effect.",
+            "category": "Imaging - CT"
+        },
+        {
+            "name": "Quantitative CT (QCT)",
+            "description": "CT technique measuring tissue density, commonly for bone mineral density.",
+            "category": "Imaging - CT"
+        },
+        {
+            "name": "Renal CT Scan (Renal CT)",
+            "description": "CT of kidneys to assess stones, masses, obstruction, or vascular anatomy.",
+            "category": "Imaging - CT"
+        },
+        {
+            "name": "Sellar CT Scan (Sellar CT)",
+            "description": "CT of sella turcica to evaluate pituitary region and bony changes.",
+            "category": "Imaging - CT"
+        },
+        {
+            "name": "Skin CT Scan (Skin CT)",
+            "description": "CT to assess skin and subcutaneous lesions and their local extent.",
+            "category": "Imaging - CT"
+        },
+        {
+            "name": "Soft Tissue CT Scan (Soft Tissue CT)",
+            "description": "CT focusing on soft tissues to evaluate masses, infection, or edema.",
+            "category": "Imaging - CT"
+        },
+        {
+            "name": "Temporal Bone CT Scan (Temporal Bone CT)",
+            "description": "CT of temporal bone to evaluate ear structures and surrounding bone.",
+            "category": "Imaging - CT"
+        },
+        {
+            "name": "Abdominal MRI",
+            "description": "MRI of the abdomen to evaluate liver, pancreas, spleen, and other organs.",
+            "category": "Imaging - MRI"
+        },
+        {
+            "name": "Adrenal MRI",
+            "description": "MRI of adrenal glands to characterize nodules, adenomas, or tumors.",
+            "category": "Imaging - MRI"
+        },
+        {
+            "name": "Brachial Plexus MRI",
+            "description": "MRI of brachial plexus to assess nerve injury, tumors, or inflammation.",
+            "category": "Imaging - MRI"
+        },
+        {
+            "name": "Brain MRI",
+            "description": "MRI of the brain to evaluate tumors, stroke, demyelination, and infection.",
+            "category": "Imaging - MRI"
+        },
+        {
+            "name": "Brain and Orbit MRI",
+            "description": "MRI of brain and orbits to assess neurologic and eye-related disorders.",
+            "category": "Imaging - MRI"
+        },
+        {
+            "name": "Breast MRI",
+            "description": "MRI of breasts to detect cancer, assess implants, or evaluate high-risk patients.",
+            "category": "Imaging - MRI"
+        },
+        {
+            "name": "Cardiac MRI (CMR)",
+            "description": "MRI of the heart to assess function, tissue, perfusion, and viability.",
+            "category": "Imaging - MRI"
+        },
+        {
+            "name": "Cervical Spine MRI",
+            "description": "MRI of neck spine to evaluate discs, spinal cord, and nerve roots.",
+            "category": "Imaging - MRI"
+        },
+        {
+            "name": "Chest MRI",
+            "description": "MRI of chest to assess mediastinum, chest wall, and selected lung lesions.",
+            "category": "Imaging - MRI"
+        },
+        {
+            "name": "Cine MRI",
+            "description": "Dynamic MRI sequence capturing motion, often used for cardiac function assessment.",
+            "category": "Imaging - MRI"
+        },
+        {
+            "name": "Contrast-Enhanced Brain MRI",
+            "description": "Brain MRI with gadolinium contrast to better detect tumors and inflammation.",
+            "category": "Imaging - MRI"
+        },
+        {
+            "name": "Contrast-Enhanced MRI (CE-MRI)",
+            "description": "MRI with gadolinium contrast to enhance lesion detection and characterization.",
+            "category": "Imaging - MRI"
+        },
+        {
+            "name": "Contrast-Enhanced Paranasal Sinus MRI",
+            "description": "Sinus MRI with contrast to evaluate tumors, inflammation, and complications.",
+            "category": "Imaging - MRI"
+        },
+        {
+            "name": "Contrast-Enhanced Spinal MRI",
+            "description": "Spine MRI with contrast to assess tumors, infection, and postoperative changes.",
+            "category": "Imaging - MRI"
+        },
+        {
+            "name": "Functional MRI (fMRI)",
+            "description": "MRI mapping brain activity by detecting blood oxygenation changes during tasks.",
+            "category": "Imaging - MRI"
+        },
+        {
+            "name": "Head and Neck MRI",
+            "description": "MRI of head and neck to evaluate tumors, soft tissues, and nerves.",
+            "category": "Imaging - MRI"
+        },
+        {
+            "name": "Internal Auditory Canal MRI (IAC MRI)",
+            "description": "MRI of internal auditory canals for vestibular schwannoma and hearing disorders.",
+            "category": "Imaging - MRI"
+        },
+        {
+            "name": "MR Defecography",
+            "description": "Dynamic pelvic MRI evaluating defecation mechanics and pelvic floor disorders.",
+            "category": "Imaging - MRI"
+        },
+        {
+            "name": "Magnetic Resonance Angiography (MRA)",
+            "description": "MRI-based imaging of blood vessels to assess stenosis, aneurysm, or occlusion.",
+            "category": "Imaging - MRI"
+        },
+        {
+            "name": "Magnetic Resonance Cholangiopancreatography (MRCP)",
+            "description": "MRI technique imaging bile and pancreatic ducts without contrast injection.",
+            "category": "Imaging - MRI"
+        },
+        {
+            "name": "Magnetic Resonance Imaging (MRI)",
+            "description": "Imaging using magnetic fields and radio waves to visualize soft tissues.",
+            "category": "Imaging - MRI"
+        },
+        {
+            "name": "Magnetic Resonance Neurography (MRN)",
+            "description": "MRI technique visualizing peripheral nerves for entrapment or neuropathy assessment.",
+            "category": "Imaging - MRI"
+        },
+        {
+            "name": "Magnetic Resonance Urography (MRU)",
+            "description": "MRI of urinary tract to assess obstruction, anatomy, and urinary collecting system.",
+            "category": "Imaging - MRI"
+        },
+        {
+            "name": "Muscle MRI",
+            "description": "MRI of muscles to evaluate tears, inflammation, infection, or tumors.",
+            "category": "Imaging - MRI"
+        },
+        {
+            "name": "Orbital MRI",
+            "description": "MRI of orbits to assess optic nerve, extraocular muscles, and orbital masses.",
+            "category": "Imaging - MRI"
+        },
+        {
+            "name": "Paranasal Sinus MRI",
+            "description": "MRI evaluation of the paranasal sinuses for inflammation, masses, or anatomy.",
+            "category": "Imaging - MRI"
+        },
+        {
+            "name": "Pelvic MRI",
+            "description": "MRI of pelvic organs to assess masses, pain, or structural abnormalities.",
+            "category": "Imaging - MRI"
+        },
+        {
+            "name": "Sellar Region MRI",
+            "description": "MRI of pituitary and sellar area to evaluate tumors or hormonal disorders.",
+            "category": "Imaging - MRI"
+        },
+        {
+            "name": "Susceptibility-Weighted Imaging (SWI)",
+            "description": "MRI sequence sensitive to blood products, iron, and venous structures.",
+            "category": "Imaging - MRI"
+        },
+        {
+            "name": "Abdominal Ultrasound",
+            "description": "Ultrasound of abdominal organs to assess liver, gallbladder, pancreas, and kidneys.",
+            "category": "Imaging - Ultrasound"
+        },
+        {
+            "name": "Abdominal and Pelvic Ultrasound",
+            "description": "Ultrasound of abdominal and pelvic organs to evaluate pain, masses, or fluid.",
+            "category": "Imaging - Ultrasound"
+        },
+        {
+            "name": "Adrenal Ultrasound",
+            "description": "Ultrasound assessment of adrenal glands, mainly in infants and children.",
+            "category": "Imaging - Ultrasound"
+        },
+        {
+            "name": "Anal Ultrasound",
+            "description": "Ultrasound of anal canal and sphincters to assess fistula or incontinence.",
+            "category": "Imaging - Ultrasound"
+        },
+        {
+            "name": "B-mode Ultrasound",
+            "description": "Standard grayscale ultrasound imaging to visualize anatomy and tissue structure.",
+            "category": "Imaging - Ultrasound"
+        },
+        {
+            "name": "Biophysical Profile (BPP)",
+            "description": "Fetal ultrasound assessment of well-being including movements, tone, breathing, and fluid.",
+            "category": "Imaging - Ultrasound"
+        },
+        {
+            "name": "Brachial Plexus Ultrasound",
+            "description": "Ultrasound evaluation of brachial plexus for injury, mass, or entrapment.",
+            "category": "Imaging - Ultrasound"
+        },
+        {
+            "name": "Breast Ultrasound",
+            "description": "Ultrasound of breast tissue to evaluate lumps, cysts, or abnormalities.",
+            "category": "Imaging - Ultrasound"
+        },
+        {
+            "name": "Carotid Ultrasound",
+            "description": "Ultrasound of carotid arteries to assess stenosis, plaque, and blood flow.",
+            "category": "Imaging - Ultrasound"
+        },
+        {
+            "name": "Contrast-enhanced Ultrasound (CEUS)",
+            "description": "Ultrasound using microbubble contrast to characterize lesions and perfusion.",
+            "category": "Imaging - Ultrasound"
+        },
+        {
+            "name": "Cranial Ultrasound",
+            "description": "Ultrasound of infant brain through fontanelle to detect hemorrhage or hydrocephalus.",
+            "category": "Imaging - Ultrasound"
+        },
+        {
+            "name": "Doppler Ultrasound",
+            "description": "Ultrasound technique measuring blood flow direction and velocity in vessels.",
+            "category": "Imaging - Ultrasound"
+        },
+        {
+            "name": "Echocardiography",
+            "description": "Ultrasound of the heart to evaluate structure, function, and valve disease.",
+            "category": "Imaging - Ultrasound"
+        },
+        {
+            "name": "Fetal Echocardiography",
+            "description": "Detailed ultrasound of fetal heart to detect congenital heart defects.",
+            "category": "Imaging - Ultrasound"
+        },
+        {
+            "name": "High-resolution Ultrasound",
+            "description": "High-frequency ultrasound for detailed imaging of superficial structures.",
+            "category": "Imaging - Ultrasound"
+        },
+        {
+            "name": "Musculoskeletal Ultrasound (MSKUS)",
+            "description": "Ultrasound of muscles, tendons, ligaments, joints, and bursae for injury.",
+            "category": "Imaging - Ultrasound"
+        },
+        {
+            "name": "Nerve Ultrasound",
+            "description": "Ultrasound imaging of peripheral nerves to assess entrapment or neuropathy.",
+            "category": "Imaging - Ultrasound"
+        },
+        {
+            "name": "Nuchal Translucency (NT) Scan",
+            "description": "First-trimester ultrasound measuring fetal neck thickness for aneuploidy risk.",
+            "category": "Imaging - Ultrasound"
+        },
+        {
+            "name": "Obstetric Ultrasound",
+            "description": "Ultrasound during pregnancy to assess fetal growth, anatomy, and placental status.",
+            "category": "Imaging - Ultrasound"
+        },
+        {
+            "name": "Ocular A-scan Ultrasonography",
+            "description": "One-dimensional eye ultrasound measuring axial length and internal reflectivity.",
+            "category": "Imaging - Ultrasound"
+        },
+        {
+            "name": "Ocular B-scan Ultrasonography",
+            "description": "Two-dimensional eye ultrasound to assess retina, vitreous, and orbital pathology.",
+            "category": "Imaging - Ultrasound"
+        },
+        {
+            "name": "Ocular Ultrasound",
+            "description": "Ultrasound of the eye and orbit to evaluate internal ocular structures.",
+            "category": "Imaging - Ultrasound"
+        },
+        {
+            "name": "Pelvic Ultrasound",
+            "description": "Ultrasound of pelvic organs to assess uterus, ovaries, bladder, and masses.",
+            "category": "Imaging - Ultrasound"
+        },
+        {
+            "name": "Penile Ultrasound",
+            "description": "Ultrasound of penis to assess vascular flow, plaques, or trauma.",
+            "category": "Imaging - Ultrasound"
+        },
+        {
+            "name": "Perineal Ultrasound",
+            "description": "Ultrasound of perineum to evaluate pelvic floor, abscesses, or soft tissues.",
+            "category": "Imaging - Ultrasound"
+        },
+        {
+            "name": "Pleural Ultrasound",
+            "description": "Ultrasound of pleura to detect effusions, consolidation, or pneumothorax signs.",
+            "category": "Imaging - Ultrasound"
+        },
+        {
+            "name": "Prostate Ultrasound",
+            "description": "Ultrasound evaluation of prostate size and lesions, often via transrectal approach.",
+            "category": "Imaging - Ultrasound"
+        },
+        {
+            "name": "Quantitative Ultrasound (QUS)",
+            "description": "Ultrasound providing quantitative measures, commonly for bone density assessment.",
+            "category": "Imaging - Ultrasound"
+        },
+        {
+            "name": "Renal Ultrasound",
+            "description": "Ultrasound of kidneys to assess obstruction, stones, cysts, or size.",
+            "category": "Imaging - Ultrasound"
+        },
+        {
+            "name": "Saline Infusion Sonography (SIS)",
+            "description": "Saline-enhanced transvaginal ultrasound to evaluate uterine cavity lesions.",
+            "category": "Imaging - Ultrasound"
+        },
+        {
+            "name": "Scrotal Ultrasound",
+            "description": "Ultrasound of testes and scrotum to evaluate pain, masses, or torsion.",
+            "category": "Imaging - Ultrasound"
+        },
+        {
+            "name": "Skin Ultrasound",
+            "description": "High-frequency ultrasound to assess skin layers, lesions, and inflammation.",
+            "category": "Imaging - Ultrasound"
+        },
+        {
+            "name": "Soft Tissue Ultrasound",
+            "description": "Ultrasound of superficial tissues to assess masses, abscesses, or foreign bodies.",
+            "category": "Imaging - Ultrasound"
+        },
+        {
+            "name": "Stress Echocardiography",
+            "description": "Echocardiogram during exercise or pharmacologic stress to assess ischemia.",
+            "category": "Imaging - Ultrasound"
+        },
+        {
+            "name": "Thoracic Ultrasound",
+            "description": "Ultrasound of chest to assess pleura, lungs, and superficial thoracic structures.",
+            "category": "Imaging - Ultrasound"
+        },
+        {
+            "name": "Three-dimensional Echocardiography (3D Echo)",
+            "description": "3D ultrasound imaging of the heart for detailed anatomy and function assessment.",
+            "category": "Imaging - Ultrasound"
+        },
+        {
+            "name": "Three-dimensional Hysterosalpingo-contrast Sonography (3D HyCoSy)",
+            "description": "3D contrast ultrasound to assess fallopian tube patency and uterine cavity.",
+            "category": "Imaging - Ultrasound"
+        },
+        {
+            "name": "Thyroid Ultrasound",
+            "description": "Ultrasound of thyroid to evaluate nodules, gland size, and cervical lymph nodes.",
+            "category": "Imaging - Ultrasound"
+        },
+        {
+            "name": "Transcranial Ultrasound",
+            "description": "Ultrasound through skull windows to assess intracranial blood flow and structures.",
+            "category": "Imaging - Ultrasound"
+        },
+        {
+            "name": "Transesophageal Echocardiography (TEE)",
+            "description": "Esophageal probe echocardiogram for detailed cardiac and valve imaging.",
+            "category": "Imaging - Ultrasound"
+        },
+        {
+            "name": "Transient Elastography (TE)",
+            "description": "Ultrasound-based test measuring liver stiffness to assess fibrosis.",
+            "category": "Imaging - Ultrasound"
+        },
+        {
+            "name": "Transrectal Ultrasound (TRUS)",
+            "description": "Rectal probe ultrasound of prostate and seminal vesicles for diagnosis or biopsy guidance.",
+            "category": "Imaging - Ultrasound"
+        },
+        {
+            "name": "Transthoracic Echocardiography (TTE)",
+            "description": "Standard echocardiogram performed through chest wall to assess heart function.",
+            "category": "Imaging - Ultrasound"
+        },
+        {
+            "name": "Transvaginal Ultrasound (TVUS)",
+            "description": "Vaginal probe ultrasound for detailed evaluation of uterus, ovaries, and adnexa.",
+            "category": "Imaging - Ultrasound"
+        },
+        {
+            "name": "Two-dimensional Ultrasound (2D Ultrasound)",
+            "description": "Conventional ultrasound producing real-time two-dimensional anatomical images.",
+            "category": "Imaging - Ultrasound"
+        },
+        {
+            "name": "Ultrasound",
+            "description": "Imaging test using sound waves to visualize organs, tissues, and blood flow.",
+            "category": "Imaging - Ultrasound"
+        },
+        {
+            "name": "Ultrasound Biomicroscopy (UBM)",
+            "description": "High-frequency ultrasound imaging of the eye's anterior segment structures.",
+            "category": "Imaging - Ultrasound"
+        },
+        {
+            "name": "Ultrasound Elastography",
+            "description": "Ultrasound technique measuring tissue stiffness to help characterize lesions.",
+            "category": "Imaging - Ultrasound"
+        },
+        {
+            "name": "Urethral Ultrasound",
+            "description": "Ultrasound imaging of the urethra to assess structure and pathology.",
+            "category": "Imaging - Ultrasound"
+        },
+        {
+            "name": "Urinary Tract Ultrasound",
+            "description": "Ultrasound evaluation of kidneys, ureters, and bladder for abnormalities.",
+            "category": "Imaging - Ultrasound"
+        },
+        {
+            "name": "Vascular Ultrasound",
+            "description": "Ultrasound assessment of blood vessels for flow and structural disease.",
+            "category": "Imaging - Ultrasound"
+        },
+        {
+            "name": "Vascular Ultrasound of Extremities",
+            "description": "Ultrasound evaluation of arm and leg vessels for blockage or clots.",
+            "category": "Imaging - Ultrasound"
+        },
+        {
+            "name": "Bone Scintigraphy (BS)",
+            "description": "Nuclear scan detecting abnormal bone metabolism, fractures, or metastases.",
+            "category": "Imaging - Nuclear Medicine"
+        },
+        {
+            "name": "Cardiac MIBG Scintigraphy",
+            "description": "Nuclear imaging of cardiac sympathetic innervation using MIBG tracer.",
+            "category": "Imaging - Nuclear Medicine"
+        },
+        {
+            "name": "Gastric Emptying Scintigraphy (GES)",
+            "description": "Nuclear medicine test measuring the rate of stomach emptying.",
+            "category": "Imaging - Nuclear Medicine"
+        },
+        {
+            "name": "Hepatobiliary Scintigraphy (HIDA Scan)",
+            "description": "Nuclear scan evaluating gallbladder function and bile duct patency.",
+            "category": "Imaging - Nuclear Medicine"
+        },
+        {
+            "name": "Labeled Red Blood Cell Scintigraphy",
+            "description": "Nuclear scan using tagged RBCs to localize active bleeding.",
+            "category": "Imaging - Nuclear Medicine"
+        },
+        {
+            "name": "Lung Ventilation-Perfusion (V/Q) Scan",
+            "description": "Nuclear test comparing airflow and blood flow to detect pulmonary embolism.",
+            "category": "Imaging - Nuclear Medicine"
+        },
+        {
+            "name": "Lymphoscintigraphy",
+            "description": "Nuclear imaging mapping lymphatic drainage and sentinel lymph nodes.",
+            "category": "Imaging - Nuclear Medicine"
+        },
+        {
+            "name": "Metaiodobenzylguanidine (MIBG) Scintigraphy",
+            "description": "Nuclear scan detecting neuroendocrine tumors using MIBG tracer uptake.",
+            "category": "Imaging - Nuclear Medicine"
+        },
+        {
+            "name": "Myocardial Perfusion Imaging (MPI)",
+            "description": "Nuclear imaging assessing heart muscle blood flow at rest and stress.",
+            "category": "Imaging - Nuclear Medicine"
+        },
+        {
+            "name": "PIB-Positron Emission Tomography (PIB-PET)",
+            "description": "PET scan using PIB tracer to detect brain amyloid plaques.",
+            "category": "Imaging - Nuclear Medicine"
+        },
+        {
+            "name": "Positron Emission Tomography (PET)",
+            "description": "Functional imaging using radiotracers to assess metabolism and disease activity.",
+            "category": "Imaging - Nuclear Medicine"
+        },
+        {
+            "name": "Positron Emission Tomography-Computed Tomography (PET-CT)",
+            "description": "Combined PET and CT for metabolic imaging with precise anatomic localization.",
+            "category": "Imaging - Nuclear Medicine"
+        },
+        {
+            "name": "Radioactive Iodine Uptake (RAIU) Test",
+            "description": "Measures thyroid iodine uptake to evaluate hyperthyroidism and function.",
+            "category": "Imaging - Nuclear Medicine"
+        },
+        {
+            "name": "Radionuclide Bone Marrow Scintigraphy",
+            "description": "Nuclear imaging assessing bone marrow distribution and activity.",
+            "category": "Imaging - Nuclear Medicine"
+        },
+        {
+            "name": "Radionuclide Renal Scintigraphy (Renogram)",
+            "description": "Nuclear test evaluating kidney perfusion, function, and urinary drainage.",
+            "category": "Imaging - Nuclear Medicine"
+        },
+        {
+            "name": "Radionuclide Scintigraphy",
+            "description": "Nuclear imaging using radiotracers to evaluate organ function and disease.",
+            "category": "Imaging - Nuclear Medicine"
+        },
+        {
+            "name": "Radionuclide Ventriculography (MUGA Scan)",
+            "description": "Nuclear test measuring cardiac ventricular function and ejection fraction.",
+            "category": "Imaging - Nuclear Medicine"
+        },
+        {
+            "name": "Single-Photon Emission Computed Tomography (SPECT)",
+            "description": "3D nuclear imaging showing regional perfusion or receptor activity.",
+            "category": "Imaging - Nuclear Medicine"
+        },
+        {
+            "name": "Somatostatin Receptor Scintigraphy (SRS)",
+            "description": "Nuclear scan detecting somatostatin receptor-positive neuroendocrine tumors.",
+            "category": "Imaging - Nuclear Medicine"
+        },
+        {
+            "name": "Three-Phase Bone Scintigraphy",
+            "description": "Bone scan with flow, blood pool, and delayed phases for infection or injury.",
+            "category": "Imaging - Nuclear Medicine"
+        },
+        {
+            "name": "Thyroid Scintigraphy",
+            "description": "Nuclear imaging assessing thyroid size, nodules, and functional activity.",
+            "category": "Imaging - Nuclear Medicine"
+        },
+        {
+            "name": "3D Vascular Reconstruction",
+            "description": "Computer-generated 3D model of vessels from imaging for detailed assessment.",
+            "category": "Imaging - Other"
+        },
+        {
+            "name": "Angiography",
+            "description": "Imaging of blood vessels using contrast to detect narrowing or aneurysms.",
+            "category": "Imaging - Other"
+        },
+        {
+            "name": "Anterior Segment Optical Coherence Tomography (AS-OCT)",
+            "description": "Cross-sectional OCT imaging of cornea and anterior chamber structures.",
+            "category": "Imaging - Other"
+        },
+        {
+            "name": "Anterior Segment Photography",
+            "description": "Photographic documentation of external eye and anterior segment findings.",
+            "category": "Imaging - Other"
+        },
+        {
+            "name": "Aortography",
+            "description": "Contrast angiography of the aorta to assess aneurysm or obstruction.",
+            "category": "Imaging - Other"
+        },
+        {
+            "name": "Arthrography",
+            "description": "Joint imaging after contrast injection to evaluate cartilage and ligaments.",
+            "category": "Imaging - Other"
+        },
+        {
+            "name": "Barium Enema",
+            "description": "X-ray exam of colon using barium contrast to detect abnormalities.",
+            "category": "Imaging - Other"
+        },
+        {
+            "name": "Barium Swallow (Esophagography)",
+            "description": "X-ray study of swallowing and esophagus using barium contrast.",
+            "category": "Imaging - Other"
+        },
+        {
+            "name": "Cardiac Catheterization",
+            "description": "Invasive procedure measuring heart pressures and evaluating coronary circulation.",
+            "category": "Imaging - Other"
+        },
+        {
+            "name": "Cardiac Catheterization and Angiography",
+            "description": "Catheter-based heart evaluation with contrast imaging of coronary arteries.",
+            "category": "Imaging - Other"
+        },
+        {
+            "name": "Cerebral Angiography",
+            "description": "Contrast imaging of brain arteries to detect aneurysms or stenosis.",
+            "category": "Imaging - Other"
+        },
+        {
+            "name": "Contrast-enhanced Imaging",
+            "description": "Imaging with contrast agent to better visualize vessels and tissues.",
+            "category": "Imaging - Other"
+        },
+        {
+            "name": "Corneal Topography",
+            "description": "Maps corneal curvature to assess astigmatism and corneal disorders.",
+            "category": "Imaging - Other"
+        },
+        {
+            "name": "Coronary Angiography",
+            "description": "Contrast imaging of coronary arteries to identify blockages.",
+            "category": "Imaging - Other"
+        },
+        {
+            "name": "Diagnostic Imaging",
+            "description": "Medical imaging performed to diagnose disease or evaluate symptoms.",
+            "category": "Imaging - Other"
+        },
+        {
+            "name": "Digital Subtraction Angiography (DSA)",
+            "description": "Angiography technique subtracting background to highlight contrast-filled vessels.",
+            "category": "Imaging - Other"
+        },
+        {
+            "name": "Eustachian Tube Contrast Radiography",
+            "description": "Contrast X-ray assessing Eustachian tube patency and function.",
+            "category": "Imaging - Other"
+        },
+        {
+            "name": "Far-infrared Breast Imaging",
+            "description": "Infrared thermography assessing breast surface temperature patterns.",
+            "category": "Imaging - Other"
+        },
+        {
+            "name": "Fistulography",
+            "description": "Contrast imaging of a fistula tract to define its course and connections.",
+            "category": "Imaging - Other"
+        },
+        {
+            "name": "Fundus Fluorescein Angiography (FFA)",
+            "description": "Retinal vessel imaging using fluorescein dye to detect leakage or ischemia.",
+            "category": "Imaging - Other"
+        },
+        {
+            "name": "Fundus Photography",
+            "description": "Photographic imaging of the retina to document ocular findings.",
+            "category": "Imaging - Other"
+        },
+        {
+            "name": "Hepatic Angiography",
+            "description": "Contrast imaging of liver arteries to assess tumors or vascular disease.",
+            "category": "Imaging - Other"
+        },
+        {
+            "name": "Hysterosalpingography (HSG)",
+            "description": "X-ray with uterine contrast to evaluate uterine cavity and fallopian tubes.",
+            "category": "Imaging - Other"
+        },
+        {
+            "name": "In Vivo Confocal Microscopy (IVCM)",
+            "description": "High-resolution microscopy imaging of living corneal and ocular surface cells.",
+            "category": "Imaging - Other"
+        },
+        {
+            "name": "Indocyanine Green Angiography (ICGA)",
+            "description": "Dye-based imaging of choroidal and retinal blood vessels.",
+            "category": "Imaging - Other"
+        },
+        {
+            "name": "Intraoperative Cholangiography",
+            "description": "X-ray contrast imaging of bile ducts during surgery.",
+            "category": "Imaging - Other"
+        },
+        {
+            "name": "Lymphangiography",
+            "description": "Contrast imaging to visualize lymphatic vessels and nodes.",
+            "category": "Imaging - Other"
+        },
+        {
+            "name": "Mammography",
+            "description": "Low-dose X-ray imaging to screen or evaluate breast tissue.",
+            "category": "Imaging - Other"
+        },
+        {
+            "name": "Myelography",
+            "description": "Contrast X-ray/CT imaging of the spinal canal and nerve roots.",
+            "category": "Imaging - Other"
+        },
+        {
+            "name": "Nailfold Capillary Microscopy",
+            "description": "Microscopic assessment of nailfold capillaries to evaluate microcirculation.",
+            "category": "Imaging - Other"
+        },
+        {
+            "name": "Neuroimaging",
+            "description": "Imaging of brain or nervous system using CT, MRI, or PET.",
+            "category": "Imaging - Other"
+        },
+        {
+            "name": "Optical Coherence Tomography (OCT)",
+            "description": "Noninvasive cross-sectional imaging of retinal and optic nerve layers.",
+            "category": "Imaging - Other"
+        },
+        {
+            "name": "Pericardiography",
+            "description": "Imaging of the pericardial sac using contrast during fluoroscopy.",
+            "category": "Imaging - Other"
+        },
+        {
+            "name": "Pulmonary Angiography",
+            "description": "Contrast X-ray imaging of pulmonary arteries to assess blood flow.",
+            "category": "Imaging - Other"
+        },
+        {
+            "name": "Renal Angiography",
+            "description": "Contrast imaging of renal arteries to evaluate kidney blood supply.",
+            "category": "Imaging - Other"
+        },
+        {
+            "name": "Retrograde Pyelography",
+            "description": "Contrast imaging of ureters and renal pelvis via bladder catheterization.",
+            "category": "Imaging - Other"
+        },
+        {
+            "name": "Sinus Imaging",
+            "description": "CT or X-ray imaging to assess paranasal sinuses and inflammation.",
+            "category": "Imaging - Other"
+        },
+        {
+            "name": "Superior Mesenteric Angiography",
+            "description": "Contrast imaging of superior mesenteric artery and intestinal circulation.",
+            "category": "Imaging - Other"
+        },
+        {
+            "name": "Urethrography",
+            "description": "Contrast X-ray imaging of the urethra to detect injury or stricture.",
+            "category": "Imaging - Other"
+        },
+        {
+            "name": "Ventriculography",
+            "description": "Contrast imaging of heart ventricles to assess function and structure.",
+            "category": "Imaging - Other"
+        },
+        {
+            "name": "Anoscopy",
+            "description": "Endoscopic examination of the anal canal and lower rectum.",
+            "category": "Endoscopy"
+        },
+        {
+            "name": "Arthroscopy",
+            "description": "Minimally invasive endoscopic evaluation and treatment of a joint.",
+            "category": "Endoscopy"
+        },
+        {
+            "name": "Bronchoscopy",
+            "description": "Endoscopic examination of the airways and bronchial tree.",
+            "category": "Endoscopy"
+        },
+        {
+            "name": "Colonoscopy",
+            "description": "Endoscopic examination of the colon and distal ileum.",
+            "category": "Endoscopy"
+        },
+        {
+            "name": "Colposcopy",
+            "description": "Magnified visual examination of cervix, vagina, and vulva.",
+            "category": "Endoscopy"
+        },
+        {
+            "name": "Cystourethroscopy",
+            "description": "Endoscopic examination of the urethra and urinary bladder.",
+            "category": "Endoscopy"
+        },
+        {
+            "name": "Endoscopic Retrograde Cholangiopancreatography (ERCP)",
+            "description": "Endoscopic contrast imaging of bile and pancreatic ducts, often with treatment.",
+            "category": "Endoscopy"
+        },
+        {
+            "name": "Endoscopic Ultrasound (EUS)",
+            "description": "Endoscopic ultrasound imaging of gastrointestinal wall and nearby structures.",
+            "category": "Endoscopy"
+        },
+        {
+            "name": "Esophagogastroduodenoscopy (EGD)",
+            "description": "Endoscopic examination of esophagus, stomach, and duodenum.",
+            "category": "Endoscopy"
+        },
+        {
+            "name": "Fetoscopy",
+            "description": "Endoscopic visualization of the fetus and placenta during pregnancy.",
+            "category": "Endoscopy"
+        },
+        {
+            "name": "Hysteroscopy",
+            "description": "Endoscopic examination of the uterine cavity via the cervix.",
+            "category": "Endoscopy"
+        },
+        {
+            "name": "Knee Arthroscopy",
+            "description": "Arthroscopic examination and treatment of the knee joint.",
+            "category": "Endoscopy"
+        },
+        {
+            "name": "Lacrimal Endoscopy",
+            "description": "Endoscopic evaluation of tear drainage pathways and lacrimal ducts.",
+            "category": "Endoscopy"
+        },
+        {
+            "name": "Laparoscopy",
+            "description": "Minimally invasive endoscopic examination of abdominal and pelvic organs.",
+            "category": "Endoscopy"
+        },
+        {
+            "name": "Laryngeal Stroboscopy",
+            "description": "Strobe-assisted visualization of vocal fold vibration during phonation.",
+            "category": "Endoscopy"
+        },
+        {
+            "name": "Laryngoscopy",
+            "description": "Visual examination of the larynx and vocal cords.",
+            "category": "Endoscopy"
+        },
+        {
+            "name": "Mediastinoscopy",
+            "description": "Endoscopic examination and biopsy of mediastinal structures and lymph nodes.",
+            "category": "Endoscopy"
+        },
+        {
+            "name": "Nasal Endoscopy",
+            "description": "Endoscopic examination of nasal passages and sinus openings.",
+            "category": "Endoscopy"
+        },
+        {
+            "name": "Nasopharyngolaryngoscopy",
+            "description": "Flexible endoscopic examination of nasal cavity, pharynx, and larynx.",
+            "category": "Endoscopy"
+        },
+        {
+            "name": "Nasopharyngoscopy",
+            "description": "Endoscopic examination of the nasopharynx and surrounding structures.",
+            "category": "Endoscopy"
+        },
+        {
+            "name": "Proctosigmoidoscopy",
+            "description": "Endoscopic examination of rectum and sigmoid colon.",
+            "category": "Endoscopy"
+        },
+        {
+            "name": "Sigmoidoscopy",
+            "description": "Endoscopic examination of the rectum and sigmoid colon.",
+            "category": "Endoscopy"
+        },
+        {
+            "name": "Thoracoscopy",
+            "description": "Endoscopic examination of pleural space and thoracic organs.",
+            "category": "Endoscopy"
+        },
+        {
+            "name": "Ureteroscopy",
+            "description": "Endoscopic examination of the ureter and renal collecting system.",
+            "category": "Endoscopy"
+        },
+        {
+            "name": "Auditory Brainstem Response (ABR)",
+            "description": "Evoked potential test measuring brainstem responses to sound stimuli.",
+            "category": "Electrophysiology"
+        },
+        {
+            "name": "Bulbocavernosus Reflex (BCR) Test",
+            "description": "Reflex test assessing sacral nerve function via genital stimulation response.",
+            "category": "Electrophysiology"
+        },
+        {
+            "name": "Cardiac Electrophysiology Study (EPS)",
+            "description": "Invasive catheter study mapping heart electrical pathways and arrhythmias.",
+            "category": "Electrophysiology"
+        },
+        {
+            "name": "Cardiac Event Monitor",
+            "description": "Portable device recording intermittent heart rhythms during symptoms.",
+            "category": "Electrophysiology"
+        },
+        {
+            "name": "Cardiac Monitoring",
+            "description": "Continuous or intermittent surveillance of heart rhythm and rate.",
+            "category": "Electrophysiology"
+        },
+        {
+            "name": "Electrocardiogram (ECG)",
+            "description": "Surface recording of the heart's electrical activity.",
+            "category": "Electrophysiology"
+        },
+        {
+            "name": "Electrocochleography (ECoG)",
+            "description": "Electrical recording from cochlea and auditory nerve in response to sound.",
+            "category": "Electrophysiology"
+        },
+        {
+            "name": "Electroencephalogram (EEG)",
+            "description": "Scalp recording of the brain's electrical activity.",
+            "category": "Electrophysiology"
+        },
+        {
+            "name": "Electrogastrography (EGG)",
+            "description": "Noninvasive recording of gastric electrical slow-wave activity.",
+            "category": "Electrophysiology"
+        },
+        {
+            "name": "Electromyography and Nerve Conduction Study (EMG/NCS)",
+            "description": "Measures muscle and nerve electrical activity to assess neuromuscular disorders.",
+            "category": "Electrophysiology"
+        },
+        {
+            "name": "Electronystagmography (ENG)",
+            "description": "Records eye movements to evaluate vestibular and balance function.",
+            "category": "Electrophysiology"
+        },
+        {
+            "name": "Electroretinography (ERG)",
+            "description": "Measures retinal electrical responses to light to assess retinal function.",
+            "category": "Electrophysiology"
+        },
+        {
+            "name": "Heart Rate Variability (HRV)",
+            "description": "Analyzes beat-to-beat heart rate variation reflecting autonomic nervous system activity.",
+            "category": "Electrophysiology"
+        },
+        {
+            "name": "Holter Monitor",
+            "description": "Continuous ambulatory ECG recording, typically 24–48 hours, to detect arrhythmias.",
+            "category": "Electrophysiology"
+        },
+        {
+            "name": "Implantable Loop Recorder (ILR)",
+            "description": "Implanted device continuously records heart rhythm to evaluate intermittent arrhythmias.",
+            "category": "Electrophysiology"
+        },
+        {
+            "name": "Polysomnography (PSG)",
+            "description": "Overnight sleep study monitoring breathing, oxygen, brain waves, and movements.",
+            "category": "Electrophysiology"
+        },
+        {
+            "name": "Somatosensory Evoked Potential (SEP)",
+            "description": "Measures nerve pathway responses to stimuli to assess sensory conduction.",
+            "category": "Electrophysiology"
+        },
+        {
+            "name": "Sympathetic Skin Response (SSR)",
+            "description": "Assesses autonomic function by measuring skin electrical responses to stimuli.",
+            "category": "Electrophysiology"
+        },
+        {
+            "name": "Transesophageal Electrophysiology Study (TEPS)",
+            "description": "Esophageal pacing and recording to assess cardiac conduction and arrhythmias.",
+            "category": "Electrophysiology"
+        },
+        {
+            "name": "Vestibular Evoked Myogenic Potentials (VEMP)",
+            "description": "Measures vestibular reflexes via muscle responses to sound or vibration.",
+            "category": "Electrophysiology"
+        },
+        {
+            "name": "Visual Electrophysiology Study",
+            "description": "Records electrical responses from visual pathways to evaluate visual function.",
+            "category": "Electrophysiology"
+        },
+        {
+            "name": "Visual Evoked Potential (VEP)",
+            "description": "Measures brain responses to visual stimuli to assess optic pathway function.",
+            "category": "Electrophysiology"
+        },
+        {
+            "name": "Abscess Aspiration",
+            "description": "Needle removal of pus for diagnosis, culture, and sometimes symptom relief.",
+            "category": "Pathology"
+        },
+        {
+            "name": "Bone Biopsy",
+            "description": "Removes bone tissue for microscopic evaluation of disease or infection.",
+            "category": "Pathology"
+        },
+        {
+            "name": "Bone Marrow Aspiration and Biopsy (BMAB)",
+            "description": "Samples marrow fluid and core to evaluate blood and marrow disorders.",
+            "category": "Pathology"
+        },
+        {
+            "name": "Brain Biopsy",
+            "description": "Removes brain tissue to diagnose tumors, infections, or inflammatory conditions.",
+            "category": "Pathology"
+        },
+        {
+            "name": "Breast Biopsy",
+            "description": "Removes breast tissue to evaluate suspected cancer or other abnormalities.",
+            "category": "Pathology"
+        },
+        {
+            "name": "Bronchoscopic Biopsy",
+            "description": "Tissue sampling from airways via bronchoscopy to diagnose lung disease.",
+            "category": "Pathology"
+        },
+        {
+            "name": "Cerebrospinal Fluid (CSF) Cytology",
+            "description": "Microscopic examination of CSF cells to detect malignancy or inflammation.",
+            "category": "Pathology"
+        },
+        {
+            "name": "Cervical Biopsy",
+            "description": "Removes cervical tissue to evaluate abnormal cells or suspected cancer.",
+            "category": "Pathology"
+        },
+        {
+            "name": "Cervical Cytology",
+            "description": "Pap test examining cervical cells for precancerous or cancerous changes.",
+            "category": "Pathology"
+        },
+        {
+            "name": "Conjunctival Biopsy",
+            "description": "Removes conjunctival tissue to diagnose ocular surface diseases or tumors.",
+            "category": "Pathology"
+        },
+        {
+            "name": "Conjunctival Cytology",
+            "description": "Examines conjunctival cells to assess inflammation, infection, or dysplasia.",
+            "category": "Pathology"
+        },
+        {
+            "name": "Core Needle Biopsy (CNB)",
+            "description": "Uses a hollow needle to obtain a tissue core for histology.",
+            "category": "Pathology"
+        },
+        {
+            "name": "Culdocentesis",
+            "description": "Aspiration of fluid from the rectouterine pouch to evaluate pelvic pathology.",
+            "category": "Pathology"
+        },
+        {
+            "name": "Cyst Aspiration Cytology",
+            "description": "Aspirates cyst fluid for microscopic analysis to assess benign or malignant cells.",
+            "category": "Pathology"
+        },
+        {
+            "name": "Cytological Examination",
+            "description": "Microscopic evaluation of cells to detect infection, inflammation, or cancer.",
+            "category": "Pathology"
+        },
+        {
+            "name": "Direct Immunofluorescence (DIF)",
+            "description": "Detects tissue-bound antibodies using fluorescent labeling on biopsy specimens.",
+            "category": "Pathology"
+        },
+        {
+            "name": "Electron Microscopy (EM)",
+            "description": "High-resolution imaging of ultrastructure to evaluate cellular and tissue details.",
+            "category": "Pathology"
+        },
+        {
+            "name": "Endomyocardial Biopsy (EMB)",
+            "description": "Samples heart muscle tissue to diagnose rejection, myocarditis, or cardiomyopathy.",
+            "category": "Pathology"
+        },
+        {
+            "name": "Excisional Biopsy",
+            "description": "Removes an entire lesion for definitive pathological diagnosis.",
+            "category": "Pathology"
+        },
+        {
+            "name": "Exfoliative Cytology",
+            "description": "Examines shed or scraped cells from body surfaces or fluids.",
+            "category": "Pathology"
+        },
+        {
+            "name": "Fine Needle Aspiration Cytology (FNAC)",
+            "description": "Uses a thin needle to collect cells for cytologic diagnosis.",
+            "category": "Pathology"
+        },
+        {
+            "name": "Gastric Biopsy",
+            "description": "Samples stomach lining via endoscopy to evaluate inflammation, infection, or cancer.",
+            "category": "Pathology"
+        },
+        {
+            "name": "Histopathological Examination",
+            "description": "Microscopic examination of tissue architecture to diagnose disease.",
+            "category": "Pathology"
+        },
+        {
+            "name": "Immunoelectron Microscopy (IEM)",
+            "description": "Uses antibody labeling with electron microscopy to localize specific molecules.",
+            "category": "Pathology"
+        },
+        {
+            "name": "Immunohistochemistry (IHC)",
+            "description": "Uses antibodies on tissue sections to identify specific proteins and cell types.",
+            "category": "Pathology"
+        },
+        {
+            "name": "In Situ Hybridization (ISH)",
+            "description": "Detects specific DNA or RNA sequences within cells in tissue sections.",
+            "category": "Pathology"
+        },
+        {
+            "name": "Incisional Biopsy",
+            "description": "Removes a portion of a lesion for diagnostic pathological examination.",
+            "category": "Pathology"
+        },
+        {
+            "name": "Intestinal Biopsy",
+            "description": "Samples intestinal mucosa to diagnose malabsorption, inflammation, or malignancy.",
+            "category": "Pathology"
+        },
+        {
+            "name": "Laryngeal Biopsy",
+            "description": "Removes laryngeal tissue to evaluate lesions, inflammation, or cancer.",
+            "category": "Pathology"
+        },
+        {
+            "name": "Liver Biopsy",
+            "description": "Samples liver tissue to assess fibrosis, hepatitis, or other liver diseases.",
+            "category": "Pathology"
+        },
+        {
+            "name": "Lung Biopsy",
+            "description": "Obtains lung tissue to diagnose interstitial disease, infection, or malignancy.",
+            "category": "Pathology"
+        },
+        {
+            "name": "Lymph Node Aspiration Cytology",
+            "description": "Needle sampling of lymph node cells to evaluate infection or malignancy.",
+            "category": "Pathology"
+        },
+        {
+            "name": "Lymph Node Biopsy",
+            "description": "Removes lymph node tissue to diagnose lymphoma, infection, or metastasis.",
+            "category": "Pathology"
+        },
+        {
+            "name": "Middle Ear Cytological Examination",
+            "description": "Microscopic evaluation of middle ear cells or fluid for infection or inflammation.",
+            "category": "Pathology"
+        },
+        {
+            "name": "Muscle Biopsy",
+            "description": "Removes muscle tissue to diagnose myopathies, inflammation, or metabolic disorders.",
+            "category": "Pathology"
+        },
+        {
+            "name": "Nail Biopsy",
+            "description": "Samples nail unit tissue to diagnose tumors, inflammatory, or infectious conditions.",
+            "category": "Pathology"
+        },
+        {
+            "name": "Nasal Cytology",
+            "description": "Examines nasal cells to evaluate rhinitis, allergy, or infection.",
+            "category": "Pathology"
+        },
+        {
+            "name": "Needle Biopsy",
+            "description": "Removes tissue with a needle for microscopic diagnosis.",
+            "category": "Pathology"
+        },
+        {
+            "name": "Oral Cytological Examination",
+            "description": "Collects mouth cells to detect infection, dysplasia, or cancer.",
+            "category": "Pathology"
+        },
+        {
+            "name": "Papanicolaou Smear (Pap Smear)",
+            "description": "Screens cervical cells for precancerous changes and cancer.",
+            "category": "Pathology"
+        },
+        {
+            "name": "Peritoneal Biopsy",
+            "description": "Samples peritoneal lining to diagnose infection, inflammation, or cancer.",
+            "category": "Pathology"
+        },
+        {
+            "name": "Pleural Biopsy",
+            "description": "Samples pleural tissue to evaluate pleuritis, infection, or malignancy.",
+            "category": "Pathology"
+        },
+        {
+            "name": "Pleural Fluid Cytology",
+            "description": "Examines pleural fluid cells to detect malignancy or infection.",
+            "category": "Pathology"
+        },
+        {
+            "name": "Prostate Biopsy",
+            "description": "Takes prostate tissue cores to diagnose prostate cancer.",
+            "category": "Pathology"
+        },
+        {
+            "name": "Rectal Mucosal Biopsy",
+            "description": "Samples rectal lining to assess inflammation, infection, or malignancy.",
+            "category": "Pathology"
+        },
+        {
+            "name": "Renal Biopsy",
+            "description": "Samples kidney tissue to diagnose renal disease and guide treatment.",
+            "category": "Pathology"
+        },
+        {
+            "name": "Scalp Biopsy",
+            "description": "Samples scalp skin to evaluate hair loss or skin disorders.",
+            "category": "Pathology"
+        },
+        {
+            "name": "Skin Biopsy",
+            "description": "Removes skin tissue to diagnose rashes, infections, or skin cancer.",
+            "category": "Pathology"
+        },
+        {
+            "name": "Small Bowel Biopsy",
+            "description": "Samples small intestine lining to diagnose malabsorption or inflammation.",
+            "category": "Pathology"
+        },
+        {
+            "name": "Special Staining",
+            "description": "Uses targeted stains to highlight specific cells, organisms, or tissue components.",
+            "category": "Pathology"
+        },
+        {
+            "name": "Spleen Biopsy",
+            "description": "Samples splenic tissue to assess lymphoma, infection, or other disorders.",
+            "category": "Pathology"
+        },
+        {
+            "name": "Splenic Aspiration Cytology",
+            "description": "Aspirates spleen cells for cytologic evaluation of disease.",
+            "category": "Pathology"
+        },
+        {
+            "name": "Subcutaneous Nodule Biopsy",
+            "description": "Samples an under-skin nodule to determine its cause.",
+            "category": "Pathology"
+        },
+        {
+            "name": "Synovial Biopsy",
+            "description": "Samples joint lining to diagnose inflammatory, infectious, or crystal arthropathies.",
+            "category": "Pathology"
+        },
+        {
+            "name": "Testicular Biopsy",
+            "description": "Samples testicular tissue to evaluate infertility or suspected malignancy.",
+            "category": "Pathology"
+        },
+        {
+            "name": "Thinprep Cytologic Test (TCT)",
+            "description": "Liquid-based cytology test for cervical cancer screening.",
+            "category": "Pathology"
+        },
+        {
+            "name": "Thyroid Fine Needle Aspiration (Thyroid FNA)",
+            "description": "Needle aspirate of thyroid nodule to assess benign versus malignant.",
+            "category": "Pathology"
+        },
+        {
+            "name": "Tongue Biopsy",
+            "description": "Samples tongue tissue to diagnose ulcers, dysplasia, or cancer.",
+            "category": "Pathology"
+        },
+        {
+            "name": "Tzanck Smear",
+            "description": "Microscopic exam of lesion cells to support herpesvirus diagnosis.",
+            "category": "Pathology"
+        },
+        {
+            "name": "Vaginal Cytology",
+            "description": "Examines vaginal cells to assess infection, atrophy, or dysplasia.",
+            "category": "Pathology"
+        },
+        {
+            "name": "16S rRNA Gene Sequencing",
+            "description": "Identifies bacteria by sequencing the 16S ribosomal RNA gene.",
+            "category": "Genetic Testing"
+        },
+        {
+            "name": "C-MYC Gene Analysis",
+            "description": "Assesses C-MYC alterations associated with certain cancers.",
+            "category": "Genetic Testing"
+        },
+        {
+            "name": "Chromosomal Microarray Analysis (CMA)",
+            "description": "Detects chromosomal copy number changes and regions of homozygosity.",
+            "category": "Genetic Testing"
+        },
+        {
+            "name": "Chromosome Breakage Study",
+            "description": "Evaluates chromosomal fragility for inherited DNA repair disorders.",
+            "category": "Genetic Testing"
+        },
+        {
+            "name": "Cytogenetic Analysis",
+            "description": "Analyzes chromosomes to detect numerical or structural abnormalities.",
+            "category": "Genetic Testing"
+        },
+        {
+            "name": "DNA Fingerprinting (Profiling)",
+            "description": "Compares DNA patterns for identity, relatedness, or sample matching.",
+            "category": "Genetic Testing"
+        },
+        {
+            "name": "Fetal Karyotype Analysis",
+            "description": "Analyzes fetal chromosomes to detect aneuploidy and rearrangements.",
+            "category": "Genetic Testing"
+        },
+        {
+            "name": "Fluorescence In Situ Hybridization (FISH)",
+            "description": "Uses fluorescent probes to detect specific DNA changes in cells.",
+            "category": "Genetic Testing"
+        },
+        {
+            "name": "Fragile X Syndrome Genetic Testing",
+            "description": "Detects FMR1 repeat expansion causing Fragile X syndrome.",
+            "category": "Genetic Testing"
+        },
+        {
+            "name": "Genetic Mutation Analysis (Genetic Sequencing)",
+            "description": "Sequences genes to identify pathogenic variants causing disease.",
+            "category": "Genetic Testing"
+        },
+        {
+            "name": "Genetic Testing",
+            "description": "Analyzes DNA to identify inherited or acquired disease-related variants.",
+            "category": "Genetic Testing"
+        },
+        {
+            "name": "HLA-DQ2/HLA-DQ8 Genotyping",
+            "description": "Tests HLA types associated with celiac disease risk.",
+            "category": "Genetic Testing"
+        },
+        {
+            "name": "Hepatitis C Virus (HCV) Genotyping",
+            "description": "Determines HCV genotype to guide antiviral treatment selection.",
+            "category": "Genetic Testing"
+        },
+        {
+            "name": "IGHV Mutation Analysis",
+            "description": "Assesses IGHV mutation status for chronic lymphocytic leukemia prognosis.",
+            "category": "Genetic Testing"
+        },
+        {
+            "name": "Karyotype Analysis (Karyotyping)",
+            "description": "Visualizes chromosomes to detect large-scale genetic abnormalities.",
+            "category": "Genetic Testing"
+        },
+        {
+            "name": "Molecular Genetic Testing",
+            "description": "Detects gene variants using DNA- or RNA-based molecular methods.",
+            "category": "Genetic Testing"
+        },
+        {
+            "name": "Multiplex Ligation-dependent Probe Amplification (MLPA)",
+            "description": "Detects exon-level deletions or duplications in specific genes.",
+            "category": "Genetic Testing"
+        },
+        {
+            "name": "Next-Generation Sequencing (NGS)",
+            "description": "High-throughput sequencing to detect variants across multiple genes.",
+            "category": "Genetic Testing"
+        },
+        {
+            "name": "Non-Invasive Prenatal Testing (NIPT)",
+            "description": "Screens fetal aneuploidy using cell-free DNA from maternal blood.",
+            "category": "Genetic Testing"
+        },
+        {
+            "name": "Nucleic Acid Hybridization",
+            "description": "Detects specific DNA or RNA sequences using complementary probes.",
+            "category": "Genetic Testing"
+        },
+        {
+            "name": "Prenatal Genetic Testing",
+            "description": "Tests fetal genetic conditions during pregnancy using blood or invasive sampling.",
+            "category": "Genetic Testing"
+        },
+        {
+            "name": "RNA Sequencing (RNA-seq)",
+            "description": "Sequences RNA to measure gene expression and detect fusion transcripts.",
+            "category": "Genetic Testing"
+        },
+        {
+            "name": "Repeat-Primed Capillary Electrophoresis PCR (RP-CE PCR)",
+            "description": "Detects pathogenic repeat expansions using repeat-primed PCR sizing.",
+            "category": "Genetic Testing"
+        },
+        {
+            "name": "Southern Blot Analysis",
+            "description": "Detects specific DNA fragments, including large repeat expansions or rearrangements.",
+            "category": "Genetic Testing"
+        },
+        {
+            "name": "24-hour Esophageal pH/Impedance Monitoring",
+            "description": "Measures reflux episodes over 24 hours using pH and impedance sensors.",
+            "category": "Functional Tests"
+        },
+        {
+            "name": "6-Minute Walk Test (6MWT)",
+            "description": "Assesses functional exercise capacity by distance walked in six minutes.",
+            "category": "Functional Tests"
+        },
+        {
+            "name": "ACTH Stimulation Test",
+            "description": "Evaluates adrenal cortisol response after synthetic ACTH administration.",
+            "category": "Functional Tests"
+        },
+        {
+            "name": "Acute Vasoreactivity Test (AVT)",
+            "description": "Assesses pulmonary artery response to vasodilators during right heart catheterization.",
+            "category": "Functional Tests"
+        },
+        {
+            "name": "Alcohol Provocation Test",
+            "description": "Evaluates symptom response after controlled alcohol exposure.",
+            "category": "Functional Tests"
+        },
+        {
+            "name": "Allergy Skin Test",
+            "description": "Detects allergic sensitization via skin prick or intradermal allergens.",
+            "category": "Functional Tests"
+        },
+        {
+            "name": "Ambulatory Blood Pressure Monitoring (ABPM)",
+            "description": "Records blood pressure over 24 hours during normal daily activities.",
+            "category": "Functional Tests"
+        },
+        {
+            "name": "Anorectal Manometry",
+            "description": "Measures anal sphincter pressures and rectal sensation for defecation disorders.",
+            "category": "Functional Tests"
+        },
+        {
+            "name": "Audiometry",
+            "description": "Measures hearing thresholds and speech recognition across sound frequencies.",
+            "category": "Functional Tests"
+        },
+        {
+            "name": "Autonomic Function Test",
+            "description": "Evaluates autonomic control of heart rate, blood pressure, and sweating.",
+            "category": "Functional Tests"
+        },
+        {
+            "name": "Bernstein Test",
+            "description": "Provokes esophageal symptoms using acid perfusion to assess reflux sensitivity.",
+            "category": "Functional Tests"
+        },
+        {
+            "name": "Body Composition Analysis (BCA)",
+            "description": "Estimates fat, muscle, and body water using impedance or other methods.",
+            "category": "Functional Tests"
+        },
+        {
+            "name": "Breath Test",
+            "description": "Analyzes exhaled gases to evaluate metabolism, infection, or malabsorption.",
+            "category": "Functional Tests"
+        },
+        {
+            "name": "Cardiac Stress Test",
+            "description": "Assesses cardiac function and ischemia during exercise or pharmacologic stress.",
+            "category": "Functional Tests"
+        },
+        {
+            "name": "Cardiopulmonary Exercise Testing (CPET)",
+            "description": "Measures gas exchange to assess integrated cardiac and pulmonary exercise capacity.",
+            "category": "Functional Tests"
+        },
+        {
+            "name": "Colonic Transit Study",
+            "description": "Measures colonic motility by tracking markers through the colon over time.",
+            "category": "Functional Tests"
+        },
+        {
+            "name": "Color Vision Test",
+            "description": "Assesses ability to distinguish colors to detect color vision defects.",
+            "category": "Functional Tests"
+        },
+        {
+            "name": "Contrast Sensitivity Test",
+            "description": "Measures ability to detect low-contrast patterns for visual function assessment.",
+            "category": "Functional Tests"
+        },
+        {
+            "name": "Corneal Endothelial Cell Count",
+            "description": "Counts corneal endothelial cells to evaluate corneal health and function.",
+            "category": "Functional Tests"
+        },
+        {
+            "name": "Corneal Pachymetry",
+            "description": "Measures corneal thickness, often for glaucoma and refractive evaluation.",
+            "category": "Functional Tests"
+        },
+        {
+            "name": "Electronic Fetal Monitoring (EFM)",
+            "description": "Monitors fetal heart rate and uterine contractions during pregnancy or labor.",
+            "category": "Functional Tests"
+        },
+        {
+            "name": "Endocrine Provocation Tests",
+            "description": "Assesses hormone gland function by measuring responses to stimulating agents.",
+            "category": "Functional Tests"
+        },
+        {
+            "name": "Erectile Function Testing",
+            "description": "Evaluates erectile physiology using nocturnal testing or vascular assessment.",
+            "category": "Functional Tests"
+        },
+        {
+            "name": "Esophageal Manometry",
+            "description": "Measures esophageal pressures and sphincter function during swallowing.",
+            "category": "Functional Tests"
+        },
+        {
+            "name": "Eustachian Tube Function Test",
+            "description": "Assesses middle ear pressure equalization and Eustachian tube patency.",
+            "category": "Functional Tests"
+        },
+        {
+            "name": "Exercise Stress Test (EST)",
+            "description": "Evaluates heart rhythm and ischemia during graded exercise.",
+            "category": "Functional Tests"
+        },
+        {
+            "name": "Gait Analysis",
+            "description": "Assesses walking mechanics to identify musculoskeletal or neurologic abnormalities.",
+            "category": "Functional Tests"
+        },
+        {
+            "name": "GnRH Stimulation Test",
+            "description": "Measures LH and FSH response to GnRH to assess pituitary-gonadal function.",
+            "category": "Functional Tests"
+        },
+        {
+            "name": "Hemodynamic Monitoring",
+            "description": "Tracks blood pressure and cardiac parameters to assess circulatory status.",
+            "category": "Functional Tests"
+        },
+        {
+            "name": "Hepatic Venous Pressure Gradient (HVPG) Measurement",
+            "description": "Measures portal hypertension by comparing hepatic venous pressures via catheterization.",
+            "category": "Functional Tests"
+        },
+        {
+            "name": "Hormonal Challenge Test",
+            "description": "Evaluates endocrine function by measuring hormone responses to administered agents.",
+            "category": "Functional Tests"
+        },
+        {
+            "name": "Indocyanine Green (ICG) Clearance Test",
+            "description": "Assesses hepatic blood flow and function by measuring ICG clearance.",
+            "category": "Functional Tests"
+        },
+        {
+            "name": "Intraocular Pressure (IOP) Measurement",
+            "description": "Measures eye pressure to screen for and monitor glaucoma.",
+            "category": "Functional Tests"
+        },
+        {
+            "name": "Lacrimal Function Test",
+            "description": "Evaluates tear production and drainage in dry eye assessment.",
+            "category": "Functional Tests"
+        },
+        {
+            "name": "Metabolic Loading Test",
+            "description": "Assesses metabolic pathways by measuring responses to a specific nutrient load.",
+            "category": "Functional Tests"
+        },
+        {
+            "name": "Nasal Provocation Test",
+            "description": "Assesses allergic rhinitis by monitoring response to nasal allergen exposure.",
+            "category": "Functional Tests"
+        },
+        {
+            "name": "Neostigmine Test",
+            "description": "Assesses neuromuscular transmission by symptom improvement after neostigmine administration.",
+            "category": "Functional Tests"
+        },
+        {
+            "name": "Neuropsychological Assessment",
+            "description": "Evaluates cognition, memory, and behavior using standardized tests.",
+            "category": "Functional Tests"
+        },
+        {
+            "name": "Ocular Muscle Function Test",
+            "description": "Assesses extraocular muscle function and ocular alignment during eye movements.",
+            "category": "Functional Tests"
+        },
+        {
+            "name": "Olfactory Testing",
+            "description": "Measures sense of smell to detect olfactory loss or dysfunction.",
+            "category": "Functional Tests"
+        },
+        {
+            "name": "Ophthalmic Biometry",
+            "description": "Measures eye dimensions for intraocular lens calculation and ocular assessment.",
+            "category": "Functional Tests"
+        },
+        {
+            "name": "Orthoptic Evaluation",
+            "description": "Assesses binocular vision, strabismus, and ocular motility.",
+            "category": "Functional Tests"
+        },
+        {
+            "name": "Otoacoustic Emissions (OAE) Test",
+            "description": "Screens cochlear function by measuring sound emissions from the inner ear.",
+            "category": "Functional Tests"
+        },
+        {
+            "name": "Pentagastrin Stimulation Test",
+            "description": "Stimulates gastric acid secretion to assess acid-producing capacity.",
+            "category": "Functional Tests"
+        },
+        {
+            "name": "Phototesting",
+            "description": "Evaluates skin photosensitivity by controlled exposure to ultraviolet light.",
+            "category": "Functional Tests"
+        },
+        {
+            "name": "Posturography",
+            "description": "Assesses balance control by measuring body sway under various conditions.",
+            "category": "Functional Tests"
+        },
+        {
+            "name": "Psychological Assessment",
+            "description": "Evaluates emotional and behavioral functioning using interviews and standardized tools.",
+            "category": "Functional Tests"
+        },
+        {
+            "name": "Pulmonary Function Tests (PFTs)",
+            "description": "Measure lung volumes, airflow, and diffusion to assess respiratory function.",
+            "category": "Functional Tests"
+        },
+        {
+            "name": "Pulp Vitality Test",
+            "description": "Assesses dental pulp nerve response to thermal or electrical stimulation.",
+            "category": "Functional Tests"
+        },
+        {
+            "name": "Pulse Oximetry (SpO2)",
+            "description": "Estimates arterial oxygen saturation noninvasively using a finger or ear sensor.",
+            "category": "Functional Tests"
+        },
+        {
+            "name": "Refraction Test",
+            "description": "Determines eyeglass prescription by measuring focusing errors of the eye.",
+            "category": "Functional Tests"
+        },
+        {
+            "name": "Rhinomanometry",
+            "description": "Measures nasal airflow and resistance to assess nasal obstruction.",
+            "category": "Functional Tests"
+        },
+        {
+            "name": "Right Heart Catheterization (RHC)",
+            "description": "Measures right-sided heart pressures and cardiac output using an intravascular catheter.",
+            "category": "Functional Tests"
+        },
+        {
+            "name": "Salivary Gland Function Test",
+            "description": "Measures saliva production and gland function, often for dry mouth evaluation.",
+            "category": "Functional Tests"
+        },
+        {
+            "name": "Skin Microcirculation Examination",
+            "description": "Assesses small blood vessel flow in skin to evaluate microvascular function.",
+            "category": "Functional Tests"
+        },
+        {
+            "name": "Tinnitus Evaluation",
+            "description": "Assesses ringing in ears using history, hearing tests, and symptom questionnaires.",
+            "category": "Functional Tests"
+        },
+        {
+            "name": "Tympanometry and Acoustic Immittance Testing",
+            "description": "Measures middle ear pressure and eardrum mobility to assess ear function.",
+            "category": "Functional Tests"
+        },
+        {
+            "name": "Urodynamic Study (UDS)",
+            "description": "Tests bladder and urethral function during filling and voiding to assess urinary problems.",
+            "category": "Functional Tests"
+        },
+        {
+            "name": "Vestibular Function Tests",
+            "description": "Evaluates inner ear balance system using eye movement and positional tests.",
+            "category": "Functional Tests"
+        },
+        {
+            "name": "Visual Acuity Test",
+            "description": "Measures how clearly you see at various distances, usually with an eye chart.",
+            "category": "Functional Tests"
+        },
+        {
+            "name": "Visual Field Test",
+            "description": "Maps peripheral vision to detect blind spots and visual pathway problems.",
+            "category": "Functional Tests"
+        },
+        {
+            "name": "Visual Function Test",
+            "description": "Assesses overall visual performance, including acuity, contrast, and functional vision measures.",
+            "category": "Functional Tests"
+        },
+        {
+            "name": "Water Deprivation Test",
+            "description": "Evaluates the body's ability to concentrate urine during dehydration, assessing diabetes insipidus.",
+            "category": "Functional Tests"
+        },
+        {
+            "name": "AST to Platelet Ratio Index (APRI)",
+            "description": "Blood-based score estimating liver fibrosis using AST level and platelet count.",
+            "category": "Other Tests"
+        },
+        {
+            "name": "Abdominal Paracentesis",
+            "description": "Removes abdominal fluid with a needle for testing or symptom relief.",
+            "category": "Other Tests"
+        },
+        {
+            "name": "Acetowhitening Test",
+            "description": "Applies acetic acid to highlight abnormal mucosa, commonly during cervical examination.",
+            "category": "Other Tests"
+        },
+        {
+            "name": "Acetylcholine Skin Test",
+            "description": "Assesses sweating and autonomic function by applying acetylcholine to the skin.",
+            "category": "Other Tests"
+        },
+        {
+            "name": "Adrenal Venous Sampling (AVS)",
+            "description": "Measures adrenal vein hormones to localize source of aldosterone overproduction.",
+            "category": "Other Tests"
+        },
+        {
+            "name": "Arthrocentesis",
+            "description": "Withdraws fluid from a joint for diagnosis or to relieve swelling.",
+            "category": "Other Tests"
+        },
+        {
+            "name": "Basal Body Temperature (BBT) Charting",
+            "description": "Daily temperature tracking to detect ovulation patterns and fertility timing.",
+            "category": "Other Tests"
+        },
+        {
+            "name": "Clinical Photography",
+            "description": "Documents medical conditions with standardized photos for monitoring and comparison.",
+            "category": "Other Tests"
+        },
+        {
+            "name": "Comprehensive Laboratory Testing",
+            "description": "Broad panel of blood and urine tests to assess overall health.",
+            "category": "Other Tests"
+        },
+        {
+            "name": "Diagnostic Nerve Block",
+            "description": "Injects anesthetic near a nerve to identify the source of pain.",
+            "category": "Other Tests"
+        },
+        {
+            "name": "Diagnostic Puncture",
+            "description": "Needle puncture to obtain fluid or tissue for diagnostic testing.",
+            "category": "Other Tests"
+        },
+        {
+            "name": "Diagnostic Sympathetic Nerve Block",
+            "description": "Anesthetic block of sympathetic nerves to diagnose sympathetically maintained pain.",
+            "category": "Other Tests"
+        },
+        {
+            "name": "Dilatation and Curettage (D&C)",
+            "description": "Widens cervix and scrapes uterine lining for diagnosis or treatment.",
+            "category": "Other Tests"
+        },
+        {
+            "name": "Duodenal Drainage",
+            "description": "Collects duodenal contents via tube to assess biliary or pancreatic secretions.",
+            "category": "Other Tests"
+        },
+        {
+            "name": "Exploratory Laparotomy",
+            "description": "Open abdominal surgery to diagnose and treat intra-abdominal conditions.",
+            "category": "Other Tests"
+        },
+        {
+            "name": "Fetal Movement Counting",
+            "description": "Tracks baby's movements to monitor fetal well-being during pregnancy.",
+            "category": "Other Tests"
+        },
+        {
+            "name": "Fiber-optic Transillumination (FOTI)",
+            "description": "Uses light to detect dental caries and cracks within teeth.",
+            "category": "Other Tests"
+        },
+        {
+            "name": "Fibrosis-4 Index (FIB-4)",
+            "description": "Blood-based score estimating liver fibrosis using age, AST, ALT, and platelets.",
+            "category": "Other Tests"
+        },
+        {
+            "name": "Fluorescein Staining",
+            "description": "Uses dye to reveal corneal abrasions or ulcers under blue light.",
+            "category": "Other Tests"
+        },
+        {
+            "name": "Hair Microscopy",
+            "description": "Microscopic examination of hair shafts to evaluate disorders or infestations.",
+            "category": "Other Tests"
+        },
+        {
+            "name": "Hamilton Anxiety Rating Scale (HAMA)",
+            "description": "Clinician-rated scale measuring severity of anxiety symptoms.",
+            "category": "Other Tests"
+        },
+        {
+            "name": "Intravaginal Ejaculatory Latency Time (IELT) Assessment",
+            "description": "Measures time from penetration to ejaculation to assess premature ejaculation.",
+            "category": "Other Tests"
+        },
+        {
+            "name": "Lacrimal Passage Irrigation",
+            "description": "Flushes tear drainage ducts to check for blockage and restore flow.",
+            "category": "Other Tests"
+        },
+        {
+            "name": "Lumbar Puncture (LP)",
+            "description": "Collects cerebrospinal fluid from lower back for diagnostic testing.",
+            "category": "Other Tests"
+        },
+        {
+            "name": "Methylene Blue Test",
+            "description": "Uses dye to identify leaks, fistulas, or tissue staining during procedures.",
+            "category": "Other Tests"
+        },
+        {
+            "name": "Neuropsychological Testing",
+            "description": "Assesses memory, attention, and cognition using standardized psychological tests.",
+            "category": "Other Tests"
+        },
+        {
+            "name": "Newborn Screening",
+            "description": "Blood and hearing tests to detect serious congenital conditions early.",
+            "category": "Other Tests"
+        },
+        {
+            "name": "Pericardiocentesis",
+            "description": "Drains fluid from the pericardial sac with a needle for relief or diagnosis.",
+            "category": "Other Tests"
+        },
+        {
+            "name": "Preoperative Evaluation",
+            "description": "Assesses medical fitness and risks before surgery and anesthesia.",
+            "category": "Other Tests"
+        },
+        {
+            "name": "Probe Test",
+            "description": "Uses a probe to assess patency, depth, or tract direction in a lesion.",
+            "category": "Other Tests"
+        },
+        {
+            "name": "Self-Rating Anxiety Scale (SAS)",
+            "description": "Patient-completed questionnaire measuring anxiety symptom severity.",
+            "category": "Other Tests"
+        },
+        {
+            "name": "Skin Allergy Test",
+            "description": "Exposes skin to allergens to identify IgE-mediated hypersensitivity reactions.",
+            "category": "Other Tests"
+        },
+        {
+            "name": "Skin Hydration Measurement",
+            "description": "Measures skin moisture levels to assess dryness and barrier function.",
+            "category": "Other Tests"
+        },
+        {
+            "name": "Skin Pathergy Test",
+            "description": "Assesses abnormal skin reactivity to minor trauma, used in Behcet disease.",
+            "category": "Other Tests"
+        },
+        {
+            "name": "Thiamine Loading Test",
+            "description": "Evaluates thiamine status by measuring response to vitamin B1 administration.",
+            "category": "Other Tests"
+        },
+        {
+            "name": "Tuberculosis (TB) Screening",
+            "description": "Tests for TB infection using skin test or blood assay.",
+            "category": "Other Tests"
+        },
+        {
+            "name": "Tympanocentesis",
+            "description": "Needle aspiration of middle ear fluid for culture or pressure relief.",
+            "category": "Other Tests"
+        },
+        {
+            "name": "Urea Breath Test (UBT)",
+            "description": "Detects Helicobacter pylori infection by measuring labeled carbon dioxide in breath.",
+            "category": "Other Tests"
+        },
+        {
+            "name": "Urethral Sounding",
+            "description": "Passes a dilator into urethra to assess or treat narrowing.",
+            "category": "Other Tests"
+        },
+        {
+            "name": "Victorian Institute of Sport Assessment-Patellar (VISA-P) Score",
+            "description": "Questionnaire scoring pain and function in patellar tendinopathy.",
+            "category": "Other Tests"
+        },
+        {
+            "name": "Voiding Diary",
+            "description": "Patient-recorded log of urination times, volumes, urgency, and leakage.",
+            "category": "Other Tests"
+        },
+        {
+            "name": "Adenosine Deaminase (ADA) Test",
+            "description": "Measures ADA enzyme activity to help detect tuberculosis-related inflammation.",
+            "category": "Laboratory Tests - Other"
+        },
+        {
+            "name": "Ascitic Fluid Analysis",
+            "description": "Tests abdominal fluid for infection, cancer, and portal hypertension causes.",
+            "category": "Laboratory Tests - Other"
+        },
+        {
+            "name": "Blood and Urine Organic Acid Analysis",
+            "description": "Detects organic acid abnormalities for suspected metabolic disorders.",
+            "category": "Laboratory Tests - Other"
+        },
+        {
+            "name": "Branched-Chain Alpha-Keto Acid Dehydrogenase (BCKAD) Activity Assay",
+            "description": "Measures BCKAD enzyme activity to diagnose maple syrup urine disease.",
+            "category": "Laboratory Tests - Other"
+        },
+        {
+            "name": "Bronchoalveolar Lavage Fluid (BALF) Analysis",
+            "description": "Analyzes lung washings for infection, inflammation, or malignancy.",
+            "category": "Laboratory Tests - Other"
+        },
+        {
+            "name": "Calculus Analysis (Stone Analysis)",
+            "description": "Determines stone composition to guide prevention and treatment.",
+            "category": "Laboratory Tests - Other"
+        },
+        {
+            "name": "Cancer Antigen 125 (CA-125) Test",
+            "description": "Measures CA-125 to monitor ovarian cancer and some other conditions.",
+            "category": "Laboratory Tests - Other"
+        },
+        {
+            "name": "Carcinoembryonic Antigen (CEA) Test",
+            "description": "Measures CEA to monitor colorectal and other cancers.",
+            "category": "Laboratory Tests - Other"
+        },
+        {
+            "name": "Cerebrospinal Fluid (CSF) Analysis",
+            "description": "Analyzes spinal fluid for infection, bleeding, inflammation, or cancer.",
+            "category": "Laboratory Tests - Other"
+        },
+        {
+            "name": "Cerebrospinal Fluid (CSF) Pressure Measurement",
+            "description": "Measures opening pressure during lumbar puncture to assess intracranial pressure.",
+            "category": "Laboratory Tests - Other"
+        },
+        {
+            "name": "Chromogranin C (CgC) Test",
+            "description": "Measures chromogranin to evaluate neuroendocrine tumor activity.",
+            "category": "Laboratory Tests - Other"
+        },
+        {
+            "name": "Conjunctival Secretion Analysis",
+            "description": "Tests eye discharge for bacteria, viruses, or inflammatory cells.",
+            "category": "Laboratory Tests - Other"
+        },
+        {
+            "name": "Corneal Scraping Analysis",
+            "description": "Microscopy and culture of corneal scrapings to diagnose keratitis.",
+            "category": "Laboratory Tests - Other"
+        },
+        {
+            "name": "Des-Gamma-Carboxy Prothrombin (DCP) Test",
+            "description": "Measures DCP to aid diagnosis and monitoring of hepatocellular carcinoma.",
+            "category": "Laboratory Tests - Other"
+        },
+        {
+            "name": "Duodenal Fluid Analysis",
+            "description": "Analyzes duodenal aspirate for parasites, bacteria, or digestive disorders.",
+            "category": "Laboratory Tests - Other"
+        },
+        {
+            "name": "Eyelid Secretion Analysis",
+            "description": "Examines eyelid gland secretions for infection or inflammation.",
+            "category": "Laboratory Tests - Other"
+        },
+        {
+            "name": "Gastric Acid Analysis",
+            "description": "Measures stomach acid output to evaluate hypoacidity or hypersecretion.",
+            "category": "Laboratory Tests - Other"
+        },
+        {
+            "name": "High-Performance Liquid Chromatography (HPLC)",
+            "description": "Separates and quantifies compounds in samples for diagnostic measurements.",
+            "category": "Laboratory Tests - Other"
+        },
+        {
+            "name": "Human Epididymis Protein 4 (HE4) Test",
+            "description": "Measures HE4 to assess risk and monitor ovarian cancer.",
+            "category": "Laboratory Tests - Other"
+        },
+        {
+            "name": "Laboratory Testing (General)",
+            "description": "Routine lab tests evaluating blood, urine, or body fluids for disease.",
+            "category": "Laboratory Tests - Other"
+        },
+        {
+            "name": "Lecithin/Sphingomyelin (L/S) Ratio",
+            "description": "Amniotic fluid test assessing fetal lung maturity.",
+            "category": "Laboratory Tests - Other"
+        },
+        {
+            "name": "Magnesium Loading Test",
+            "description": "Assesses magnesium deficiency by measuring urinary excretion after magnesium infusion.",
+            "category": "Laboratory Tests - Other"
+        },
+        {
+            "name": "Metabolite Analysis",
+            "description": "Measures specific metabolites to evaluate metabolic pathways and disease.",
+            "category": "Laboratory Tests - Other"
+        },
+        {
+            "name": "Nasal Secretion Analysis",
+            "description": "Tests nasal discharge for infection, allergy, or inflammatory markers.",
+            "category": "Laboratory Tests - Other"
+        },
+        {
+            "name": "Neuron-Specific Enolase (NSE) Test",
+            "description": "Measures NSE to assess neuroendocrine tumors or neuronal injury.",
+            "category": "Laboratory Tests - Other"
+        },
+        {
+            "name": "Pericardial Fluid Analysis",
+            "description": "Tests fluid around the heart for infection, malignancy, or inflammation.",
+            "category": "Laboratory Tests - Other"
+        },
+        {
+            "name": "Phosphatidylglycerol (PG) Test",
+            "description": "Amniotic fluid test for fetal lung maturity and surfactant production.",
+            "category": "Laboratory Tests - Other"
+        },
+        {
+            "name": "Pleural Fluid Adenosine Deaminase (ADA) Test",
+            "description": "Measures pleural ADA to support diagnosis of tuberculous pleuritis.",
+            "category": "Laboratory Tests - Other"
+        },
+        {
+            "name": "Pleural Fluid Analysis",
+            "description": "Analyzes fluid around lungs to determine cause of effusion.",
+            "category": "Laboratory Tests - Other"
+        },
+        {
+            "name": "Pregnancy Test (hCG)",
+            "description": "Detects human chorionic gonadotropin to confirm pregnancy.",
+            "category": "Laboratory Tests - Other"
+        },
+        {
+            "name": "Progenitor Cell Culture",
+            "description": "Cultures progenitor cells to assess growth, differentiation, or marrow function.",
+            "category": "Laboratory Tests - Other"
+        },
+        {
+            "name": "Prostate-Specific Antigen (PSA) Test",
+            "description": "Measures PSA to screen and monitor prostate disease.",
+            "category": "Laboratory Tests - Other"
+        },
+        {
+            "name": "Prostatic Fluid Analysis",
+            "description": "Examines prostatic secretions for inflammation or infection.",
+            "category": "Laboratory Tests - Other"
+        },
+        {
+            "name": "Semen Analysis",
+            "description": "Evaluates sperm count, motility, morphology, and semen quality.",
+            "category": "Laboratory Tests - Other"
+        },
+        {
+            "name": "Skin Microscopic Examination",
+            "description": "Microscopic evaluation of skin scrapings for fungi, mites, or parasites.",
+            "category": "Laboratory Tests - Other"
+        },
+        {
+            "name": "Sweat Chloride Test",
+            "description": "Measures sweat chloride to diagnose cystic fibrosis.",
+            "category": "Laboratory Tests - Other"
+        },
+        {
+            "name": "Synovial Fluid Analysis",
+            "description": "Tests joint fluid for crystals, infection, inflammation, or bleeding.",
+            "category": "Laboratory Tests - Other"
+        },
+        {
+            "name": "Tissue Serotonin (5-HT) Test",
+            "description": "Measures serotonin in tissue to evaluate neuroendocrine tumor activity.",
+            "category": "Laboratory Tests - Other"
+        },
+        {
+            "name": "Tumor Marker Panel",
+            "description": "Blood tests measuring multiple tumor markers to aid cancer evaluation.",
+            "category": "Laboratory Tests - Other"
+        },
+        {
+            "name": "Urinary and Serum Catecholamine Metabolites Test",
+            "description": "Measures metanephrines to detect pheochromocytoma or paraganglioma.",
+            "category": "Laboratory Tests - Other"
+        },
+        {
+            "name": "Vaginal and Cervical Secretion Analysis",
+            "description": "Tests genital secretions for infection, inflammation, or abnormal cells.",
+            "category": "Laboratory Tests - Other"
+        },
+        {
+            "name": "Vaginal pH Test",
+            "description": "Measures vaginal acidity to help evaluate infections and vaginitis.",
+            "category": "Laboratory Tests - Other"
+        },
+        {
+            "name": "Vesicular Fluid Analysis",
+            "description": "Tests blister fluid for viral infection, bacteria, or inflammatory cells.",
+            "category": "Laboratory Tests - Other"
+        }
+    ]
+}

@@ -1,0 +1,56 @@
+# OS and editor files
+.DS_Store
+.idea/
+.vscode/
+
+# Local environment
+.env
+env/
+venv/
+.venv/
+
+# Python cache and build artifacts
+__pycache__/
+.pytest_cache/
+*.py[cod]
+*.egg-info/
+
+# Node and frontend build artifacts
+node_modules/
+dist/
+build/
+
+# Logs, databases, and local runtime output
+*.log
+*.db
+*.sqlite3
+logs/
+volumes/
+workspace/
+decoupling_output/
+per_tick_reports/
+debug*/
+
+# Local baseline implementation
+/baseline/
+
+# Data files
+**/data/**/*.json
+**/data/**/*.jsonl
+!benchmark/data_metrics/config.example.json
+!data/catalogs/**/*.json
+!data/normal_examinations/**/*.json
+!data/patients_data/**/*.json
+!data/patients_data/**/*.jsonl
+
+# Private local datasets
+data/splits/
+.private_data/
+
+# Local-only assistant files
+/AGENTS.md
+/claude_code_env.sh
+/.claude/
+
+# Local secrets/config
+benchmark/data_metrics/config.json

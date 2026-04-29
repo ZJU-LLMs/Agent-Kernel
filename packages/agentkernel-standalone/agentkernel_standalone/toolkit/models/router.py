@@ -146,6 +146,7 @@ class ModelRouter:
         user_prompt: str,
         system_prompt: str = "",
         model_name: Optional[str] = None,
+        capability: str = "chat",
         timeout: int = 300,
         **kwargs: Union[str, float, int],
     ) -> Optional[str]:
@@ -156,6 +157,7 @@ class ModelRouter:
             user_prompt (str): Prompt text provided by the user.
             system_prompt (str): Optional system prompt steering the LLM behaviour. Defaults to an empty string.
             model_name (Optional[str]): Optional identifier for the model to use.
+            capability (str): Capability identifier. Defaults to ``"chat"``.
             timeout (int): Maximum time to wait for a response in seconds. Defaults to 300 seconds.
             **kwargs (Union[str, float, int]): Additional sampling parameters forwarded to the backend.
 
@@ -169,6 +171,7 @@ class ModelRouter:
                 user_prompt=sanitized_prompt,
                 system_prompt=system_prompt,
                 model_name=model_name,
+                capability=capability,
                 timeout=timeout,
                 **kwargs,
             )

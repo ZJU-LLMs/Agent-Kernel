@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from typing import Any, Dict, List, Optional, Tuple
 
-from pydantic import BaseModel, Field, field_validator
+from pydantic import BaseModel, Field, field_validator, model_validator
 
 from ...types.schemas.message import MessageKind
 
@@ -51,18 +51,35 @@ class RecorderConfig(BaseModel):
     """Configuration for the data recorder, typically a database.
 
     Attributes:
-        dbname (str): The name of the database.
-        user (str): The username for database access.
-        password (str): The password for database access.
-        host (str): The database host address.
-        port (int): The port number for database access.
+        trajectory_dir (Optional[str]): Directory for trajectory JSON files.
+        buffer_size (int): Number of events to buffer before flushing.
+        enable_db (bool): Whether to enable database recording.
+        clear_on_init (bool): Whether to clear recorder state on startup.
+        dbname (Optional[str]): The name of the database.
+        user (Optional[str]): The username for database access.
+        password (Optional[str]): The password for database access.
+        host (Optional[str]): The database host address.
+        port (Optional[int]): The port number for database access.
     """
 
-    dbname: str
-    user: str
-    password: str
-    host: str
-    port: int
+    trajectory_dir: Optional[str] = None
+    buffer_size: int = 100
+    enable_db: bool = True
+    clear_on_init: bool = False
+    dbname: Optional[str] = None
+    user: Optional[str] = None
+    password: Optional[str] = None
+    host: Optional[str] = None
+    port: Optional[int] = None
+
+    @model_validator(mode="after")
+    def validate_db_fields(self) -> "RecorderConfig":
+        """Require database settings only when DB recording is enabled."""
+        if self.enable_db and any(
+            getattr(self, field_name) is None for field_name in ["dbname", "user", "password", "host", "port"]
+        ):
+            raise ValueError("Database fields are required when enable_db=True.")
+        return self
 
 
 class SystemConfig(BaseModel):

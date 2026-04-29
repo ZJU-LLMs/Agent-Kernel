@@ -106,6 +106,7 @@ class AsyncModelRouter:
         user_prompt: str,
         system_prompt: str = "",
         model_name: Optional[str] = None,
+        capability: str = "chat",
         timeout: int = 300,
         return_usage: bool = False,
         **kwargs: object,
@@ -117,6 +118,7 @@ class AsyncModelRouter:
             user_prompt (str): User prompt passed to the provider.
             system_prompt (str): Optional system prompt. Defaults to an empty string.
             model_name (Optional[str]): Optional model identifier.
+            capability (str): Capability identifier. Defaults to ``"chat"``.
             timeout (int): Request timeout in seconds. Defaults to 300 seconds.
             return_usage (bool): If True, return tuple of (response, usage). Defaults to False.
             **kwargs (object): Additional provider-specific request parameters.
@@ -125,7 +127,7 @@ class AsyncModelRouter:
             ChatResponseWithUsage: Tuple of (response_list, token_usage).
                 token_usage is None if not available from the provider.
         """
-        target_providers = self._get_target_providers(capability="chat", model_name=model_name)
+        target_providers = self._get_target_providers(capability=capability, model_name=model_name)
         if not target_providers:
             logger.warning("No target providers available for chat request.")
             return (None, None)

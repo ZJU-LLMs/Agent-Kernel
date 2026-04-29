@@ -5,6 +5,7 @@ simulation scenarios. Application-specific event types should be defined
 in the application's own modules (e.g., utils/event_types.py).
 """
 
+import asyncio
 import json
 import os
 import time
@@ -115,13 +116,17 @@ class Recorder(SystemComponent):
                 - enable_db: Whether to enable database recording
         """
         super().__init__(**kwargs)
-        
-        self.trajectory_dir = kwargs.pop("trajectory_dir", None)
-        self.buffer_size = int(kwargs.pop("buffer_size", 100))
-        self.enable_db = kwargs.pop("enable_db", True)
-        
-        if self.enable_db and all(k in kwargs for k in ["dbname", "user", "password", "host", "port"]):
-            self.config = RecorderConfig(**kwargs)
+
+        self.config = RecorderConfig(**kwargs)
+        self.trajectory_dir = self.config.trajectory_dir
+        self.buffer_size = int(self.config.buffer_size)
+        self.enable_db = self.config.enable_db
+        self.clear_on_init = bool(self.config.clear_on_init)
+
+        if self.enable_db and all(
+            getattr(self.config, field_name) is not None
+            for field_name in ["dbname", "user", "password", "host", "port"]
+        ):
             self.db_config: Dict[str, Any] = {
                 "database": self.config.dbname,
                 "user": self.config.user,
@@ -130,12 +135,11 @@ class Recorder(SystemComponent):
                 "port": self.config.port,
             }
         else:
-            self.config = None
             self.db_config = {}
             self.enable_db = False
-        
+
         self.pool: Optional[Pool] = None
-        
+
         self._trajectory_events: List[TrajectoryEvent] = []
         self._trajectory_metadata: Dict[str, Any] = {
             "version": "1.0.0",
@@ -143,18 +147,20 @@ class Recorder(SystemComponent):
             "framework": "AgentKernel",
         }
         self._event_buffer: List[TrajectoryEvent] = []
-        
+        self._buffer_lock: asyncio.Lock = asyncio.Lock()
+
         self._total_llm_calls: int = 0
         self._prompt_tokens: int = 0
-        
+
         if self.trajectory_dir is None:
-            self.trajectory_dir = os.environ.get("MAS_EVENT_LOG_DIR", ".")
-        
+            base_dir = os.environ.get("MAS_EVENT_LOG_DIR", ".")
+            self.trajectory_dir = os.path.join(base_dir, "trajectory")
+
         self._trajectory_file = os.path.join(
-            self.trajectory_dir, 
+            self.trajectory_dir,
             f"trajectory_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
         )
-        
+
         logger.info(
             "Recorder initialized. DB enabled: %s, Trajectory file: %s",
             self.enable_db,
@@ -165,6 +171,8 @@ class Recorder(SystemComponent):
         """Establish the database connection pool after actor creation."""
         if self.enable_db:
             await self.connect()
+        if self.clear_on_init:
+            await self.clear_records()
 
     async def connect(self) -> None:
         """Create a connection pool and ensure the schema exists."""
@@ -191,6 +199,33 @@ class Recorder(SystemComponent):
             logger.exception(exc)
             self.pool = None
             self.enable_db = False
+
+    async def clear_records(self) -> None:
+        """Clear recorder buffers and optionally truncate backing database tables."""
+        self._trajectory_events.clear()
+        self._event_buffer.clear()
+        self._total_llm_calls = 0
+        self._prompt_tokens = 0
+        self._trajectory_metadata = {
+            "version": "1.0.0",
+            "created_at": datetime.now().isoformat(),
+            "framework": "AgentKernel",
+        }
+
+        if self.enable_db and self.pool:
+            try:
+                async with self.pool.acquire() as connection:
+                    await connection.execute(
+                        """
+                        TRUNCATE simulation_ticks, agent_actions, messages, agent_states, trajectory_events
+                        RESTART IDENTITY;
+                    """
+                    )
+                logger.info("Recorder database tables truncated.")
+            except Exception as exc:
+                logger.warning("Failed to clear recorder database tables: %s", exc)
+        else:
+            logger.debug("Recorder database clearing skipped (disabled or not connected).")
 
     async def _initialize_schema(self) -> None:
         """Create required tables if they do not already exist."""
@@ -329,13 +364,14 @@ class Recorder(SystemComponent):
             target_id=target_id,
             timestamp=time.time()
         )
-        
-        self._event_buffer.append(event)
-        logger.debug(f"Event added to buffer. New buffer size: {len(self._event_buffer)}/{self.buffer_size}")
-        
-        if len(self._event_buffer) >= self.buffer_size:
-            logger.info(f"Buffer full ({len(self._event_buffer)} >= {self.buffer_size}), flushing...")
-            await self._flush_buffer()
+
+        async with self._buffer_lock:
+            self._event_buffer.append(event)
+            logger.debug(f"Event added to buffer. New buffer size: {len(self._event_buffer)}/{self.buffer_size}")
+
+            if len(self._event_buffer) >= self.buffer_size:
+                logger.info(f"Buffer full ({len(self._event_buffer)} >= {self.buffer_size}), flushing...")
+                await self._flush_buffer()
     
     async def record_llm_usage(
         self,
@@ -429,7 +465,8 @@ class Recorder(SystemComponent):
             Path to the saved trajectory file
         """
         # Flush any remaining buffered events
-        await self._flush_buffer()
+        async with self._buffer_lock:
+            await self._flush_buffer()
         
         file_path = path or self._trajectory_file
         
@@ -463,7 +500,8 @@ class Recorder(SystemComponent):
         Returns:
             List of event dictionaries
         """
-        await self._flush_buffer()
+        async with self._buffer_lock:
+            await self._flush_buffer()
         return [e.to_dict() for e in self._trajectory_events]
     
     async def get_llm_usage_summary(self) -> Dict[str, Any]:
