@@ -64,7 +64,7 @@ OpenHospital introduces a robust, dual-dimensional metric system that quantitati
 This is an interesting introduction to OpenHospital.
 
 <div align="center">
-  <a href="https://www.bilibili.com/video/YOUR_VIDEO_ID/" target="_blank">
+  <a href="https://www.bilibili.com/video/BV1LJwZzkEeg/?spm_id_from=333.337.search-card.all.click&vd_source=bce9cf8b2af4de3dd7d05c09453440b5" target="_blank">
     <img src="assets/showcase_video_cover.jpg" alt="OpenHospital Showcase" width="700"/>
   </a>
 </div>
