@@ -297,7 +297,7 @@ Agent-Kernel/
 感谢所有为 Agent-Kernel 做出贡献的开发者们：
 
 <a href="https://github.com/ZJU-LLMs/Agent-Kernel/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=ZJU-LLMs/Agent-Kernel&v=1" width=400 />
+  <img src="https://contrib.rocks/image?repo=ZJU-LLMs/Agent-Kernel" width=400 />
 </a>
 
 _我们同样欢迎您通过提交 Pull Requests 成为贡献者中的一员！_

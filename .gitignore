@@ -31,3 +31,4 @@ mkdocs.yml
 generate_static_docs.py
 figure/
 per_tick_reports/
+Docs/

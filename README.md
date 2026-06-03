@@ -304,7 +304,7 @@ If you use Agent-Kernel in your research, please consider citing our paper:
 Thanks to all the developers who have contributed to Agent-Kernel:
 
 <a href="https://github.com/ZJU-LLMs/Agent-Kernel/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=ZJU-LLMs/Agent-Kernel&v=1" width=400 />
+  <img src="https://contrib.rocks/image?repo=ZJU-LLMs/Agent-Kernel" width=400 />
 </a>
 
 _We also welcome you to become one of our contributors via Pull Requests!_
